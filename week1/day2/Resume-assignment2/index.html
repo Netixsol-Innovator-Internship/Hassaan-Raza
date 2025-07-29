@@ -1,123 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <title>Assignment 2</title>
+  </head>
+  <body>
+    <main
+      class="w-[90%] lg:max-w-[900px] flex flex-col mx-auto justify-start text-gray-600"
+    >
+      <!-- Header -->
+      <header class="text-center p-5 w-full">
+        <h1 class="font-bold text-2xl text-black">John Doe</h1>
+        <p>Creative and Innovative Web Developer</p>
+        <div class="w-full border-b-2 border-black pb-3">
+          <div
+            class="md:w-[650px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-1 mt-4 text-xs font-semibold"
+          >
+            <a href="#">
+              <i class="fa-solid fa-location-dot text-green-500 mr-2"></i>
+              Pleasantville, CA 94588
+            </a>
+            <a href="#">
+              <i class="fa-solid fa-phone text-green-500 mr-2"></i>
+              (555) 123-4567
+            </a>
+            <a href="#">
+              <span class="mr-2 text-green-500 font-bold">@</span>
+              johndoe@gmail.com
+            </a>
+            <a href="#">
+              <i class="fa-solid fa-link text-green-500 mr-1"></i>
+              http://www.johndoe.com
+            </a>
+          </div>
+        </div>
+      </header>
 
-    <!DOCTYPE html>
-    <html lang="en">
+      <!-- Profile Section -->
+      <section
+        name="Profile"
+        class="w-full px-5 mt-1 border-b-2 border-black pb-2 flex flex-col md:flex-row justify-between items-start gap-y-2"
+      >
+        <h1 class="text-xl text-black font-bold w-full md:w-[20%]">Profile</h1>
+        <div
+          class="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-48 text-center text-[15px] w-full md:w-[80%]"
+        >
+          <div class="flex flex-col items-center">
+            <i class="fa-brands fa-linkedin text-blue-600"></i>
+            <span>LinkedIn</span>
+          </div>
+          <div class="flex flex-col items-center">
+            <i class="fa-brands fa-github text-black"></i>
+            <span>GitHub</span>
+          </div>
+          <div
+            class="flex flex-col items-center justify-center md:justify-normal"
+          >
+            <i class="fa-brands fa-stack-overflow text-orange-600"></i>
+            <span>Stack Overflow</span>
+          </div>
+        </div>
+      </section>
 
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Muhammad Hassaan Raza - Resume</title>
-          <script src="https://cdn.tailwindcss.com"></script>
+      <!-- Summary Section -->
+      <section
+        name="Summary"
+        class="w-full px-5 mt-1 border-b-2 border-black pb-2 flex flex-col md:flex-row justify-between items-start gap-y-4"
+      >
+        <h1 class="text-xl text-black font-bold w-full md:w-[20%]">Summary</h1>
+        <div class="w-full md:w-[80%] text-[15px] text-justify">
+          <p>
+            Innovative Web Developer with 5 years of experience in building
+            impactful and user-friendly websites and web applications.
+            Specialized in
+            <strong class="text-black">Front-end technologies</strong> and
+            passionate about cutting-edge techniques and technologies. Proven
+            track record leading successful projects from inception to
+            completion.
+          </p>
+        </div>
+      </section>
 
-    </head>
+      <!-- Experience -->
+      <section
+        name="Experience"
+        class="w-full px-5 mt-4 border-b-2 border-black pb-3 flex flex-col md:flex-row justify-between items-start gap-y-4"
+      >
+        <h1 class="text-xl text-black font-bold w-full md:w-[20%]">
+          Experience
+        </h1>
 
-    <body style="font-family: Arial, sans-serif; line-height: 1.6; margin: 30px; background: #fff; color: #000;">
+        <div class="grid grid-cols-1 gap-8 text-[16px] w-full md:w-[80%]">
+          <!-- Creative Solutions Inc. -->
+          <div class="flex flex-col items-start text-left space-y-3">
+            <div class="flex justify-between w-full items-center">
+              <strong class="text-black text-lg"
+                >Creative Solutions Inc.</strong
+              >
+              <strong class="text-sm text-black whitespace-nowrap"
+                >Jan 2019 – Present</strong
+              >
+            </div>
+            <span class="text-gray-700 font-medium">Senior Web Developer</span>
+            <div class="flex flex-col text-sm text-gray-600 space-y-1">
+              <span> San Francisco, CA</span>
+              <span>
+                🔗
+                <a href="#" class="text-blue-600 break-all" target="_blank"
+                  >https://creativesolutions.inc/</a
+                >
+              </span>
+            </div>
+            <ul class="list-disc pl-5 space-y-1 text-gray-800 text-[16px]">
+              <li>
+                Redesigned the main product website, increasing user engagement
+                by 40%.
+              </li>
+              <li>
+                Implemented a new responsive framework, improving device
+                compatibility.
+              </li>
+              <li>
+                Mentored four junior developers, encouraging technical
+                excellence.
+              </li>
+            </ul>
+          </div>
 
-        <header style="text-align: center;">
-            <h1 style="line-height: 1;;">Muhammad Hassaan Raza</h1>
-            <h2 style="line-height: 0;">AI Engineer Intern</h2>
+          <!-- TechAdvancers -->
+          <div class="flex flex-col items-start text-left space-y-3">
+            <div class="flex justify-between gap-x-2 w-full items-center">
+              <strong class="text-black text-lg">TechAdvancers</strong>
+              <strong class="text-sm text-black whitespace-nowrap"
+                >Jun 2016 – Dec 2018</strong
+              >
+            </div>
+            <span class="text-gray-700 font-medium">Web Developer</span>
+            <div class="flex flex-col text-sm text-gray-600 space-y-1">
+              <span> San Jose, CA</span>
+              <span>
+                🔗
+                <a href="#" class="text-blue-600 break-all" target="_blank"
+                  >https://techadvancers.com/</a
+                >
+              </span>
+            </div>
+            <ul class="list-disc pl-5 space-y-1 text-gray-800 text-[16px]">
+              <li>
+                Built web apps in a 10-person team using React.js and Node.js.
+              </li>
+              <li>
+                Integrated services like Stripe for payments and Twilio for SMS.
+              </li>
+              <li>Enhanced performance, reducing load times by 30%.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Education Section -->
+      <section
+        name="Education"
+        class="w-full px-5 mt-1 border-b-2 border-black pb-3 flex flex-col md:flex-row justify-between items-start gap-y-4"
+      >
+        <h1 class="text-xl text-black font-bold w-full md:w-[20%]">
+          Education
+        </h1>
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md:gap-52 text-left md:text-center text-[16px] w-full md:w-[80%]"
+        >
+          <div class="flex flex-col items-center">
+            <strong class="text-black">University of California</strong>
+            <span>Berkeley, CA</span>
+          </div>
+          <div class="flex flex-col items-center">
+            <strong class="text-black">August 2012 - May 2016</strong>
+            <span>Bachelor's in Computer Science</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section
+        name="Projects"
+        class="w-full px-5 mt-4 border-b-2 border-black pb-3 flex flex-col md:flex-row justify-between items-start gap-y-4"
+      >
+        <h1 class="text-xl text-black font-bold w-full md:w-[20%]">Projects</h1>
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 gap-8 text-[16px] w-full md:w-[80%]"
+        >
+          <div class="flex flex-col items-start text-left space-y-2">
+            <strong class="text-black">E-Commerce Platform</strong>
+            <span class="text-gray-700">Project Lead</span>
             <p>
-                Faisalabad, Pakistan |
-                📧 <a href="mailto:hassaanxhk11@gmail.com">hassaanxhk11@gmail.com</a> |
-                🔗 <a href="https://github.com/HassaanRazaX" target="_blank">github.com/HassaanRazaX</a> |
-                📞 <a href="tel:+923200096255">0320 0096255</a>
+              Led the development of a full-stack e-commerce platform, improving
+              sales conversion by 25%.
             </p>
-        </header>
+          </div>
+          <div class="flex flex-col items-start text-left space-y-2">
+            <strong class="text-black">Interactive Dashboard</strong>
+            <span class="text-gray-700">Front-end Developer</span>
+            <p>
+              Created an interactive analytics dashboard for a SaaS application,
+              enhancing data visualization for clients.
+            </p>
+          </div>
+        </div>
+      </section>
 
+      <!-- Skills Table -->
+      <section
+        name="Skills"
+        class="w-full px-5 mt-4 border-b-2 border-black pb-3 flex flex-col lg:flex-row justify-between items-start gap-y-4"
+      >
+        <h1 class="text-xl text-black font-bold w-full md:w-[20%]">Skills</h1>
 
-        <section>
-            <h3 style="line-height: 0;">Education</h3>
-            <hr>
+        <div class="flex flex-col md:flex-row gap-4 lg:gap-6 w-full md:w-[80%]">
+          <div class="flex flex-col items-start text-left space-y-2">
+            <strong class="text-black">Web Technologies</strong>
+            <span class="text-gray-700">Advanced</span>
+            <p class="lg:whitespace-nowrap">HTML5, JavaScript, PHP, Python</p>
+          </div>
 
-            <ul>
-                <li>BS Artificial Intelligence, National Textile University (2022-2026) - CGPA: 3.61</li>
-                <li>Intermediate (ICS), Punjab Group of Colleges - 2022</li>
-                <li>Matriculation (Science), Dar-ul-Madina International School - 2020</li>
-            </ul>
-        </section>
+          <div class="flex flex-col items-start text-left space-y-2">
+            <strong class="text-black">Web Frameworks</strong>
+            <span class="text-gray-700">Intermediate</span>
+            <p class="">
+              React.js, Angular, Vue.js, Laravel, Django
+            </p>
+          </div>
 
-        <section>
-            <h3>Skills</h3>
-            <hr>
+          <div class="flex flex-col items-start text-left space-y-2">
+            <strong class="text-black">Tools</strong>
+            <span class="text-gray-700">Intermediate</span>
+            <p class="lg:whitespace-nowrap">
+              Webpack, Git, Jenkins, Docker, JIRA
+            </p>
+          </div>
+        </div>
+      </section>
 
-            <ul>
-                <li>Embedded Systems: ESP32, Arduino, MicroPython, FreeRTOS</li>
-                <li>Programming: C++, Python, JavaScript</li>
-                <li>Web: Next.js, Firebase, Tailwind CSS, HTML</li>
-                <li>AI/ML: TensorFlow, scikit-learn, TFLite Micro</li>
-                <li>Tools: Git, Firebase, Arduino IDE, PlatformIO</li>
-                <li>Soft Skills: Public Speaking, Team Leadership, Technical Writing</li>
-            </ul>
-        </section>
+      <!-- Certifications Section -->
+      <section
+        name="Certifications"
+        class="w-full px-5 mt-4 border-b-2 border-black pb-3 flex flex-col lg:flex-row justify-between items-start gap-y-4"
+      >
+        <h1 class="text-xl text-black font-bold w-full md:w-[20%]">
+          Certifications
+        </h1>
 
-        <section>
-            <h3>Experience</h3>
-            <hr>
+        <div
+          class="flex flex-col md:flex-row gap-6 gap-x-12 lg:gap-x-18 w-full md:w-[80%]"
+        >
+          <div class="flex flex-col items-start text-left space-y-2">
+            <div class="flex items-center gap-2 md:gap-18">
+              <strong class="text-black whitespace-nowrap"
+                >Full-Stack Web Development</strong
+              >
+              <strong class="whitespace-nowrap text-black">2020</strong>
+            </div>
+            <span class="text-gray-700">CodeAcademy</span>
+          </div>
 
-            <ul>
-                <li><strong>Internship - Embedded Developer</strong>, Epteck Technologies (Jun–Aug 2023)</li>
-                <li><strong>Instructor Assistant - COAL Assembly Language</strong> (Sep 2024–Feb 2025)</li>
-                <li><strong>Organizer</strong> - IoT & Embedded Workshop at NTU (2025)</li>
-            </ul>
-        </section>
+          <div class="flex flex-col items-start text-left space-y-2">
+            <div class="flex items-center whitespace-nowrap gap-10 md:gap-18">
+              <strong class="text-black">AWS Certified Developer</strong>
+              <strong class="whitespace-nowrap text-black">2019</strong>
+            </div>
+            <span class="text-gray-700">Amazon Web Services</span>
+          </div>
+        </div>
+      </section>
 
-        <section>
-            <h3>Major Projects</h3>
-            <hr>
+      <!-- Languages  -->
 
-            <ul>
-                <li><strong>SenseAI SmartFit Wristband</strong>: ESP32-C3 based wearable health monitor with Firebase
-                    integration and on-device AI.</li>
-                <li><strong>Smart Weather Station</strong>: WebSocket-powered MicroPython dashboard with DHT11, OLED,
-                    RGB
-                    control.</li>
-                <li><strong>Smart Bin</strong>: Auto-opening IoT bin with Blynk app and servo using ESP32.</li>
-                <li><strong>Smart Home System</strong>: Flame/gas detection, automation, and remote control using
-                    FreeRTOS.
-                </li>
-                <li><strong>Virtual Friend Chatbot</strong>: Mental health assistant using Flask, LangChain, and
-                    HuggingFace
-                    models.</li>
-                <li><strong>Human Action Detection</strong>: LRCN-based video classification using CNN + LSTM.</li>
-                <li><strong>Animal Classifier</strong>: CNN model trained to classify cat/dog/squirrel images (93%
-                    train,
-                    75% test).</li>
-            </ul>
-        </section>
+      <section
+        name="Projects"
+        class="w-full px-5 mt-4 border-b-2 border-black pb-3 flex flex-col lg:flex-row justify-between items-start gap-y-4"
+      >
+        <h1 class="text-xl text-black font-bold w-full md:w-[20%]">
+          Languages
+        </h1>
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 gap-8 text-[16px] w-full md:w-[80%]"
+        >
+          <div class="flex flex-col items-start text-left space-y-2">
+            <strong class="text-black">English</strong>
+            <span class="text-gray-700">Native Speaking</span>
+          </div>
+          <div class="flex flex-col items-start text-left space-y-2">
+            <strong class="text-black">Spanish</strong>
+            <span class="text-gray-700">Intermediate</span>
+          </div>
+        </div>
+      </section>
 
-        <section>
-            <h3>Certifications</h3>
-            <hr>
+      <!-- References  -->
 
-            <ul>
-                <li>Microsoft Office Specialist</li>
-                <li>Machine Learning with Python – IBM</li>
-                <li>Applied ML – Supervised Models (Coursera)</li>
-            </ul>
-        </section>
-
-        <section>
-            <h3>Achievements</h3>
-            <hr>
-
-            <ul>
-                <li>Gold Medal - PGC Robotics Exhibition 2022</li>
-                <li>Runner-Up - NTU Parliamentary Debate 2023</li>
-            </ul>
-        </section>
-
-        <section>
-            <h3>Languages</h3>
-            <hr>
-
-            <ul>
-                <li>English - Fluent</li>
-                <li>Urdu - Native</li>
-            </ul>
-        </section>
-
-    </body>
-
-    </html>
-</body>
-
+      <section
+        name="References"
+        class="w-full px-5 mt-4 pb-4 gap-x-9 flex flex-col md:flex-row justify-between items-start gap-y-4"
+      >
+        <h1 class="text-xl text-black font-bold w-full md:w-[20%]">
+          References
+        </h1>
+        <div class="w-full md:w-[80]">
+          <strong class="text-black">Provided upon request</strong>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>
