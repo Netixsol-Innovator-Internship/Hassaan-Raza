@@ -1,15 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link href="output.css" rel="stylesheet">
+    <link href="output.css" rel="stylesheet">
 
     <title>Document</title>
 </head>
-<body>
-      <h1 class="text-3xl font-bold underline">
-        Hello world!
-      </h1>
+
+<body class="font-sans">
+    <!-- hero section -->
+    <section class="bg-[url('assets/img/bg-landingpage.JPG')] bg-cover bg-center h-screen ">
+        <!-- header/navbar -->
+        <header class="top-0 left-0 w-full z-20 px-16 py-10 flex justify-between items-center">
+            <!-- logo -->
+            <div class="w-50 ">
+                <img src="assets/img/logo.png" alt="Saudi">
+            </div>
+
+            <!-- nav bar -->
+            <nav class="mr-30">
+                <ul class="flex justify-between items-center  gap-15 text-white text-xl font-semibold">
+                    <li> <button
+                            class="bg-white text-black px-2 py-1 rounded-full flex items-center gap-1 text-sm shadow">
+                            <span>🌙</span>
+                            <span>☀️</span>
+                        </button>
+                    </li>
+                    <li><a href="#">Destinations</a></li>
+                    <li><a href="#">Members</a></li>
+                    <li><a href="#">Gallery</a></li>
+            </nav>
+        </header>
+        <!--navbar end -->
+
+              <!-- Main Hero Content -->
+      <div class=" z-20 h-full flex flex-col justify-center items-center text-center px-4">
+        <h2 class="text-4xl  md:text-6xl font-extrabold mb-4">Explore</h2>
+        <h1 class="text-5xl text-gray-200 md:text-7xl font-extrabold mb-6">Saudi Arabia</h1>
+        <p class="max-w-xl text-lg text-gray-200">Saudi Arabia is rich in heritage and history. The country is home to hundreds of historically important sites.</p>
+      </div>
+
+    </section>
 </body>
+
 </html>
