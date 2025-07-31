@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About us</title>
+    <link rel="stylesheet" href="output.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Imperial+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        #hisma {
+            font-family: 'Imperial Script', cursive;
+        }
+
+        /* Custom animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fadeIn {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        .card-hover-effect {
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .card-hover-effect:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .arrow-pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: translateX(0);
+            }
+
+            50% {
+                transform: translateX(10px);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        .text-custom {
+            color: #D1D5DB;
+        }
+    </style>
+    <script src="script.js"></script>
+</head>
+
+<body class="bg-white text-white dark:bg-black dark:text-white transition-colors duration-300">
+
+    <!-- Destnation Hero section -->
+
+    <section
+        class="relative min-h-screen bg-cover bg-center bg-[url('assets/img/neom.png')] flex flex-col justify-between pb-10">
+        <!-- Overlay -->
+        <div class="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black to-transparent pointer-events-none">
+        </div>
+
+        <!-- Navbar -->
+        <header class="w-full z-30 px-4 md:px-12 py-4 flex justify-between items-center relative animate-fadeIn">
+            <!-- Logo -->
+            <div class="w-28 md:w-40 flex-shrink-0 transform hover:scale-105 transition-transform duration-300">
+                <a href="index.html"> <img src="assets/img/logo.png" alt="Saudi Arabia Logo" class="w-full h-auto"></a>
+            </div>
+            <!-- Hamburger Button (mobile) -->
+            <button id="nav-toggle"
+                class="md:hidden flex items-center px-3 py-2 border rounded text-white border-gray-400 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all duration-200">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+            <!-- Nav Links -->
+            <nav id="nav-menu"
+                class="hidden md:flex items-center gap-4 md:gap-10 text-white text-base md:text-xl absolute md:static top-16 left-0 w-full md:w-auto bg-black/90 md:bg-transparent px-4 md:px-0 py-4 md:py-0 rounded-b-xl md:rounded-none shadow-lg md:shadow-none z-30 transform md:transform-none transition-all duration-300 ease-in-out">
+                <!-- dark/light mode -->
+                <!-- <div
+                    class="mode_toggler 2xl:w-20 2xl:h-10 w-16 bg-white h-8 rounded-full relative flex items-center p-1 gap-0.5 cursor-pointer overflow-hidden hover:shadow-lg hover:shadow-white/20 transition-all duration-300">
+                    <div class="dark flex-1 flex items-center justify-center h-full rounded-full hover:bg-gray-200 transition-colors duration-200" title="Dark Mode">
+                        <i class="fa-regular fa-moon text-black"></i>
+                    </div>
+                    <div class="light flex-1 flex items-center justify-center h-full rounded-full hover:bg-gray-200 transition-colors duration-200" title="Light Mode">
+                        <i class="fa-solid fa-sun text-black"></i>
+                    </div>
+                </div> -->
+                <!-- extraaaaaaaa -->
+
+                <div
+                    class="mode_toggler w-16 h-8 bg-white rounded-full relative flex items-center p-1 gap-0.5 cursor-pointer">
+                    <div class="dark flex-1 flex items-center justify-center h-full rounded-full">
+                        <i class="fa-regular fa-moon text-black"></i>
+                    </div>
+                    <div class="light flex-1 flex items-center justify-center h-full rounded-full">
+                        <i class="fa-solid fa-sun text-black"></i>
+                    </div>
+                </div>
+
+                <a href="destination.html"
+                    class="hover:underline block py-1 transition-all duration-200 hover:text-amber-300">Destinations</a>
+                <a href="#"
+                    class="hover:underline block py-1 transition-all duration-200 hover:text-amber-300">Members</a>
+                <a href="#"
+                    class="hover:underline block py-1 transition-all duration-200 hover:text-amber-300">Gallery</a>
+            </nav>
+        </header>
+
+        <!-- Main Hero Content -->
+        <div
+            class="flex-1 flex flex-col justify-center items-center text-center px-4 pt-16 md:pt-0 space-y-4 animate-fadeIn">
+            <!-- <h2 class="text-4xl md:text-7xl font-extrabold mb-2 md:mb-4 tracking-tight drop-shadow-lg ">
+                Explore</h2> -->
+            <h1 class="text-4xl md:text-7xl font-extrabold mb-4 md:mb-6 tracking-tight drop-shadow-lg text-white">About
+                Us</h1>
+            <p class="max-w-xl text-base md:text-lg text-white opacity-90 leading-relaxed">
+                Discover the country's hidden gems and breathtaking landscapes </p>
+        </div>
+
+
+    </section>
+
+    <!-- trends -->
+    <!-- Traditions of Saudi Arabia Section -->
+
+    <section class="px-4 md:px-12 py-10 md:py-16 bg-white dark:bg-black text-black dark:text-white">
+        <div class="text-center mb-8 md:mb-12 animate-fadeIn">
+            <h2 class="text-2xl md:text-4xl font-semibold mb-4">Saudi, a kingdom that inspires</h2>
+            <p class="mt-2 max-w-2xl mx-auto text-base md:text-xl text-gray-600  leading-relaxed">
+                A uniquely Saudi experience awaits in winter </p>
+        </div>
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-2xl md:text-4xl font-bold mb-8 md:mb-12">Traditions of Saudi Arabia</h2>
+
+            <!-- Languages Article -->
+            <article class="grid gap-6 md:gap-10 mb-12 md:mb-16 md:grid-cols-2 items-center">
+                <img src="assets/img/section2-languages-about-us-page.jpg"
+                    class="w-full h-64 md:h-96 object-cover rounded-3xl shadow-lg" alt="Languages of Saudi Arabia">
+                <div>
+                    <h3 class="text-xl md:text-2xl font-bold mb-4">Languages</h3>
+                    <p class="text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                        Arabic is the official language of Saudi Arabia and the primary language used in all dealings
+                        and public transactions.
+                        English serves as an informal second language in the Kingdom and is spoken by a large section of
+                        its society.
+                        All road signs are bilingual, showing information in both Arabic and English.
+                    </p>
+                </div>
+            </article>
+
+            <!-- Culture Article -->
+            <article class="grid gap-6 md:gap-10 md:grid-cols-2 items-center">
+                <div class="order-2 md:order-1">
+                    <h3 class="text-xl md:text-2xl font-bold mb-4">Culture</h3>
+                    <p class="text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                        Saudi culture is rooted in Islamic traditions and Bedouin customs. The Kingdom's cultural
+                        heritage includes traditional
+                        dances like the Ardah, distinctive clothing like the thobe and abaya, and a strong tradition of
+                        hospitality.
+                        Family values and respect for elders are central to Saudi society.
+                    </p>
+                </div>
+                <img src="assets/img/section2-culture-about-us-page.jpg"
+                    class="w-full h-64 md:h-96 object-cover rounded-3xl shadow-lg order-1 md:order-2"
+                    alt="Saudi Culture">
+            </article>
+        </div>
+    </section>
+
+
+<!-- end -->
+
+
+
+ <!-- whatsapp -->
+    <section class="px-4 md:px-12 py-16 md:py-20 text-white  dark:bg-black">
+        <div
+            class="max-w-4xl mx-auto border-2 border-[#047F01] rounded-full bg-gradient-to-b from-white via-[#047F01] to-white p-1">
+            <div
+                class="bg-[#047E01] rounded-full px-6 py-4 md:py-6 flex flex-col md:flex-row justify-between items-center gap-4">
+                <h2 class="text-lg md:text-xl font-semibold text-center md:text-left">Contact us on WhatsApp</h2>
+                <button
+                    class="px-6 md:px-8 py-2 rounded-full bg-white text-[#047E01] font-medium hover:bg-gray-100 transition-colors duration-200">
+                    Start Chat
+                </button>
+            </div>
+        </div>
+    </section>
+
+
+     <!-- arrow image  -->
+    <section class="px-4 md:px-20 py-16 flex justify-center animate-fadeIn">
+        <div
+            class="md:px-10 relative w-full bg-[url('assets/img/section3-bg-about-us-page.jpg')] bg-cover bg-center overflow-hidden min-h-[320px] flex flex-col sm:flex-row justify-center items-center rounded-sm group">
+            <!-- Overlay for better text visibility in dark mode -->
+            <div class="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-all duration-500"></div>
+            <div class="relative flex-1 flex flex-col justify-center pl-8 sm:py-10">
+                <h2 class="text-2xl md:text-4xl font-semibold text-white mb-0">Rules of Behaviour
+KSA</h2>
+                </div>
+            <div class="relative flex-shrink-0 mb-5 sm:mb-0">
+                <div class="w-16 h-16 transform group-hover:scale-110 transition-transform duration-300">
+                    <a href="#" class="block w-full h-full">
+                        <img src="assets/img/arrow.png" alt="Next" class="w-full h-full object-contain arrow-pulse" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+  
+     <!-- arrow image ends -->
+
+
+
+
+     <!-- footer -->
+
+    <!-- footer -->
+    <footer class="w-full bg-[#222222] px-4 sm:px-15 py-10 animate-fadeIn">
+        <div
+            class="max-w-[1512px] mx-auto flex flex-wrap sm:flex-nowrap justify-start sm:justify-between items-start gap-y-10">
+            <!-- Logo -->
+            <div
+                class="w-full sm:w-auto flex justify-center sm:justify-start mb-6 sm:mb-0 sm:mr-20 transform hover:scale-105 transition-transform duration-300">
+                <img src="assets/img/logo.png" alt="Saudi Logo" class="w-[200px] sm:w-[267px] h-auto object-contain" />
+            </div>
+
+            <!-- Columns Wrapper -->
+            <div class="flex flex-wrap sm:flex-nowrap gap-x-10 sm:gap-x-16 text-white">
+                <!-- About -->
+                <div class="flex flex-col gap-2 min-w-[120px]">
+                    <h3 class="font-semibold text-custom mb-2">About</h3>
+                    <a href="about.html"
+                        class="font-normal text-custom hover:text-amber-400 hover:underline transition-all duration-200">About
+                        us</a>
+                    <a href="#"
+                        class="font-normal text-custom hover:text-amber-400 hover:underline transition-all duration-200">Features</a>
+                    <a href="#"
+                        class="font-normal text-custom hover:text-amber-400 hover:underline transition-all duration-200">News
+                        & Blogs</a>
+                </div>
+
+                <!-- Contact -->
+                <div class="flex flex-col gap-2 min-w-[120px]">
+                    <h3 class="font-semibold text-custom mb-2">Contact</h3>
+                    <a href="#"
+                        class="font-normal text-custom hover:text-amber-400 hover:underline transition-all duration-200">Instagram</a>
+                    <a href="#"
+                        class="font-normal text-custom hover:text-amber-400 hover:underline transition-all duration-200">Twitter</a>
+                    <a href="#"
+                        class="font-normal text-custom hover:text-amber-400 hover:underline transition-all duration-200">Facebook</a>
+                </div>
+
+                <!-- Support -->
+                <div class="flex flex-col gap-2 min-w-[120px]">
+                    <h3 class="font-semibold text-custom mb-2">Support</h3>
+                    <a href="#"
+                        class="font-normal text-custom hover:text-amber-400 hover:underline transition-all duration-200">FAQs</a>
+                    <a href="#"
+                        class="font-normal text-custom hover:text-amber-400 hover:underline transition-all duration-200">Support
+                        Centre</a>
+                    <a href="#"
+                        class="font-normal text-custom hover:text-amber-400 hover:underline transition-all duration-200">Feedback</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+     <!-- footer ends -->
+
+
+</body>
+
+</html>
