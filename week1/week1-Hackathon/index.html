@@ -2,96 +2,705 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NFT Collection </title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NFT Collection Hero</title>
     <link rel="stylesheet" href="output.css">
 </head>
 
-<body class="font-poppins">
-
+<body class="font-poppins bg-black text-white">
 
     <!-- Hero Section -->
+    <section class="relative min-h-screen bg-cover bg-center flex flex-col overflow-hidden pb-10"
+        style="background-image: url('assets/img/bg-hero-section.png');">
 
-    <section
-        class="relative min-h-screen bg-cover bg-center bg-[url('assets/img/bg-hero-section.png')] flex flex-col justify-between overflow-hidden pb-10">
-
-        <header class="flex justify-between items-center  bg-[#191919] text-white py-6 px-32 2xl:px-40">
+        <!-- Header -->
+        <header
+            class="flex flex-wrap justify-between items-center bg-[#191919] text-white py-6 px-6 lg:px-12 xl:px-32 2xl:px-40">
             <div>
-                <h1 class="text-2xl font-bold tracking-wider">
-                    Logo Here
-                </h1>
+                <h1 class="text-2xl font-bold tracking-wider">Logo Here</h1>
             </div>
 
             <nav>
-                <ul class="flex space-x-15 text-lg 2xl:text-xl font-semibold items-center">
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Collection</a></li>
-                    <li><a href="#">Creater</a></li>
-                    <li><a href="#">Road Map</a></li>
-                    <li><button class="btn">Sign in</button></li>
+                <ul class="flex flex-wrap gap-6 md:gap-10 text-base 2xl:text-lg font-semibold items-center">
+                    <li><a href="#" class="hover:underline">About</a></li>
+                    <li><a href="#" class="hover:underline">Collection</a></li>
+                    <li><a href="#" class="hover:underline">Creator</a></li>
+                    <li><a href="#" class="hover:underline">Road Map</a></li>
+                    <li>
+                        <!-- @apply text-white text-center font-bold text-lg 2xl:text-xl border border-white rounded-2xl  bg-(--base-color) px-13 py-3 -->
+
+                        <button class="btn">Sign
+                            in</button>
+                    </li>
                 </ul>
             </nav>
         </header>
 
-        <!-- hero content -->
-        <div class=" grid grid-cols-2 justify-items-center text-white ">
-            <!-- hero content left -->
-            <div class="relative flex flex-col justify-center items-center h-full self-center justify-self-center">
-
-                <div class="absolute right-0 top-35">
-                    <img src="assets/img/star-filled.png" alt="">
+        <!-- Hero Content -->
+        <div
+            class="container mx-auto flex flex-col-reverse lg:flex-row items-center gap-12 px-6 lg:px-12 2xl:px-40 mt-10 relative">
+            <!-- Left column -->
+            <div class="relative flex-1 flex flex-col justify-center">
+                <!-- top-right filled star -->
+                <div
+                    class="absolute right-0 top-1/4 transform translate-x-1/4 -translate-y-1/4 w-12 h-12 md:w-20 md:h-20 lg:w-24 lg:h-24">
+                    <img src="assets/img/star-filled.png" alt="star" class="w-full h-full object-contain" />
                 </div>
-                <!-- text hero -->
-                <div class="pl-50">
-                    <div class="text-7xl font-bold tracking-wider mb-4  ">
-                        <h1>We Have High</h1>
-                        <h1>Quality <span class="text-(--base-color)">NFT</span></h1>
-                        <h1>Collections</h1>
 
-                    </div>
-                    <p class="font-bold text-xs">Lorem ipsum dolor sit amet consectetur. Rhoncus massa suspendisse turpis sed viverra tempus
+                <!-- Headline -->
+                <div class="mb-6">
+                    <h1
+                        class="font-extrabold heading-tight text-4xl sm:text-5xl md:text-6xl 2xl:text-7xl leading-tight flex flex-col gap-0">
+                        <div>We Have High</div>
+                        <div>Quality <span class="text-[color:var(--tw-color-base)]" style="color: #DA8F4D;">NFT</span>
+                        </div>
+                        <div>Collections</div>
+                    </h1>
+                    <p class="mt-4 max-w-xl text-sm font-semibold font-work-sans">
+                        Lorem ipsum dolor sit amet consectetur. Rhoncus massa suspendisse turpis sed viverra tempus
                         tortor.
                         Habitant accumsan sagittis in facilisi placerat ac. Laoreet scelerisque viverra viverra ornare
-                        fermentum faucibus sit purus volutpat. Egestas lectus ornare convallis ornare nullam enim neque.
+                        fermentum
+                        faucibus sit purus volutpat. Egestas lectus ornare convallis ornare nullam enim neque.
                     </p>
                 </div>
-                <!-- text hero end -->
-                <!-- buttons hero -->
-                <div>
-                    <button class="btn">Get Whitelist</button>
-                    <button class="btn bg-transparent">Contact us</button>
-                </div>
-                <!-- Sales number -->
-                <div class="flex space-x-4 mt-6 font-space-mono text-4xl">
-                    <div>
-                        <h1 class="text-2xl font-bold ">240k+</h1>
-                        <p class="font-work-sans text-2xl">Total Sales</p>
-                    </div>
-                    <div>
-                        <h1 class="text-2xl font-bold">100k+</h1>
-                        <p class="font-work-sans text-2xl">Auctions</p>
-                    </div>
-                    <div>
-                        <h1 class="text-2xl font-bold">240k+</h1>
-                        <p class="font-work-sans text-2xl">Artists</p>
-                    </div>
+
+                <!-- Buttons -->
+                <div class="flex flex-wrap gap-8 mt-4">
+                    <button class="btn">Get
+                        Whitelist</button>
+                    <button class="btn bg-transparent">Contact
+                        us</button>
                 </div>
 
+                <!-- Stats -->
+                <div
+                    class="flex flex-wrap justify-around gap-8 mt-8  font-space-mono bg-white/10 backdrop-blur-md rounded-4xl p-6">
+                    <div class="flex flex-col">
+                        <span class="text-3xl font-bold">240k+</span>
+                        <span class="text-sm font-medium font-work-sans">Total Sales</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-3xl font-bold">100k+</span>
+                        <span class="text-sm font-medium font-work-sans">Auctions</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-3xl font-bold">240k+</span>
+                        <span class="text-sm font-medium font-work-sans">Artists</span>
+                    </div>
+                </div>
             </div>
 
-            <!-- hero- tiger -->
-            <div class="relative">
-                <div class="">
-                    <img src="assets/img/Group 865.png" alt="" class="w-[500px]">
+            <!-- Right image -->
+            <div class="relative flex-1 flex justify-center lg:justify-end">
+                <div class="relative">
+                    <img src="assets/img/Group 865.png" alt="hero image"
+                        class="max-w-full w-[400px] sm:w-[450px] md:w-[500px] object-contain" />
+                    <!-- bottom-left hollow star -->
+                    <div
+                        class="absolute left-0 bottom-0 w-10 h-10 md:w-15 md:h-15 lg:w-18 lg:h-18 -translate-x-1/4 translate-y-1/2">
+                        <img src="assets/img/hollow-star.png" alt="decor" class="w-full h-full object-contain" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- About Us -->
+    <section class="w-full mx-auto bg-black min-h-screen overflow-hidden">
+        <!-- Header -->
+        <div class="text-center mb-8 mt-8 md:mb-12 md:mt-12">
+            <h2 class="text-2xl md:text-5xl font-bold mb-4">About Us</h2>
+        </div>
+
+        <div class="bg-[#DA8F4D17] px-6 md:px-12 lg:px-20 py-10">
+            <div class="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Tiger grid -->
+                <div class="grid grid-cols-2 gap-6">
+                    <!-- card -->
+                    <div class="bg-[#2B2B2BAD] rounded-2xl overflow-hidden aspect-[4/3]">
+                        <div class="w-full h-full overflow-hidden">
+                            <img src="assets/img/1tiger.png" alt="tiger 1"
+                                class="w-full h-full object-cover object-top" />
+                        </div>
+                    </div>
+                    <div class="bg-[#2B2B2BAD] rounded-2xl overflow-hidden aspect-[4/3]">
+                        <div class="w-full h-full overflow-hidden">
+                            <img src="assets/img/2tiger.png" alt="tiger 2"
+                                class="w-full h-full object-cover object-top" />
+                        </div>
+                    </div>
+                    <div class="bg-[#2B2B2BAD] rounded-2xl overflow-hidden aspect-[4/3]">
+                        <div class="w-full h-full overflow-hidden">
+                            <img src="assets/img/3tiger.png" alt="tiger 3"
+                                class="w-full h-full object-cover object-top" />
+                        </div>
+                    </div>
+                    <div class="bg-[#2B2B2BAD] rounded-2xl overflow-hidden aspect-[4/3]">
+                        <div class="w-full h-full overflow-hidden">
+                            <img src="assets/img/4tiger.png" alt="tiger 4"
+                                class="w-full h-full object-cover object-top" />
+                        </div>
+                    </div>
                 </div>
 
-                <div class="absolute left-0 bottom-0">
-                    <img src="assets/img/hollow-star.png" alt="">
+                <!-- Text & button -->
+                <div class="flex flex-col justify-center items-start gap-6">
+                    <div class="space-y-4">
+                        <p class="font-bold text-base">
+                            Lorem ipsum dolor sit amet consectetur. Pharetra faucibus donec ultrices eros elit metus
+                            morbi aliquam quis. Suspendisse massa ullamcorper tortor morbi nisi leo. Ultrices leo vel
+                            tincidunt nunc eget elit. Gravida et duis ipsum pellentesque libero. Tellus rhoncus metus et
+                            eget mattis fringilla nec id. Amet ultrices quam ridiculus tellus. Leo adipiscing tincidunt
+                            amet nisi semper adipiscing quam in est. Tempor sed dui nunc diam adipiscing at.
+                        </p>
+                        <p class="font-bold text-base">
+                            Tellus rhoncus metus et eget mattis fringilla nec id. Amet ultrices quam ridiculus tellus.
+                            Leo adipiscing tincidunt amet nisi semper adipiscing quam in est. Tempor sed dui nunc diam
+                            adipiscing at.
+                        </p>
+                    </div>
+                    <button class="btn bg-white/35 border border-[rgba(218,143,77,1)] text-white">
+                        Connect Wallet
+                    </button>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Top collection -->
+    <section class="w-full mx-auto bg-black min-h-screen overflow-hidden mb-10">
+        <!-- Header -->
+        <div class="text-center mb-8 mt-8 md:mb-12 md:mt-12">
+            <h2 class="text-2xl md:text-5xl font-bold mb-4">Top Collections</h2>
+            <p class="max-w-xl mx-auto text-base md:text-xl leading-relaxed">
+                The largest and unique Super rare NFT marketplace
+                For crypto-collectibles
+            </p>
+        </div>
+
+
+        <div class="grid grid-cols-3 gap-4 bg-cover bg-center px-6 md:px-12 lg:px-20 py-10"
+            style="background-image: url('assets/img/bg-hero-section.png');">
+            <div>
+                <img src="assets/img/Frame 1261152803.png" alt="">
+            </div>
+
+            <div>
+                <img src="assets/img/Frame 1261152815.png" alt="">
+            </div>
+            <div>
+                <img src="assets/img/Frame 1261152805.png" alt="">
+            </div>
+            <div>
+                <img src="assets/img/Frame 1261152814.png" alt="">
+            </div>
+            <div>
+                <img src="assets/img/Frame 1261152817.png" alt="">
+            </div>
+            <div>
+                <img src="assets/img/Frame 1261152814.png" alt="">
+
+            </div>
+        </div>
+        <button class="btn bg-white/35 border border-[rgba(218,143,77,1)] text-white mx-auto block mt-10">
+            Explore More
+
+        </button>
+    </section>
+
+    <!-- Top/ Creater -->
+    <section class="w-full mx-auto bg-black min-h-screen overflow-hidden mb-10 ">
+        <!-- Header -->
+        <div class="text-center mb-8 mt-8 md:mb-12 md:mt-12">
+            <h2 class="text-2xl md:text-5xl font-bold mb-4">Top Creaters</h2>
+            <p class="max-w-xl mx-auto text-base md:text-xl leading-relaxed">
+                Checkout Top Rated Creators on the NFT Marketplace
+            </p>
+        </div>
+
+        <!-- Top Creators -->
+
+        <div class="text-white flex items-center justify-center">
+            <div class="w-full max-w-[1728px] px-4 sm:px-6 md:px-10 lg:px-20">
+                <div
+                    class="w-full px-2 sm:px-4 md:px-6 lg:px-10 py-12 sm:py-16 md:py-20 flex flex-col items-center justify-between">
+
+                    <!-- Cards Grid -->
+                    <div
+                        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-4 lg:gap-6 gap-2 w-full max-w-7xl">
+
+                        <!-- Card 1 -->
+                        <div class="bg-[#E6DCBA33] rounded-3xl bg-gradient-to-r from-white/5 via-white/2 to-white/5 p-6 sm:p-8 flex flex-col items-start justify-evenly text-center 
+        transform transition-all duration-300 hover:scale-105 animate-fadeInUp">
+
+                            <!-- Main Image - Circular -->
+                            <div class="flex">
+                                <div class="bg-[#2B2B2B] rounded-full w-10 h-10 text-[#858584] text-center text-xl">1
+                                </div>
+
+                                <div
+                                    class="w-60 h-60 md:w-48 md:h-48 2xl:h-36 2xl:w-36 rounded-full overflow-hidden my-8 border-4 border-white/20 transition-transform duration-500 hover:scale-110">
+                                    <img src="./assets/img/Ellipse 137.png" alt="NFT"
+                                        class="w-full h-full object-cover" />
+                                </div>
+                            </div>
+
+                            <!-- Card Info -->
+                            <div class="w-full flex flex-col items-center justify-center">
+                                <h4 class="font-semibold font-poppins text-lg sm:text-xl md:text-2xl mb-2">Name NFT</h4>
+                                <p class="text-sm text-gray-300 font-sans sm:text-xl">
+                                    Total Sales <span class="font-mono">34.53 ETH</span>
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Card 2 -->
+                        <div class="bg-[#E6DCBA33] rounded-3xl bg-gradient-to-r from-white/5 via-white/2 to-white/5 p-6 sm:p-8 flex flex-col items-start justify-evenly text-center 
+        transform transition-all duration-300 hover:scale-105 animate-fadeInUp">
+
+                            <!-- Main Image - Circular -->
+                            <div class="flex">
+                                <div class="bg-[#2B2B2B] rounded-full w-10 h-10 text-[#858584] text-center text-xl">2</div>
+
+                                <div
+                                    class="w-60 h-60 md:w-48 md:h-48 2xl:h-36 2xl:w-36 rounded-full overflow-hidden my-8 border-4 border-white/20 transition-transform duration-500 hover:scale-110">
+                                    <img src="./assets/img/Ellipse 138.png" alt="NFT" class="w-full h-full object-cover" />
+                                </div>
+                            </div>
+
+                            <!-- Card Info -->
+                            <div class="w-full flex flex-col items-center justify-center">
+                                <h4 class="font-semibold font-poppins text-lg sm:text-xl md:text-2xl mb-2">Name NFT</h4>
+                                <p class="text-sm text-gray-300 font-sans sm:text-xl">
+                                    Total Sales <span class="font-mono">34.53 ETH</span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="bg-[#E6DCBA33] rounded-3xl bg-gradient-to-r from-white/5 via-white/2 to-white/5 p-6 sm:p-8 flex flex-col items-start justify-evenly text-center 
+        transform transition-all duration-300 hover:scale-105 animate-fadeInUp">
+
+                            <!-- Main Image - Circular -->
+                            <div class="flex">
+                                <div class="bg-[#2B2B2B] rounded-full w-10 h-10 text-[#858584] text-center text-xl">3</div>
+
+                                <div
+                                    class="w-60 h-60 md:w-48 md:h-48 2xl:h-36 2xl:w-36 rounded-full overflow-hidden my-8 border-4 border-white/20 transition-transform duration-500 hover:scale-110">
+                                    <img src="./assets/img/Ellipse 136.png" alt="NFT" class="w-full h-full object-cover" />
+                                </div>
+                            </div>
+
+                            <!-- Card Info -->
+                            <div class="w-full flex flex-col items-center justify-center">
+                                <h4 class="font-semibold font-poppins text-lg sm:text-xl md:text-2xl mb-2">Name NFT</h4>
+                                <p class="text-sm text-gray-300 font-sans sm:text-xl">
+                                    Total Sales <span class="font-mono">34.53 ETH</span>
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <!-- Card 4 -->
+                        <div class="bg-[#E6DCBA33] rounded-3xl bg-gradient-to-r from-white/5 via-white/2 to-white/5 p-6 sm:p-8 flex flex-col items-start justify-evenly text-center 
+        transform transition-all duration-300 hover:scale-105 animate-fadeInUp">
+
+                            <!-- Main Image - Circular -->
+                            <div class="flex">
+                                <div class="bg-[#2B2B2B] rounded-full w-10 h-10 text-[#858584] text-center text-xl">1</div>
+
+                                <div
+                                    class="w-60 h-60 md:w-48 md:h-48 2xl:h-36 2xl:w-36 rounded-full overflow-hidden my-8 border-4 border-white/20 transition-transform duration-500 hover:scale-110">
+                                    <img src="./assets/img/Ellipse 135.png" alt="NFT" class="w-full h-full object-cover" />
+                                </div>
+                            </div>
+
+                            <!-- Card Info -->
+                            <div class="w-full flex flex-col items-center justify-center">
+                                <h4 class="font-semibold font-poppins text-lg sm:text-xl md:text-2xl mb-2">Name NFT</h4>
+                                <p class="text-sm text-gray-300 font-sans sm:text-xl">
+                                    Total Sales <span class="font-mono">34.53 ETH</span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Card 5 -->
+                        <div class="bg-[#E6DCBA33] rounded-3xl bg-gradient-to-r from-white/5 via-white/2 to-white/5 p-6 sm:p-8 flex flex-col items-start justify-evenly text-center 
+        transform transition-all duration-300 hover:scale-105 animate-fadeInUp">
+
+                            <!-- Main Image - Circular -->
+                            <div class="flex">
+                                <div class="bg-[#2B2B2B] rounded-full w-10 h-10 text-[#858584] text-center text-xl">5</div>
+
+                                <div
+                                    class="w-60 h-60 md:w-48 md:h-48 2xl:h-36 2xl:w-36 rounded-full overflow-hidden my-8 border-4 border-white/20 transition-transform duration-500 hover:scale-110">
+                                    <img src="./assets/img/Ellipse 133.png" alt="NFT" class="w-full h-full object-cover" />
+                                </div>
+                            </div>
+
+                            <!-- Card Info -->
+                            <div class="w-full flex flex-col items-center justify-center">
+                                <h4 class="font-semibold font-poppins text-lg sm:text-xl md:text-2xl mb-2">Name NFT</h4>
+                                <p class="text-sm text-gray-300 font-sans sm:text-xl">
+                                    Total Sales <span class="font-mono">34.53 ETH</span>
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Card 6 -->
+                        <div class="bg-[#E6DCBA33] rounded-3xl bg-gradient-to-r from-white/5 via-white/2 to-white/5 p-6 sm:p-8 flex flex-col items-start justify-evenly text-center 
+        transform transition-all duration-300 hover:scale-105 animate-fadeInUp">
+
+                            <!-- Main Image - Circular -->
+                            <div class="flex">
+                                <div class="bg-[#2B2B2B] rounded-full w-10 h-10 text-[#858584] text-center text-xl">6</div>
+
+                                <div
+                                    class="w-60 h-60 md:w-48 md:h-48 2xl:h-36 2xl:w-36 rounded-full overflow-hidden my-8 border-4 border-white/20 transition-transform duration-500 hover:scale-110">
+                                    <img src="./assets/img/Ellipse 134.png" alt="NFT" class="w-full h-full object-cover" />
+                                </div>
+                            </div>
+
+                            <!-- Card Info -->
+                            <div class="w-full flex flex-col items-center justify-center">
+                                <h4 class="font-semibold font-poppins text-lg sm:text-xl md:text-2xl mb-2">Name NFT</h4>
+                                <p class="text-sm text-gray-300 font-sans sm:text-xl">
+                                    Total Sales <span class="font-mono">34.53 ETH</span>
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Card 7 -->
+                        <div class="bg-[#E6DCBA33] rounded-3xl bg-gradient-to-r from-white/5 via-white/2 to-white/5 p-6 sm:p-8 flex flex-col items-start justify-evenly text-center 
+        transform transition-all duration-300 hover:scale-105 animate-fadeInUp">
+
+                            <!-- Main Image - Circular -->
+                            <div class="flex">
+                                <div class="bg-[#2B2B2B] rounded-full w-10 h-10 text-[#858584] text-center text-xl">7</div>
+
+                                <div
+                                    class="w-60 h-60 md:w-48 md:h-48 2xl:h-36 2xl:w-36 rounded-full overflow-hidden my-8 border-4 border-white/20 transition-transform duration-500 hover:scale-110">
+                                    <img src="./assets/img/Ellipse 134 (1).png" alt="NFT" class="w-full h-full object-cover" />
+                                </div>
+                            </div>
+
+                            <!-- Card Info -->
+                            <div class="w-full flex flex-col items-center justify-center">
+                                <h4 class="font-semibold font-poppins text-lg sm:text-xl md:text-2xl mb-2">Name NFT</h4>
+                                <p class="text-sm text-gray-300 font-sans sm:text-xl">
+                                    Total Sales <span class="font-mono">34.53 ETH</span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Card 8 -->
+                        <div class="bg-[#E6DCBA33] rounded-3xl bg-gradient-to-r from-white/5 via-white/2 to-white/5 p-6 sm:p-8 flex flex-col items-start justify-evenly text-center 
+        transform transition-all duration-300 hover:scale-105 animate-fadeInUp">
+
+                            <!-- Main Image - Circular -->
+                            <div class="flex">
+                                <div class="bg-[#2B2B2B] rounded-full w-10 h-10 text-[#858584] text-center text-xl">8</div>
+
+                                <div
+                                    class="w-60 h-60 md:w-48 md:h-48 2xl:h-36 2xl:w-36 rounded-full overflow-hidden my-8 border-4 border-white/20 transition-transform duration-500 hover:scale-110">
+                                    <img src="./assets/img/Ellipse 133 (1).png" alt="NFT" class="w-full h-full object-cover" />
+                                </div>
+                            </div>
+
+                            <!-- Card Info -->
+                            <div class="w-full flex flex-col items-center justify-center">
+                                <h4 class="font-semibold font-poppins text-lg sm:text-xl md:text-2xl mb-2">Name NFT</h4>
+                                <p class="text-sm text-gray-300 font-sans sm:text-xl">
+                                    Total Sales <span class="font-mono">34.53 ETH</span>
+                                </p>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Road Map -->
+     <section class="w-full mx-auto bg-black min-h-screen overflow-hidden mb-10 ">
+        <!-- Header -->
+        <div class="text-center mb-8 mt-8 md:mb-12 md:mt-12">
+            <h2 class="text-2xl md:text-5xl font-bold mb-4">Top Creaters</h2>
+        </div>
+
+    <div
+        class="text-white flex items-start justify-center relative bg-[url(./assetsimg/.png)] bg-cover bg-center my-6"
+        aria-label="Top NFT Collections">
+        <div class="w-full max-w-[1728px] px-4 sm:px-6 md:px-10 lg:px-20">
+            <div class="w-full px-4 sm:px-6 md:px-10 lg:px-20 py-20 space-y-16">
+                <!-- Row 1-->
+                <div class="flex flex-col lg:flex-row 2xl:gap-28 gap-14 items-stretch">
+                    <!-- Card 1 -->
+                    <div
+                        class="w-full lg:w-1/2 p-6 rounded-xl bg-[#1d1919b2] bg-gradient-to-r from-white/2 via-white/5 to-white/2 border border-[#E6BB27] shadow-lg px-6 lg:mb-36">
+                        <h6 class="text-center text-2xl font-clash text-white">January</h6>
+                        <div class="text-left space-y-2">
+                            <h1 class="text-4xl font-semibold font-clash text-white py-4">Brief</h1>
+                            <p class="text-[18px] font-clash text-white/90">
+                                Lorem ipsum dolor sit amet consectetur. Elit massa erat vitae non semper quis. Morbi sed
+                                aliquet donec facilisis. Senectus eget.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div
+                        class="w-full lg:w-1/2 p-6 rounded-xl bg-[#1d1919b2] bg-gradient-to-r from-white/2 via-white/5 to-white/2 border border-[#E6BB27] shadow-lg px-6 lg:mt-36">
+                        <h6 class="text-center text-2xl font-clash text-white">Fabruary</h6>
+                        <div class="text-left space-y-2">
+                            <h1 class="text-4xl font-semibold font-clash text-white py-4">Research</h1>
+                            <p class="text-[18px] font-clash text-white/90">
+                                Lorem ipsum dolor sit amet consectetur. Elit massa erat vitae non semper quis. Morbi sed
+                                aliquet donec facilisis. Senectus eget.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Row 2-->
+                <div class="flex flex-col lg:flex-row 2xl:gap-28 gap-14 items-stretch">
+                    <!-- Card 1 -->
+                    <div
+                        class="w-full lg:w-1/2 p-6 rounded-xl bg-[#1d1919b2] bg-gradient-to-r from-white/2 via-white/5 to-white/2 border border-[#E6BB27] shadow-lg px-6 lg:mb-36">
+                        <h6 class="text-center text-2xl font-clash text-white">March</h6>
+                        <div class="text-left space-y-2">
+                            <h1 class="text-4xl font-semibold font-clash text-white py-4">Discover</h1>
+                            <p class="text-[18px] font-clash text-white/90">
+                                Lorem ipsum dolor sit amet consectetur. Elit massa erat vitae non semper quis. Morbi sed
+                                aliquet donec facilisis. Senectus eget.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div
+                        class="w-full lg:w-1/2 p-6 rounded-xl bg-[#1d1919b2] bg-gradient-to-r from-white/2 via-white/5 to-white/2 border border-[#E6BB27] shadow-lg px-6 lg:mt-36">
+                        <h6 class="text-center text-2xl font-clash text-white">April</h6>
+                        <div class="text-left space-y-2">
+                            <h1 class="text-4xl font-semibold font-clash text-white py-4">Design</h1>
+                            <p class="text-[18px] font-clash text-white/90">
+                                Lorem ipsum dolor sit amet consectetur. Elit massa erat vitae non semper quis. Morbi sed
+                                aliquet donec facilisis. Senectus eget.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Row 3 -->
+                <div class="flex flex-col lg:flex-row 2xl:gap-28 gap-14 items-stretch">
+                    <!-- Card 1 -->
+                    <div
+                        class="w-full lg:w-1/2 p-6 rounded-xl bg-[#1d1919b2] bg-gradient-to-r from-white/2 via-white/5 to-white/2 border border-[#E6BB27] shadow-lg px-6 lg:mb-36">
+                        <h6 class="text-center text-2xl font-clash text-white">May</h6>
+                        <div class="text-left space-y-2">
+                            <h1 class="text-4xl font-semibold font-clash text-white py-4">Testing</h1>
+                            <p class="text-[18px] font-clash text-white/90">
+                                Lorem ipsum dolor sit amet consectetur. Elit massa erat vitae non semper quis. Morbi sed
+                                aliquet donec facilisis. Senectus eget.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div
+                        class="w-full lg:w-1/2 p-6 rounded-xl bg-[#1d1919b2] bg-gradient-to-r from-white/2 via-white/5 to-white/2 border border-[#E6BB27]  shadow-lg px-6 lg:mt-36">
+                        <h6 class="text-center text-2xl font-clash text-white">June</h6>
+                        <div class="text-left space-y-2">
+                            <h1 class="text-4xl font-semibold font-clash text-white py-4">Launch & Feedback</h1>
+                            <p class="text-[18px] font-clash text-white/90">
+                                Lorem ipsum dolor sit amet consectetur. Elit massa erat vitae non semper quis. Morbi sed
+                                aliquet donec facilisis. Senectus eget.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- how it works -->
+    <section class="w-full mx-auto bg-black min-h-screen overflow-hidden mb-10">
+        <!-- Header -->
+        <div class="text-center mb-8 mt-8 md:mb-12 md:mt-12">
+            <h2 class="text-2xl md:text-5xl font-bold mb-4">How it works</h2>
+            <!-- Section 1 - Setup Wallet -->
+            <article
+                class="w-full max-w-[1728px] px-4 sm:px-6 md:px-10 lg:px-20 flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12 mb-16 sm:mb-20 lg:mb-28">
+                <!-- Image -->
+                <figure class="w-full lg:w-1/2 order-2 lg:order-1">
+                    <img src="./assets/img/image 110.png" alt="Illustration of digital wallet connection"
+                        class="object-contain w-full h-auto max-w-md mx-auto lg:max-w-none">
+                </figure>
+                <!-- Content -->
+                <div class="w-full lg:w-1/2 order-1 lg:order-2 text-center lg:text-left">
+                    <div class="mb-6 lg:mb-0">
+                        <img src="./assets/img/star-filled.png" alt="Visual divider icon"
+                            class="w-8 sm:w-12 md:w-16 lg:w-32 mx-auto lg:mx-0 lg:ml-4 xl:ml-14">
+                    </div>
+                    <h2
+                        class="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl py-6 sm:py-8 lg:py-12 lg:pl-4 xl:pl-14 leading-tight lg:leading-snug">
+                        Setup and Connect your Wallet.
+                    </h2>
+                    <p class="font-semibold text-xs sm:text-sm md:text-base mx-4 sm:mx-6 lg:mx-4 xl:mx-14">
+                        Lorem ipsum dolor sit amet consectetur. Donec vitae pellentesque nunc ut sit a volutpat
+                        elementum.
+                        Nunc elit nisi pellentesque porta elementum. Id mattis neque diam nulla. Amet et a felis
+                        pellentesque sed odio.
+                    </p>
+                </div>
+            </article>
+
+            <!-- Section 2 - Create NFT -->
+            <article
+                class="w-full max-w-[1728px] px-4 sm:px-6 md:px-10 lg:px-20 flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12 mb-16 sm:mb-20 lg:mb-28">
+                <!-- Content -->
+                <div class="w-full lg:w-1/2 order-1 text-center lg:text-left">
+                    <h2
+                        class="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl py-6 sm:py-8 lg:py-12 lg:pl-4 xl:pl-14 leading-tight lg:leading-snug">
+                        Create your Own Digital NFT
+                    </h2>
+                    <p class="font-semibold text-xs sm:text-sm md:text-base mx-4 sm:mx-6 lg:mx-4 xl:mx-14 mb-8 lg:mb-0">
+                        Lorem ipsum dolor sit amet consectetur. Donec vitae pellentesque nunc ut sit a volutpat
+                        elementum.
+                        Nunc elit nisi pellentesque porta elementum. Id mattis neque diam nulla. Amet et a felis
+                        pellentesque sed odio.
+                    </p>
+                    <div
+                        class="w-full flex items-center justify-center lg:items-end lg:justify-end lg:pr-10 xl:pr-40 pt-8 lg:pt-20 xl:pt-40">
+                        <img src="./assets/img/star-filled.png" alt="Visual divider icon"
+                            class="w-8 sm:w-12 md:w-16 lg:w-24 xl:w-36">
+                    </div>
+                </div>
+                <!-- Image -->
+                <figure class="w-full lg:w-1/2 order-2 flex items-center justify-center">
+                    <div
+                        class="bg-[#030303] rounded-3xl sm:rounded-[50px] lg:rounded-[100px] bg-gradient-to-r from-white/5 via-white/2 to-white/5 backdrop-blur-lg overflow-hidden sm:p-4 w-full max-w-xs sm:max-w-sm lg:max-w-md xl:w-[531px] xl:h-[460px] aspect-square xl:aspect-auto">
+                        <img src="./assets/img/image 111.png" alt="Colorful digital NFT example"
+                            class="object-contain w-full h-full">
+                    </div>
+                </figure>
+            </article>
+
+            <!-- Section 3 - Start Earning -->
+            <article
+                class="w-full max-w-[1728px] px-4 sm:px-6 md:px-10 lg:px-20 flex flex-col lg:flex-row items-start justify-center gap-8 lg:gap-12 pb-16 sm:pb-20 lg:pb-28">
+                <!-- Image -->
+                <figure class="w-full lg:w-1/2 order-2 lg:order-1">
+                    <img src="./assets/img/image 113.png" alt="Illustration of earning digital money"
+                        class="object-contain w-full h-auto max-w-md mx-auto lg:max-w-none">
+                </figure>
+                <!-- Content -->
+                <div class="w-full lg:w-1/2 order-1 lg:order-2 text-center lg:text-left">
+                    <h2
+                        class="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl py-6 sm:py-8 lg:py-12 lg:pt-20 xl:pt-36 lg:pl-4 xl:pl-14 leading-tight lg:leading-snug">
+                        Setup and Connect your Wallet.
+                    </h2>
+                    <p class="font-semibold text-xs sm:text-sm md:text-base mx-4 sm:mx-6 lg:mx-4 xl:mx-14">
+                        Lorem ipsum dolor sit amet consectetur. Donec vitae pellentesque nunc ut sit a volutpat
+                        elementum.
+                        Nunc elit nisi pellentesque porta elementum. Id mattis neque diam nulla. Amet et a felis
+                        pellentesque sed odio.
+                    </p>
+                </div>
+            </article>
+    </section>
+
+
+    <footer
+        class="text-white flex items-center justify-center relative bg-[url(./assets/img/bg-hero-section.png)] bg-cover bg-center"
+        aria-label="Site Footer">
+        <div class="w-full max-w-[1728px] px-4 sm:px-6 md:px-10 lg:px-20">
+            <div
+                class="w-full px-2 sm:px-4 md:px-6 lg:px-10 py-12 sm:py-16 md:py-20 flex flex-col items-center justify-between">
+
+                <!-- Heading -->
+                <h1
+                    class="font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl pt-8 sm:pt-12 md:pt-16 lg:pt-20 text-center">
+                    Join Our Community
+                </h1>
+
+                <!-- Description -->
+                <p
+                    class="text-xs sm:text-sm md:text-base font-semibold max-w-xs sm:max-w-lg md:max-w-2xl lg:max-w-3xl py-8 sm:py-12 md:py-16 text-center leading-relaxed">
+                    Lorem ipsum dolor sit amet consectetur. Donec vitae pellentesque nunc ut sit a volutpat elementum.
+                    Nunc elit nisi pellentesque porta elementum. Id mattis neque diam nulla. Amet et a felis
+                    pellentesque
+                    sed odio.
+                </p>
+
+                <!-- Newsletter Form -->
+                <form
+                    class="w-full max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl flex flex-col sm:flex-row gap-4 sm:gap-6 items-center"
+                    aria-label="Newsletter Subscription Form">
+                    <input type="email" placeholder="Your Email"
+                        class="bg-[#D9D9D9] px-4 sm:px-6 md:px-8 lg:px-12 py-3 sm:py-4 md:py-5 w-full flex-1 rounded-full text-black text-sm sm:text-base placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all duration-300"
+                        required aria-label="Email Address">
+                    <button type="submit"
+                        class="bg-[#EFE7D78F] hover:bg-white hover:text-black text-white text-sm sm:text-base lg:text-lg px-6 sm:px-8 lg:px-12 xl:px-14 py-3 sm:py-4 md:py-5 rounded-full border border-white transition-all duration-300 whitespace-nowrap w-full sm:w-auto"
+                        aria-label="Join Newsletter">
+                        Join Now
+                    </button>
+                </form>
+
+                <!-- Copyright -->
+                <p
+                    class="text-xs sm:text-sm md:text-base font-worksans pt-12 sm:pt-16 md:pt-20 text-[#CCCCCC] text-center">
+                    Ⓒ NFT Market. Use this template freely.
+                </p>
+            </div>
+        </div>
+    </footer>
+
 </body>
 
 </html>
+
+
+
+
+<!-- gradient card -->
+<!-- <div class="w-64 h-40 rounded-2xl p-2 mt-6 mx-auto"
+            style="background: linear-gradient(90deg,rgba(0, 0, 0, 1) 70%, rgba(237, 221, 83, 1) 93%, rgba(255, 255, 255, 1) 100%);">
+            <div class="w-full h-full bg-black p-2 rounded-2xl">
+                <div class="w-full h-full bg-blck border border-solid border-white rounded-2xl"></div>
+            </div>
+        </div> -->
+
+
+<!-- Footer -->
+<!-- <footer class="min-h-[477px] bg-footer-bg bg-cover bg-center w-full">
+      <div class="max-w-[1000px] mx-auto flex flex-col gap-12">
+        <h2
+          class="text-4xl lg:text-[59.76px] font-bold text-center pt-12 2xl:pt-24"
+        >
+          Join Our Community
+        </h2>
+        <p class="max-w-[816px] mx-auto text-[12px] lg:text-[14px] text-center">
+          Lorem ipsum dolor sit amet consectetur. Donec vitae pellentesque nunc
+          ut sit a volutpat elementum. Nunc elit nisi pellentesque porta
+          elementum. Id mattis neque diam nulla. Amet et a felis pellentesque
+          sed odio.
+        </p>
+        <form class="flex max-w-[816px] mx-auto w-full gap-6 px-6">
+          <input
+            type="email"
+            placeholder="Your Email"
+            class="w-full rounded-[41px] px-10 py-2 2xl:py-6 bg-[#D9D9D9] text-[14px] lg:text-[17px]"
+          />
+          <button
+            class="bg-[#EFE7D78F] w-[210px] text-[14px] lg:text-[17px] border-[1.35px] border-[#EA9112] py-2 3xl:py-6 text-white rounded-[41px]"
+          >
+            Join Now
+          </button>
+        </form>
+        <div class="copy_right">
+          <p class="text-center text-[#CCCCCC] text-[16px]">
+            Ⓒ NFT Market. Use this template freely.
+          </p>
+        </div>
+      </div>
+    </footer> -->

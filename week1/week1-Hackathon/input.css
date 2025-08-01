@@ -17,6 +17,13 @@
 
 @layer components {
     .btn{
-        @apply text-white text-center font-bold text-lg 2xl:text-xl border border-white rounded-2xl  bg-(--base-color) px-13 py-3
+        /* @apply text-white text-center font-bold text-lg 2xl:text-xl border border-white rounded-2xl  bg-(--base-color) px-13 py-3 */
+        @apply font-bold rounded-2xl border border-white px-6 py-2 bg-(--base-color) hover:brightness-105 transition text-base 2xl:text-lg md:py-3 lg:px-10 2xl:px-13;
+        
     }
-}
+} 
+
+
+
+
+
