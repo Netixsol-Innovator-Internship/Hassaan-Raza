@@ -1,6 +1,6 @@
 # NFT Collection Landing Page
 
-**Live Demo:** [https://nft-collection-demo.vercel.app](https://nft-collection-demo.vercel.app)
+**Live Demo:** [https://hassaan-week1-hackathon.vercel.app/](https://hassaan-week1-hackathon.vercel.app/)
 
 ## 📌 Overview
 This is a **responsive NFT Collection Landing Page** built using **Tailwind CSS**.  
