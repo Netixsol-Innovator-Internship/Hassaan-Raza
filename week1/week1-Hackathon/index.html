@@ -14,60 +14,57 @@
     <section class="relative min-h-screen bg-cover bg-center flex flex-col overflow-hidden pb-10"
         style="background-image: url('assets/img/bg-hero-section.png');">
 
-             <!-- RADIAL top right GRADIUNT -->
-                     <div class="w-100 h-100 rounded-full  blur-[200px] absolute top-20% right-0 translate-x-1/2 translate-y-1/2  " style="background: #FFFFFF;
+        <!-- RADIAL top right GRADIUNT -->
+        <div class="w-100 h-100 rounded-full  blur-[200px] absolute top-20% right-0 translate-x-1/2 translate-y-1/2  "
+            style="background: #FFFFFF;
 background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);">
 
         </div>
         <!-- RADIAL bottom left GRADIUNT -->
         <div class="w-100 h-100 rounded-full  blur-[200px] absolute top-[40%] left-0 translate-y-1/2" style="background: #FFFFFF; 
 background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);"></div>
-        
+
         <!-- Header -->
         <header
             class="flex flex-wrap justify-between items-center bg-[#191919] text-white py-6 px-6 lg:px-12 xl:px-32 2xl:px-40">
             <div>
-                <h1 class="text-2xl font-bold tracking-wider">Logo Here</h1>
+                <h1 class="text-2xl font-bold tracking-wider hover:text-[#DA8F4D] transition-colors duration-300">Logo
+                    Here</h1>
             </div>
 
             <nav class="relative">
-  <!-- Hamburger button: visible on small, hidden on md+ -->
-  <button id="nav-toggle" aria-label="Toggle menu" aria-expanded="false"
-    class="md:hidden flex items-center justify-center rounded-full p-2 border border-white">
-    <!-- simple hamburger icon -->
-    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M3 7h18M3 12h18M3 17h18" />
-    </svg>
-  </button>
+                <!-- Hamburger button: visible on small, hidden on md+ -->
+                <button id="nav-toggle" aria-label="Toggle menu" aria-expanded="false"
+                    class="md:hidden flex items-center justify-center rounded-full p-2 border border-white hover:bg-white hover:text-black transition-colors duration-300">
+                    <!-- simple hamburger icon -->
+                    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M3 7h18M3 12h18M3 17h18" />
+                    </svg>
+                </button>
 
-  <!-- Primary nav: hidden on small, shown on md+; for mobile it's toggled -->
-  <ul id="nav-menu"
-    class="hidden md:flex flex-wrap gap-6 md:gap-10 text-base 2xl:text-lg font-semibold items-center absolute md:static right-0 top-full mt-2 md:mt-0 bg-[#191919] md:bg-transparent rounded-2xl md:rounded-none p-4 md:p-0 z-30">
-    <li><a href="#" class="hover:underline block">About</a></li>
-    <li><a href="#" class="hover:underline block">Collection</a></li>
-    <li><a href="#" class="hover:underline block">Creator</a></li>
-    <li><a href="#" class="hover:underline block">Road Map</a></li>
-    <li>
-      <button class="btn">Sign in</button>
-    </li>
-  </ul>
-</nav>
-
-            <!-- <nav>
-                <ul class="flex flex-wrap gap-6 md:gap-10 text-base 2xl:text-lg font-semibold items-center">
-                    <li><a href="#" class="hover:underline">About</a></li>
-                    <li><a href="#" class="hover:underline">Collection</a></li>
-                    <li><a href="#" class="hover:underline">Creator</a></li>
-                    <li><a href="#" class="hover:underline">Road Map</a></li> -->
-                    <!-- <li> -->
-                        <!-- @apply text-white text-center font-bold text-lg 2xl:text-xl border border-white rounded-2xl  bg-(--base-color) px-13 py-3 -->
-<!-- 
-                        <button class="btn">Sign
+                <!-- Primary nav: hidden on small, shown on md+; for mobile it's toggled -->
+                <ul id="nav-menu"
+                    class="hidden md:flex flex-wrap gap-6 md:gap-10 text-base 2xl:text-lg font-semibold items-center absolute md:static right-0 top-full mt-2 md:mt-0 bg-[#191919] md:bg-transparent rounded-2xl md:rounded-none p-4 md:p-0 z-30">
+                    <li><a href="#"
+                            class="hover:underline hover:text-[#DA8F4D] transition-colors duration-300 block">About</a>
+                    </li>
+                    <li><a href="#"
+                            class="hover:underline hover:text-[#DA8F4D] transition-colors duration-300 block">Collection</a>
+                    </li>
+                    <li><a href="#"
+                            class="hover:underline hover:text-[#DA8F4D] transition-colors duration-300 block">Creator</a>
+                    </li>
+                    <li><a href="#"
+                            class="hover:underline hover:text-[#DA8F4D] transition-colors duration-300 block">Road
+                            Map</a></li>
+                    <li>
+                        <button
+                            class="btn hover:bg-[#DA8F4D] hover:border-[#DA8F4D] transition-colors duration-300">Sign
                             in</button>
                     </li>
                 </ul>
-            </nav> -->
+            </nav>
         </header>
 
         <!-- Hero Content -->
@@ -77,7 +74,7 @@ background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 25
             <div class="relative flex-1 flex flex-col justify-center">
                 <!-- top-right filled star -->
                 <div
-                    class="absolute right-0 top-1/4 transform translate-x-1/4 -translate-y-1/4 w-12 h-12 md:w-20 md:h-20 lg:w-24 lg:h-24">
+                    class="absolute right-0 top-1/4 transform translate-x-1/4 -translate-y-1/4 w-12 h-12 md:w-20 md:h-20 lg:w-24 lg:h-24 hover:rotate-180 transition-transform duration-1000">
                     <img src="assets/img/star-filled.png" alt="star" class="w-full h-full object-contain" />
                 </div>
 
@@ -86,11 +83,14 @@ background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 25
                     <h1
                         class="font-extrabold heading-tight text-4xl sm:text-5xl md:text-6xl 2xl:text-7xl leading-tight flex flex-col gap-0">
                         <div>We Have High</div>
-                        <div>Quality <span class="text-[color:var(--tw-color-base)]" style="color: #DA8F4D;">NFT</span>
+                        <div>Quality <span
+                                class="text-[color:var(--tw-color-base)] hover:scale-110 inline-block transition-transform duration-300"
+                                style="color: #DA8F4D;">NFT</span>
                         </div>
                         <div>Collections</div>
                     </h1>
-                    <p class="mt-4 max-w-xl text-sm font-semibold font-work-sans">
+                    <p
+                        class="mt-4 max-w-xl text-sm font-semibold font-work-sans hover:text-opacity-80 transition-opacity duration-300">
                         Lorem ipsum dolor sit amet consectetur. Rhoncus massa suspendisse turpis sed viverra tempus
                         tortor.
                         Habitant accumsan sagittis in facilisi placerat ac. Laoreet scelerisque viverra viverra ornare
@@ -101,24 +101,26 @@ background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 25
 
                 <!-- Buttons -->
                 <div class="flex flex-wrap gap-8 mt-4">
-                    <button class="btn">Get
+                    <button
+                        class="btn hover:bg-[#DA8F4D] hover:border-[#DA8F4D] hover:scale-105 transition-all duration-300">Get
                         Whitelist</button>
-                    <button class="btn bg-transparent">Contact
+                    <button
+                        class="btn bg-transparent hover:bg-[#DA8F4D] hover:border-[#DA8F4D] hover:scale-105 transition-all duration-300">Contact
                         us</button>
                 </div>
 
                 <!-- Stats -->
                 <div
-                    class="flex flex-wrap justify-around gap-8 mt-8  font-space-mono bg-white/10 backdrop-blur-md rounded-4xl p-6">
-                    <div class="flex flex-col">
+                    class="flex flex-wrap justify-around gap-8 mt-8 font-space-mono bg-white/10 backdrop-blur-md rounded-4xl p-6 hover:bg-white/20 transition-all duration-500">
+                    <div class="flex flex-col hover:scale-110 transition-transform duration-300">
                         <span class="text-3xl font-bold">240k+</span>
                         <span class="text-sm font-medium font-work-sans">Total Sales</span>
                     </div>
-                    <div class="flex flex-col">
+                    <div class="flex flex-col hover:scale-110 transition-transform duration-300">
                         <span class="text-3xl font-bold">100k+</span>
                         <span class="text-sm font-medium font-work-sans">Auctions</span>
                     </div>
-                    <div class="flex flex-col">
+                    <div class="flex flex-col hover:scale-110 transition-transform duration-300">
                         <span class="text-3xl font-bold">240k+</span>
                         <span class="text-sm font-medium font-work-sans">Artists</span>
                     </div>
@@ -127,12 +129,12 @@ background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 25
 
             <!-- Right image -->
             <div class="relative flex-1 flex justify-center lg:justify-end">
-                <div class="relative">
+                <div class="relative hover:scale-105 transition-transform duration-500">
                     <img src="assets/img/Group 865.png" alt="hero image"
                         class="max-w-full w-[400px] sm:w-[450px] md:w-[500px] object-contain" />
                     <!-- bottom-left hollow star -->
                     <div
-                        class="absolute left-0 bottom-0 w-10 h-10 md:w-15 md:h-15 lg:w-18 lg:h-18 -translate-x-1/4 translate-y-1/2">
+                        class="absolute left-0 bottom-0 w-10 h-10 md:w-15 md:h-15 lg:w-18 lg:h-18 -translate-x-1/4 translate-y-1/2 hover:rotate-180 transition-transform duration-1000">
                         <img src="assets/img/hollow-star.png" alt="decor" class="w-full h-full object-contain" />
                     </div>
                 </div>
@@ -144,7 +146,8 @@ background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 25
     <section class="w-full mx-auto bg-black min-h-screen overflow-hidden">
         <!-- Header -->
         <div class="text-center mb-8 mt-8 md:mb-12 md:mt-12">
-            <h2 class="text-2xl md:text-5xl font-bold mb-4">About Us</h2>
+            <h2 class="text-2xl md:text-5xl font-bold mb-4 hover:text-[#DA8F4D] transition-colors duration-300">About Us
+            </h2>
         </div>
 
         <div class="bg-[#DA8F4D17] px-6 md:px-12 lg:px-20 py-10">
@@ -152,28 +155,32 @@ background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 25
                 <!-- Tiger grid -->
                 <div class="grid grid-cols-2 gap-6">
                     <!-- card -->
-                    <div class="bg-[#2B2B2BAD] rounded-2xl overflow-hidden aspect-[4/3]">
-                        <div class="w-full h-full overflow-hidden">
+                    <div
+                        class="bg-[#2B2B2BAD] rounded-2xl overflow-hidden aspect-[4/3] hover:scale-105 transition-transform duration-300">
+                        <div class="w-full h-full overflow-hidden group">
                             <img src="assets/img/1tiger.png" alt="tiger 1"
-                                class="w-full h-full object-cover object-top" />
+                                class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
                         </div>
                     </div>
-                    <div class="bg-[#2B2B2BAD] rounded-2xl overflow-hidden aspect-[4/3]">
-                        <div class="w-full h-full overflow-hidden">
+                    <div
+                        class="bg-[#2B2B2BAD] rounded-2xl overflow-hidden aspect-[4/3] hover:scale-105 transition-transform duration-300">
+                        <div class="w-full h-full overflow-hidden group">
                             <img src="assets/img/2tiger.png" alt="tiger 2"
-                                class="w-full h-full object-cover object-top" />
+                                class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
                         </div>
                     </div>
-                    <div class="bg-[#2B2B2BAD] rounded-2xl overflow-hidden aspect-[4/3]">
-                        <div class="w-full h-full overflow-hidden">
+                    <div
+                        class="bg-[#2B2B2BAD] rounded-2xl overflow-hidden aspect-[4/3] hover:scale-105 transition-transform duration-300">
+                        <div class="w-full h-full overflow-hidden group">
                             <img src="assets/img/3tiger.png" alt="tiger 3"
-                                class="w-full h-full object-cover object-top" />
+                                class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
                         </div>
                     </div>
-                    <div class="bg-[#2B2B2BAD] rounded-2xl overflow-hidden aspect-[4/3]">
-                        <div class="w-full h-full overflow-hidden">
+                    <div
+                        class="bg-[#2B2B2BAD] rounded-2xl overflow-hidden aspect-[4/3] hover:scale-105 transition-transform duration-300">
+                        <div class="w-full h-full overflow-hidden group">
                             <img src="assets/img/4tiger.png" alt="tiger 4"
-                                class="w-full h-full object-cover object-top" />
+                                class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
                         </div>
                     </div>
                 </div>
@@ -181,20 +188,21 @@ background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 25
                 <!-- Text & button -->
                 <div class="flex flex-col justify-center items-start gap-6">
                     <div class="space-y-4">
-                        <p class="font-bold text-base">
+                        <p class="font-bold text-base hover:text-opacity-80 transition-opacity duration-300">
                             Lorem ipsum dolor sit amet consectetur. Pharetra faucibus donec ultrices eros elit metus
                             morbi aliquam quis. Suspendisse massa ullamcorper tortor morbi nisi leo. Ultrices leo vel
                             tincidunt nunc eget elit. Gravida et duis ipsum pellentesque libero. Tellus rhoncus metus et
                             eget mattis fringilla nec id. Amet ultrices quam ridiculus tellus. Leo adipiscing tincidunt
                             amet nisi semper adipiscing quam in est. Tempor sed dui nunc diam adipiscing at.
                         </p>
-                        <p class="font-bold text-base">
+                        <p class="font-bold text-base hover:text-opacity-80 transition-opacity duration-300">
                             Tellus rhoncus metus et eget mattis fringilla nec id. Amet ultrices quam ridiculus tellus.
                             Leo adipiscing tincidunt amet nisi semper adipiscing quam in est. Tempor sed dui nunc diam
                             adipiscing at.
                         </p>
                     </div>
-                    <button class="btn bg-white/35 border border-[rgba(218,143,77,1)] text-white">
+                    <button
+                        class="btn bg-white/35 border border-[rgba(218,143,77,1)] text-white hover:bg-[#DA8F4D] hover:border-[#DA8F4D] hover:scale-105 transition-all duration-300">
                         Connect Wallet
                     </button>
                 </div>
@@ -203,66 +211,85 @@ background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 25
     </section>
 
     <!-- Top collection -->
- <!-- Top collection -->
-<section class="z-20 relative w-full mx-auto bg-black overflow-hidden mb-10">
-  <!-- Header -->
-  <div class="text-center mb-8 mt-8 md:mb-12 md:mt-12 px-6">
-    <h2 class="text-2xl md:text-5xl font-bold mb-4">Top Collections</h2>
-    <p class="max-w-xl mx-auto text-base md:text-xl leading-relaxed">
-      The largest and unique Super rare NFT marketplace
-      For crypto-collectibles
-    </p>
-    <!-- RADIAL top right GRADIENT (top to bottom, right side) -->
-    <div class="w-100 h-100 rounded-full blur-[200px] absolute left-0 top-0 -translate-x-1/2 z-10"
-      style="background: #FFFFFF; background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);">
-    </div>
-  </div>
+    <!-- Top collection -->
+    <section class="z-20 relative w-full mx-auto bg-black overflow-hidden mb-10">
+        <!-- Header -->
+        <div class="text-center mb-8 mt-8 md:mb-12 md:mt-12 px-6">
+            <h2 class="text-2xl md:text-5xl font-bold mb-4 hover:text-[#DA8F4D] transition-colors duration-300">Top
+                Collections</h2>
+            <p
+                class="max-w-xl mx-auto text-base md:text-xl leading-relaxed hover:text-opacity-80 transition-opacity duration-300">
+                The largest and unique Super rare NFT marketplace
+                For crypto-collectibles
+            </p>
+            <!-- RADIAL top right GRADIENT (top to bottom, right side) -->
+            <div class="w-100 h-100 rounded-full blur-[200px] absolute left-0 top-0 -translate-x-1/2 z-10 hover:opacity-80 transition-opacity duration-500"
+                style="background: #FFFFFF; background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);">
+            </div>
+        </div>
 
-  <div class="z-20 px-6 md:px-12 lg:px-20 py-10">
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"
-      style="background-image: url('assets/img/bg-hero-section.png'); background-size: cover; background-position: center;">
-      <div class="w-full">
-        <img src="assets/img/Frame 1261152803.png" alt="Top collection item 1" class="w-full h-auto object-contain" loading="lazy" />
-      </div>
-      <div class="w-full">
-        <img src="assets/img/Frame 1261152815.png" alt="Top collection item 2" class="w-full h-auto object-contain" loading="lazy" />
-      </div>
-      <div class="w-full">
-        <img src="assets/img/Frame 1261152805.png" alt="Top collection item 3" class="w-full h-auto object-contain" loading="lazy" />
-      </div>
-      <div class="w-full">
-        <img src="assets/img/Frame 1261152814.png" alt="Top collection item 4" class="w-full h-auto object-contain" loading="lazy" />
-      </div>
-      <div class="w-full">
-        <img src="assets/img/Frame 1261152817.png" alt="Top collection item 5" class="w-full h-auto object-contain" loading="lazy" />
-      </div>
-      <div class="w-full">
-        <img src="assets/img/Frame 1261152814.png" alt="Top collection item 6" class="w-full h-auto object-contain" loading="lazy" />
-      </div>
-    </div>
-    <div class="flex justify-center mt-10">
-      <button class="btn bg-white/35 border border-[rgba(218,143,77,1)] text-white">
-        Explore More
-      </button>
-    </div>
-  </div>
-</section>
+        <div class="z-20 px-6 md:px-12 lg:px-20 py-10">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"
+                style="background-image: url('assets/img/bg-hero-section.png'); background-size: cover; background-position: center;">
+                <div class="w-full hover:scale-105 transition-transform duration-300">
+                    <img src="assets/img/Frame 1261152803.png" alt="Top collection item 1"
+                        class="w-full h-auto object-contain hover:brightness-110 transition-all duration-300"
+                        loading="lazy" />
+                </div>
+                <div class="w-full hover:scale-105 transition-transform duration-300">
+                    <img src="assets/img/Frame 1261152815.png" alt="Top collection item 2"
+                        class="w-full h-auto object-contain hover:brightness-110 transition-all duration-300"
+                        loading="lazy" />
+                </div>
+                <div class="w-full hover:scale-105 transition-transform duration-300">
+                    <img src="assets/img/Frame 1261152805.png" alt="Top collection item 3"
+                        class="w-full h-auto object-contain hover:brightness-110 transition-all duration-300"
+                        loading="lazy" />
+                </div>
+                <div class="w-full hover:scale-105 transition-transform duration-300">
+                    <img src="assets/img/Frame 1261152814.png" alt="Top collection item 4"
+                        class="w-full h-auto object-contain hover:brightness-110 transition-all duration-300"
+                        loading="lazy" />
+                </div>
+                <div class="w-full hover:scale-105 transition-transform duration-300">
+                    <img src="assets/img/Frame 1261152817.png" alt="Top collection item 5"
+                        class="w-full h-auto object-contain hover:brightness-110 transition-all duration-300"
+                        loading="lazy" />
+                </div>
+                <div class="w-full hover:scale-105 transition-transform duration-300">
+                    <img src="assets/img/Frame 1261152814.png" alt="Top collection item 6"
+                        class="w-full h-auto object-contain hover:brightness-110 transition-all duration-300"
+                        loading="lazy" />
+                </div>
+            </div>
+            <div class="flex justify-center mt-10">
+                <button
+                    class="btn bg-white/35 border border-[rgba(218,143,77,1)] text-white hover:bg-[#DA8F4D] hover:border-[#DA8F4D] hover:scale-105 transition-all duration-300">
+                    Explore More
+                </button>
+            </div>
+        </div>
+    </section>
 
     <!-- Top/ Creater -->
     <section class="relative w-full mx-auto bg-black min-h-screen overflow-hidden mb-10 ">
         <!-- RADIAL top right GRADIUNT -->
-                     <div class="w-100 h-100 rounded-full  blur-[200px] absolute top-0 right-0 translate-x-1/2 -translate-y-1/2  " style="background: #FFFFFF;
+        <div class="w-100 h-100 rounded-full  blur-[200px] absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 hover:opacity-80 transition-opacity duration-500"
+            style="background: #FFFFFF;
 background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);">
 
         </div>
         <!-- RADIAL bottom left GRADIUNT -->
-        <div class="w-100 h-100 rounded-full  blur-[200px] absolute top-[40%] left-0 translate-y-1/2" style="background: #FFFFFF; 
+        <div class="w-100 h-100 rounded-full  blur-[200px] absolute top-[40%] left-0 translate-y-1/2 hover:opacity-80 transition-opacity duration-500"
+            style="background: #FFFFFF; 
 background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);"></div>
-        
+
         <!-- Header -->
         <div class="text-center mb-8 mt-8 md:mb-12 md:mt-12">
-            <h2 class="text-2xl md:text-5xl font-bold mb-4">Top Creaters</h2>
-            <p class="max-w-xl mx-auto text-base md:text-xl leading-relaxed">
+            <h2 class="text-2xl md:text-5xl font-bold mb-4 hover:text-[#DA8F4D] transition-colors duration-300">Top
+                Creaters</h2>
+            <p
+                class="max-w-xl mx-auto text-base md:text-xl leading-relaxed hover:text-opacity-80 transition-opacity duration-300">
                 Checkout Top Rated Creators on the NFT Marketplace
             </p>
         </div>
@@ -279,203 +306,266 @@ background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 25
                         class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-4 lg:gap-6 gap-2 w-full max-w-7xl">
 
                         <!-- Card 1 -->
-                        <div class="bg-[#E6DCBA33] rounded-3xl bg-gradient-to-r from-white/5 via-white/2 to-white/5 p-6 sm:p-8 flex flex-col items-start justify-evenly text-center 
-        transform transition-all duration-300 hover:scale-105 animate-fadeInUp">
+                        <div
+                            class="bg-[#E6DCBA33] rounded-3xl bg-gradient-to-r from-white/5 via-white/2 to-white/5 p-6 sm:p-8 flex flex-col items-start justify-evenly text-center 
+        transform transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#DA8F4D]/30 animate-fadeInUp">
 
                             <!-- Main Image - Circular -->
                             <div class="flex">
-                                <div class="bg-[#2B2B2B] rounded-full w-10 h-10 text-[#858584] text-center text-xl">1
+                                <div
+                                    class="bg-[#2B2B2B] rounded-full w-10 h-10 text-[#858584] text-center text-xl hover:text-[#DA8F4D] transition-colors duration-300">
+                                    1
                                 </div>
 
                                 <div
-                                    class="w-60 h-60 md:w-48 md:h-48 2xl:h-36 2xl:w-36 rounded-full overflow-hidden my-8 border-4 border-white/20 transition-transform duration-500 hover:scale-110">
+                                    class="w-60 h-60 md:w-48 md:h-48 2xl:h-36 2xl:w-36 rounded-full overflow-hidden my-8 border-4 border-white/20 transition-transform duration-500 hover:scale-110 hover:border-[#DA8F4D]">
                                     <img src="./assets/img/Ellipse 137.png" alt="NFT"
-                                        class="w-full h-full object-cover" />
+                                        class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
                                 </div>
                             </div>
 
                             <!-- Card Info -->
                             <div class="w-full flex flex-col items-center justify-center">
-                                <h4 class="font-semibold font-poppins text-lg sm:text-xl md:text-2xl mb-2">Name NFT</h4>
-                                <p class="text-sm text-gray-300 font-sans sm:text-xl">
-                                    Total Sales <span class="font-mono">34.53 ETH</span>
+                                <h4
+                                    class="font-semibold font-poppins text-lg sm:text-xl md:text-2xl mb-2 hover:text-[#DA8F4D] transition-colors duration-300">
+                                    Name NFT</h4>
+                                <p
+                                    class="text-sm text-gray-300 font-sans sm:text-xl hover:text-opacity-80 transition-opacity duration-300">
+                                    Total Sales <span
+                                        class="font-mono hover:text-[#DA8F4D] transition-colors duration-300">34.53
+                                        ETH</span>
                                 </p>
                             </div>
                         </div>
                         <!-- Card 2 -->
-                        <div class="bg-[#E6DCBA33] rounded-3xl bg-gradient-to-r from-white/5 via-white/2 to-white/5 p-6 sm:p-8 flex flex-col items-start justify-evenly text-center 
-        transform transition-all duration-300 hover:scale-105 animate-fadeInUp">
+                        <div
+                            class="bg-[#E6DCBA33] rounded-3xl bg-gradient-to-r from-white/5 via-white/2 to-white/5 p-6 sm:p-8 flex flex-col items-start justify-evenly text-center 
+        transform transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#DA8F4D]/30 animate-fadeInUp">
 
                             <!-- Main Image - Circular -->
                             <div class="flex">
-                                <div class="bg-[#2B2B2B] rounded-full w-10 h-10 text-[#858584] text-center text-xl">2
+                                <div
+                                    class="bg-[#2B2B2B] rounded-full w-10 h-10 text-[#858584] text-center text-xl hover:text-[#DA8F4D] transition-colors duration-300">
+                                    2
                                 </div>
 
                                 <div
-                                    class="w-60 h-60 md:w-48 md:h-48 2xl:h-36 2xl:w-36 rounded-full overflow-hidden my-8 border-4 border-white/20 transition-transform duration-500 hover:scale-110">
+                                    class="w-60 h-60 md:w-48 md:h-48 2xl:h-36 2xl:w-36 rounded-full overflow-hidden my-8 border-4 border-white/20 transition-transform duration-500 hover:scale-110 hover:border-[#DA8F4D]">
                                     <img src="./assets/img/Ellipse 138.png" alt="NFT"
-                                        class="w-full h-full object-cover" />
+                                        class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
                                 </div>
                             </div>
 
                             <!-- Card Info -->
                             <div class="w-full flex flex-col items-center justify-center">
-                                <h4 class="font-semibold font-poppins text-lg sm:text-xl md:text-2xl mb-2">Name NFT</h4>
-                                <p class="text-sm text-gray-300 font-sans sm:text-xl">
-                                    Total Sales <span class="font-mono">34.53 ETH</span>
+                                <h4
+                                    class="font-semibold font-poppins text-lg sm:text-xl md:text-2xl mb-2 hover:text-[#DA8F4D] transition-colors duration-300">
+                                    Name NFT</h4>
+                                <p
+                                    class="text-sm text-gray-300 font-sans sm:text-xl hover:text-opacity-80 transition-opacity duration-300">
+                                    Total Sales <span
+                                        class="font-mono hover:text-[#DA8F4D] transition-colors duration-300">34.53
+                                        ETH</span>
                                 </p>
                             </div>
                         </div>
 
                         <!-- Card 3 -->
-                        <div class="bg-[#E6DCBA33] rounded-3xl bg-gradient-to-r from-white/5 via-white/2 to-white/5 p-6 sm:p-8 flex flex-col items-start justify-evenly text-center 
-        transform transition-all duration-300 hover:scale-105 animate-fadeInUp">
+                        <div
+                            class="bg-[#E6DCBA33] rounded-3xl bg-gradient-to-r from-white/5 via-white/2 to-white/5 p-6 sm:p-8 flex flex-col items-start justify-evenly text-center 
+        transform transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#DA8F4D]/30 animate-fadeInUp">
 
                             <!-- Main Image - Circular -->
                             <div class="flex">
-                                <div class="bg-[#2B2B2B] rounded-full w-10 h-10 text-[#858584] text-center text-xl">3
+                                <div
+                                    class="bg-[#2B2B2B] rounded-full w-10 h-10 text-[#858584] text-center text-xl hover:text-[#DA8F4D] transition-colors duration-300">
+                                    3
                                 </div>
 
                                 <div
-                                    class="w-60 h-60 md:w-48 md:h-48 2xl:h-36 2xl:w-36 rounded-full overflow-hidden my-8 border-4 border-white/20 transition-transform duration-500 hover:scale-110">
+                                    class="w-60 h-60 md:w-48 md:h-48 2xl:h-36 2xl:w-36 rounded-full overflow-hidden my-8 border-4 border-white/20 transition-transform duration-500 hover:scale-110 hover:border-[#DA8F4D]">
                                     <img src="./assets/img/Ellipse 136.png" alt="NFT"
-                                        class="w-full h-full object-cover" />
+                                        class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
                                 </div>
                             </div>
 
                             <!-- Card Info -->
                             <div class="w-full flex flex-col items-center justify-center">
-                                <h4 class="font-semibold font-poppins text-lg sm:text-xl md:text-2xl mb-2">Name NFT</h4>
-                                <p class="text-sm text-gray-300 font-sans sm:text-xl">
-                                    Total Sales <span class="font-mono">34.53 ETH</span>
+                                <h4
+                                    class="font-semibold font-poppins text-lg sm:text-xl md:text-2xl mb-2 hover:text-[#DA8F4D] transition-colors duration-300">
+                                    Name NFT</h4>
+                                <p
+                                    class="text-sm text-gray-300 font-sans sm:text-xl hover:text-opacity-80 transition-opacity duration-300">
+                                    Total Sales <span
+                                        class="font-mono hover:text-[#DA8F4D] transition-colors duration-300">34.53
+                                        ETH</span>
                                 </p>
                             </div>
                         </div>
 
 
                         <!-- Card 4 -->
-                        <div class="bg-[#E6DCBA33] rounded-3xl bg-gradient-to-r from-white/5 via-white/2 to-white/5 p-6 sm:p-8 flex flex-col items-start justify-evenly text-center 
-        transform transition-all duration-300 hover:scale-105 animate-fadeInUp">
+                        <div
+                            class="bg-[#E6DCBA33] rounded-3xl bg-gradient-to-r from-white/5 via-white/2 to-white/5 p-6 sm:p-8 flex flex-col items-start justify-evenly text-center 
+        transform transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#DA8F4D]/30 animate-fadeInUp">
 
                             <!-- Main Image - Circular -->
                             <div class="flex">
-                                <div class="bg-[#2B2B2B] rounded-full w-10 h-10 text-[#858584] text-center text-xl">1
+                                <div
+                                    class="bg-[#2B2B2B] rounded-full w-10 h-10 text-[#858584] text-center text-xl hover:text-[#DA8F4D] transition-colors duration-300">
+                                    1
                                 </div>
 
                                 <div
-                                    class="w-60 h-60 md:w-48 md:h-48 2xl:h-36 2xl:w-36 rounded-full overflow-hidden my-8 border-4 border-white/20 transition-transform duration-500 hover:scale-110">
+                                    class="w-60 h-60 md:w-48 md:h-48 2xl:h-36 2xl:w-36 rounded-full overflow-hidden my-8 border-4 border-white/20 transition-transform duration-500 hover:scale-110 hover:border-[#DA8F4D]">
                                     <img src="./assets/img/Ellipse 135.png" alt="NFT"
-                                        class="w-full h-full object-cover" />
+                                        class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
                                 </div>
                             </div>
 
                             <!-- Card Info -->
                             <div class="w-full flex flex-col items-center justify-center">
-                                <h4 class="font-semibold font-poppins text-lg sm:text-xl md:text-2xl mb-2">Name NFT</h4>
-                                <p class="text-sm text-gray-300 font-sans sm:text-xl">
-                                    Total Sales <span class="font-mono">34.53 ETH</span>
+                                <h4
+                                    class="font-semibold font-poppins text-lg sm:text-xl md:text-2xl mb-2 hover:text-[#DA8F4D] transition-colors duration-300">
+                                    Name NFT</h4>
+                                <p
+                                    class="text-sm text-gray-300 font-sans sm:text-xl hover:text-opacity-80 transition-opacity duration-300">
+                                    Total Sales <span
+                                        class="font-mono hover:text-[#DA8F4D] transition-colors duration-300">34.53
+                                        ETH</span>
                                 </p>
                             </div>
                         </div>
 
                         <!-- Card 5 -->
-                        <div class="bg-[#E6DCBA33] rounded-3xl bg-gradient-to-r from-white/5 via-white/2 to-white/5 p-6 sm:p-8 flex flex-col items-start justify-evenly text-center 
-        transform transition-all duration-300 hover:scale-105 animate-fadeInUp">
+                        <div
+                            class="bg-[#E6DCBA33] rounded-3xl bg-gradient-to-r from-white/5 via-white/2 to-white/5 p-6 sm:p-8 flex flex-col items-start justify-evenly text-center 
+        transform transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#DA8F4D]/30 animate-fadeInUp">
 
                             <!-- Main Image - Circular -->
                             <div class="flex">
-                                <div class="bg-[#2B2B2B] rounded-full w-10 h-10 text-[#858584] text-center text-xl">5
+                                <div
+                                    class="bg-[#2B2B2B] rounded-full w-10 h-10 text-[#858584] text-center text-xl hover:text-[#DA8F4D] transition-colors duration-300">
+                                    5
                                 </div>
 
                                 <div
-                                    class="w-60 h-60 md:w-48 md:h-48 2xl:h-36 2xl:w-36 rounded-full overflow-hidden my-8 border-4 border-white/20 transition-transform duration-500 hover:scale-110">
+                                    class="w-60 h-60 md:w-48 md:h-48 2xl:h-36 2xl:w-36 rounded-full overflow-hidden my-8 border-4 border-white/20 transition-transform duration-500 hover:scale-110 hover:border-[#DA8F4D]">
                                     <img src="./assets/img/Ellipse 133.png" alt="NFT"
-                                        class="w-full h-full object-cover" />
+                                        class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
                                 </div>
                             </div>
 
                             <!-- Card Info -->
                             <div class="w-full flex flex-col items-center justify-center">
-                                <h4 class="font-semibold font-poppins text-lg sm:text-xl md:text-2xl mb-2">Name NFT</h4>
-                                <p class="text-sm text-gray-300 font-sans sm:text-xl">
-                                    Total Sales <span class="font-mono">34.53 ETH</span>
+                                <h4
+                                    class="font-semibold font-poppins text-lg sm:text-xl md:text-2xl mb-2 hover:text-[#DA8F4D] transition-colors duration-300">
+                                    Name NFT</h4>
+                                <p
+                                    class="text-sm text-gray-300 font-sans sm:text-xl hover:text-opacity-80 transition-opacity duration-300">
+                                    Total Sales <span
+                                        class="font-mono hover:text-[#DA8F4D] transition-colors duration-300">34.53
+                                        ETH</span>
                                 </p>
                             </div>
                         </div>
                         <!-- Card 6 -->
-                        <div class="bg-[#E6DCBA33] rounded-3xl bg-gradient-to-r from-white/5 via-white/2 to-white/5 p-6 sm:p-8 flex flex-col items-start justify-evenly text-center 
-        transform transition-all duration-300 hover:scale-105 animate-fadeInUp">
+                        <div
+                            class="bg-[#E6DCBA33] rounded-3xl bg-gradient-to-r from-white/5 via-white/2 to-white/5 p-6 sm:p-8 flex flex-col items-start justify-evenly text-center 
+        transform transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#DA8F4D]/30 animate-fadeInUp">
 
                             <!-- Main Image - Circular -->
                             <div class="flex">
-                                <div class="bg-[#2B2B2B] rounded-full w-10 h-10 text-[#858584] text-center text-xl">6
+                                <div
+                                    class="bg-[#2B2B2B] rounded-full w-10 h-10 text-[#858584] text-center text-xl hover:text-[#DA8F4D] transition-colors duration-300">
+                                    6
                                 </div>
 
                                 <div
-                                    class="w-60 h-60 md:w-48 md:h-48 2xl:h-36 2xl:w-36 rounded-full overflow-hidden my-8 border-4 border-white/20 transition-transform duration-500 hover:scale-110">
+                                    class="w-60 h-60 md:w-48 md:h-48 2xl:h-36 2xl:w-36 rounded-full overflow-hidden my-8 border-4 border-white/20 transition-transform duration-500 hover:scale-110 hover:border-[#DA8F4D]">
                                     <img src="./assets/img/Ellipse 134.png" alt="NFT"
-                                        class="w-full h-full object-cover" />
+                                        class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
                                 </div>
                             </div>
 
                             <!-- Card Info -->
                             <div class="w-full flex flex-col items-center justify-center">
-                                <h4 class="font-semibold font-poppins text-lg sm:text-xl md:text-2xl mb-2">Name NFT</h4>
-                                <p class="text-sm text-gray-300 font-sans sm:text-xl">
-                                    Total Sales <span class="font-mono">34.53 ETH</span>
+                                <h4
+                                    class="font-semibold font-poppins text-lg sm:text-xl md:text-2xl mb-2 hover:text-[#DA8F4D] transition-colors duration-300">
+                                    Name NFT</h4>
+                                <p
+                                    class="text-sm text-gray-300 font-sans sm:text-xl hover:text-opacity-80 transition-opacity duration-300">
+                                    Total Sales <span
+                                        class="font-mono hover:text-[#DA8F4D] transition-colors duration-300">34.53
+                                        ETH</span>
                                 </p>
                             </div>
                         </div>
                         <!-- Card 7 -->
-                        <div class="bg-[#E6DCBA33] rounded-3xl bg-gradient-to-r from-white/5 via-white/2 to-white/5 p-6 sm:p-8 flex flex-col items-start justify-evenly text-center 
-        transform transition-all duration-300 hover:scale-105 animate-fadeInUp">
+                        <div
+                            class="bg-[#E6DCBA33] rounded-3xl bg-gradient-to-r from-white/5 via-white/2 to-white/5 p-6 sm:p-8 flex flex-col items-start justify-evenly text-center 
+        transform transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#DA8F4D]/30 animate-fadeInUp">
 
                             <!-- Main Image - Circular -->
                             <div class="flex">
-                                <div class="bg-[#2B2B2B] rounded-full w-10 h-10 text-[#858584] text-center text-xl">7
+                                <div
+                                    class="bg-[#2B2B2B] rounded-full w-10 h-10 text-[#858584] text-center text-xl hover:text-[#DA8F4D] transition-colors duration-300">
+                                    7
                                 </div>
 
                                 <div
-                                    class="w-60 h-60 md:w-48 md:h-48 2xl:h-36 2xl:w-36 rounded-full overflow-hidden my-8 border-4 border-white/20 transition-transform duration-500 hover:scale-110">
+                                    class="w-60 h-60 md:w-48 md:h-48 2xl:h-36 2xl:w-36 rounded-full overflow-hidden my-8 border-4 border-white/20 transition-transform duration-500 hover:scale-110 hover:border-[#DA8F4D]">
                                     <img src="./assets/img/Ellipse 134 (1).png" alt="NFT"
-                                        class="w-full h-full object-cover" />
+                                        class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
                                 </div>
                             </div>
 
                             <!-- Card Info -->
                             <div class="w-full flex flex-col items-center justify-center">
-                                <h4 class="font-semibold font-poppins text-lg sm:text-xl md:text-2xl mb-2">Name NFT</h4>
-                                <p class="text-sm text-gray-300 font-sans sm:text-xl">
-                                    Total Sales <span class="font-mono">34.53 ETH</span>
+                                <h4
+                                    class="font-semibold font-poppins text-lg sm:text-xl md:text-2xl mb-2 hover:text-[#DA8F4D] transition-colors duration-300">
+                                    Name NFT</h4>
+                                <p
+                                    class="text-sm text-gray-300 font-sans sm:text-xl hover:text-opacity-80 transition-opacity duration-300">
+                                    Total Sales <span
+                                        class="font-mono hover:text-[#DA8F4D] transition-colors duration-300">34.53
+                                        ETH</span>
                                 </p>
                             </div>
                         </div>
 
                         <!-- Card 8 -->
-                        <div class="bg-[#E6DCBA33] rounded-3xl bg-gradient-to-r from-white/5 via-white/2 to-white/5 p-6 sm:p-8 flex flex-col items-start justify-evenly text-center 
-        transform transition-all duration-300 hover:scale-105 animate-fadeInUp">
+                        <div
+                            class="bg-[#E6DCBA33] rounded-3xl bg-gradient-to-r from-white/5 via-white/2 to-white/5 p-6 sm:p-8 flex flex-col items-start justify-evenly text-center 
+        transform transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#DA8F4D]/30 animate-fadeInUp">
 
                             <!-- Main Image - Circular -->
                             <div class="flex">
-                                <div class="bg-[#2B2B2B] rounded-full w-10 h-10 text-[#858584] text-center text-xl">8
+                                <div
+                                    class="bg-[#2B2B2B] rounded-full w-10 h-10 text-[#858584] text-center text-xl hover:text-[#DA8F4D] transition-colors duration-300">
+                                    8
                                 </div>
 
                                 <div
-                                    class="w-60 h-60 md:w-48 md:h-48 2xl:h-36 2xl:w-36 rounded-full overflow-hidden my-8 border-4 border-white/20 transition-transform duration-500 hover:scale-110">
+                                    class="w-60 h-60 md:w-48 md:h-48 2xl:h-36 2xl:w-36 rounded-full overflow-hidden my-8 border-4 border-white/20 transition-transform duration-500 hover:scale-110 hover:border-[#DA8F4D]">
                                     <img src="./assets/img/Ellipse 133 (1).png" alt="NFT"
-                                        class="w-full h-full object-cover" />
+                                        class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
                                 </div>
                             </div>
 
                             <!-- Card Info -->
                             <div class="w-full flex flex-col items-center justify-center">
-                                <h4 class="font-semibold font-poppins text-lg sm:text-xl md:text-2xl mb-2">Name NFT</h4>
-                                <p class="text-sm text-gray-300 font-sans sm:text-xl">
-                                    Total Sales <span class="font-mono">34.53 ETH</span>
+                                <h4
+                                    class="font-semibold font-poppins text-lg sm:text-xl md:text-2xl mb-2 hover:text-[#DA8F4D] transition-colors duration-300">
+                                    Name NFT</h4>
+                                <p
+                                    class="text-sm text-gray-300 font-sans sm:text-xl hover:text-opacity-80 transition-opacity duration-300">
+                                    Total Sales <span
+                                        class="font-mono hover:text-[#DA8F4D] transition-colors duration-300">34.53
+                                        ETH</span>
                                 </p>
                             </div>
                         </div>
-
 
 
                     </div>
@@ -489,27 +579,42 @@ background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 25
     <section class="w-full mx-auto bg-black min-h-screen overflow-hidden">
         <!-- Header -->
         <div class="text-center mb-8 mt-8 md:mb-12 md:mt-12">
-            <h2 class="text-2xl md:text-5xl font-bold mb-4">Road Map</h2>
+            <h2 class="text-2xl md:text-5xl font-bold mb-4 hover:text-[#DA8F4D] transition-colors duration-300">Road Map
+            </h2>
         </div>
 
         <div
             class="relative text-white flex items-start justify-center relative bg-[url(./assets/img/bg-hero-section.png)] bg-cover bg-center my-6">
             <!-- balls and line-->
 
-            <div class="lg:absolute lg:left-[50%] top-[17%]  lg:w-1 h-[68%] lg:space-x-2 bg-white"></div>
+            <div
+                class="lg:absolute lg:left-[50%] top-[17%]  lg:w-1 h-[68%] lg:space-x-2 bg-white hover:bg-[#DA8F4D] transition-colors duration-300">
+            </div>
 
-            <div class="lg:absolute lg:left-[49.5%] top-[17%]  lg:w-6 lg:h-6 rounded-full bg-white"></div>
+            <div
+                class="lg:absolute lg:left-[49.5%] top-[17%]  lg:w-6 lg:h-6 rounded-full bg-white hover:bg-[#DA8F4D] hover:scale-125 transition-all duration-300">
+            </div>
 
-            <div class="lg:absolute lg:left-[49.5%] top-[25%]  lg:w-6 lg:h-6 rounded-full bg-(--base-color)"></div>
-            
-            <div class="lg:absolute lg:left-[49.5%] top-[47%]  lg:w-6 lg:h-6 rounded-full bg-white"></div>
+            <div
+                class="lg:absolute lg:left-[49.5%] top-[25%]  lg:w-6 lg:h-6 rounded-full bg-(--base-color) hover:bg-white hover:scale-125 transition-all duration-300">
+            </div>
 
-            <div class="lg:absolute lg:left-[49.5%] top-[55%]  lg:w-6 lg:h-6 rounded-full bg-(--base-color)"></div>
-            
-            <div class="lg:absolute lg:left-[49.5%] top-[76%]  lg:w-6 lg:h-6 rounded-full bg-white"></div>
+            <div
+                class="lg:absolute lg:left-[49.5%] top-[47%]  lg:w-6 lg:h-6 rounded-full bg-white hover:bg-[#DA8F4D] hover:scale-125 transition-all duration-300">
+            </div>
 
-            <div class="lg:absolute lg:left-[49.5%] top-[84%]  lg:w-6 lg:h-6 rounded-full bg-(--base-color)"></div>
-<!-- balls and line end -->
+            <div
+                class="lg:absolute lg:left-[49.5%] top-[55%]  lg:w-6 lg:h-6 rounded-full bg-(--base-color) hover:bg-white hover:scale-125 transition-all duration-300">
+            </div>
+
+            <div
+                class="lg:absolute lg:left-[49.5%] top-[76%]  lg:w-6 lg:h-6 rounded-full bg-white hover:bg-[#DA8F4D] hover:scale-125 transition-all duration-300">
+            </div>
+
+            <div
+                class="lg:absolute lg:left-[49.5%] top-[84%]  lg:w-6 lg:h-6 rounded-full bg-(--base-color) hover:bg-white hover:scale-125 transition-all duration-300">
+            </div>
+            <!-- balls and line end -->
 
 
             <div class="w-full max-w-[1728px] px-4 sm:px-6 md:px-10 lg:px-20 ">
@@ -517,14 +622,20 @@ background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 25
                     <!-- Row 1-->
                     <div class="flex flex-col lg:flex-row 2xl:gap-28 gap-14 items-stretch ">
                         <!-- Card 1 -->
-                        <div class="w-full lg:w-1/2 px-2 py-2 rounded-xl  lg:mb-50 xl:mb-47"
+                        <div class="w-full lg:w-1/2 px-2 py-2 rounded-xl lg:mb-50 xl:mb-47 hover:scale-[1.02] transition-transform duration-300"
                             style="background: #FAF5EB;
 background: linear-gradient(90deg, rgba(250, 245, 235, 0) 0%, rgba(220, 181, 110, 0) 54%, rgba(207, 152, 51, 1) 85%, rgba(229, 224, 207, 1) 100%);">
-                            <div class="w-full p-6 rounded-xl bg-[#1d1919b2] border border-[#f8f8f8] shadow-lg px-6">
-                                <h6 class="text-center text-2xl font-clash text-white">January</h6>
+                            <div
+                                class="w-full p-6 rounded-xl bg-[#1d1919b2] border border-[#f8f8f8] shadow-lg px-6 hover:border-[#DA8F4D] transition-colors duration-300">
+                                <h6
+                                    class="text-center text-2xl font-clash text-white hover:text-[#DA8F4D] transition-colors duration-300">
+                                    January</h6>
                                 <div class="text-left space-y-2">
-                                    <h1 class="text-4xl font-semibold font-clash text-white py-4">Brief</h1>
-                                    <p class="text-[18px] font-clash text-white/90">
+                                    <h1
+                                        class="text-4xl font-semibold font-clash text-white py-4 hover:text-[#DA8F4D] transition-colors duration-300">
+                                        Brief</h1>
+                                    <p
+                                        class="text-[18px] font-clash text-white/90 hover:text-opacity-100 transition-opacity duration-300">
                                         Lorem ipsum dolor sit amet consectetur. Elit massa erat vitae non semper quis.
                                         Morbi sed
                                         aliquet donec facilisis. Senectus eget.
@@ -533,14 +644,20 @@ background: linear-gradient(90deg, rgba(250, 245, 235, 0) 0%, rgba(220, 181, 110
                             </div>
                         </div>
                         <!-- Card 2 -->
-                        <div class="w-full lg:w-1/2 px-2 py-2 rounded-xl  lg:mt-50 xl:mt-47"
+                        <div class="w-full lg:w-1/2 px-2 py-2 rounded-xl lg:mt-50 xl:mt-47 hover:scale-[1.02] transition-transform duration-300"
                             style="background: #FAF5EB;
 background: linear-gradient(270deg, rgba(250, 245, 235, 0) 0%, rgba(220, 181, 110, 0) 54%, rgba(207, 152, 51, 1) 85%, rgba(229, 224, 207, 1) 100%);">
-                            <div class="w-full p-6 rounded-xl bg-[#1d1919b2] border border-[#f8f8f8] shadow-lg px-6">
-                                <h6 class="text-center text-2xl font-clash text-white">Fabruary</h6>
+                            <div
+                                class="w-full p-6 rounded-xl bg-[#1d1919b2] border border-[#f8f8f8] shadow-lg px-6 hover:border-[#DA8F4D] transition-colors duration-300">
+                                <h6
+                                    class="text-center text-2xl font-clash text-white hover:text-[#DA8F4D] transition-colors duration-300">
+                                    Fabruary</h6>
                                 <div class="text-left space-y-2">
-                                    <h1 class="text-4xl font-semibold font-clash text-white py-4">Research</h1>
-                                    <p class="text-[18px] font-clash text-white/90">
+                                    <h1
+                                        class="text-4xl font-semibold font-clash text-white py-4 hover:text-[#DA8F4D] transition-colors duration-300">
+                                        Research</h1>
+                                    <p
+                                        class="text-[18px] font-clash text-white/90 hover:text-opacity-100 transition-opacity duration-300">
                                         Lorem ipsum dolor sit amet consectetur. Elit massa erat vitae non semper quis.
                                         Morbi sed
                                         aliquet donec facilisis. Senectus eget.
@@ -553,14 +670,20 @@ background: linear-gradient(270deg, rgba(250, 245, 235, 0) 0%, rgba(220, 181, 11
                     <!-- Row 2-->
                     <div class="flex flex-col lg:flex-row 2xl:gap-28 gap-14 items-stretch ">
                         <!-- Card 1 -->
-                        <div class="w-full lg:w-1/2 px-2 py-2 rounded-xl  lg:mb-50 xl:mb-47"
+                        <div class="w-full lg:w-1/2 px-2 py-2 rounded-xl lg:mb-50 xl:mb-47 hover:scale-[1.02] transition-transform duration-300"
                             style="background: #FAF5EB;
 background: linear-gradient(90deg, rgba(250, 245, 235, 0) 0%, rgba(220, 181, 110, 0) 54%, rgba(207, 152, 51, 1) 85%, rgba(229, 224, 207, 1) 100%);">
-                            <div class="w-full p-6 rounded-xl bg-[#1d1919b2] border border-[#f8f8f8] shadow-lg px-6">
-                                <h6 class="text-center text-2xl font-clash text-white">March</h6>
+                            <div
+                                class="w-full p-6 rounded-xl bg-[#1d1919b2] border border-[#f8f8f8] shadow-lg px-6 hover:border-[#DA8F4D] transition-colors duration-300">
+                                <h6
+                                    class="text-center text-2xl font-clash text-white hover:text-[#DA8F4D] transition-colors duration-300">
+                                    March</h6>
                                 <div class="text-left space-y-2">
-                                    <h1 class="text-4xl font-semibold font-clash text-white py-4">Discover</h1>
-                                    <p class="text-[18px] font-clash text-white/90">
+                                    <h1
+                                        class="text-4xl font-semibold font-clash text-white py-4 hover:text-[#DA8F4D] transition-colors duration-300">
+                                        Discover</h1>
+                                    <p
+                                        class="text-[18px] font-clash text-white/90 hover:text-opacity-100 transition-opacity duration-300">
                                         Lorem ipsum dolor sit amet consectetur. Elit massa erat vitae non semper quis.
                                         Morbi
                                         sed
@@ -570,14 +693,20 @@ background: linear-gradient(90deg, rgba(250, 245, 235, 0) 0%, rgba(220, 181, 110
                             </div>
                         </div>
                         <!-- Card 2 -->
-                        <div class="w-full lg:w-1/2 px-2 py-2 rounded-xl  lg:mt-50 xl:mt-47"
+                        <div class="w-full lg:w-1/2 px-2 py-2 rounded-xl lg:mt-50 xl:mt-47 hover:scale-[1.02] transition-transform duration-300"
                             style="background: #FAF5EB;
 background: linear-gradient(270deg, rgba(250, 245, 235, 0) 0%, rgba(220, 181, 110, 0) 54%, rgba(207, 152, 51, 1) 85%, rgba(229, 224, 207, 1) 100%);">
-                            <div class="w-full p-6 rounded-xl bg-[#1d1919b2] border border-[#f8f8f8] shadow-lg px-6">
-                                <h6 class="text-center text-2xl font-clash text-white">April</h6>
+                            <div
+                                class="w-full p-6 rounded-xl bg-[#1d1919b2] border border-[#f8f8f8] shadow-lg px-6 hover:border-[#DA8F4D] transition-colors duration-300">
+                                <h6
+                                    class="text-center text-2xl font-clash text-white hover:text-[#DA8F4D] transition-colors duration-300">
+                                    April</h6>
                                 <div class="text-left space-y-2">
-                                    <h1 class="text-4xl font-semibold font-clash text-white py-4">Design</h1>
-                                    <p class="text-[18px] font-clash text-white/90">
+                                    <h1
+                                        class="text-4xl font-semibold font-clash text-white py-4 hover:text-[#DA8F4D] transition-colors duration-300">
+                                        Design</h1>
+                                    <p
+                                        class="text-[18px] font-clash text-white/90 hover:text-opacity-100 transition-opacity duration-300">
                                         Lorem ipsum dolor sit amet consectetur. Elit massa erat vitae non semper quis.
                                         Morbi
                                         sed
@@ -591,14 +720,20 @@ background: linear-gradient(270deg, rgba(250, 245, 235, 0) 0%, rgba(220, 181, 11
                     <!-- Row 3-->
                     <div class="flex flex-col lg:flex-row 2xl:gap-28 gap-14 items-stretch ">
                         <!-- Card 1 -->
-                        <div class="w-full lg:w-1/2 px-2 py-2 rounded-xl  lg:mb-50 xl:mb-47"
+                        <div class="w-full lg:w-1/2 px-2 py-2 rounded-xl lg:mb-50 xl:mb-47 hover:scale-[1.02] transition-transform duration-300"
                             style="background: #FAF5EB;
 background: linear-gradient(90deg, rgba(250, 245, 235, 0) 0%, rgba(220, 181, 110, 0) 54%, rgba(207, 152, 51, 1) 85%, rgba(229, 224, 207, 1) 100%);">
-                            <div class="w-full p-6 rounded-xl bg-[#1d1919b2] border border-[#f8f8f8] shadow-lg px-6">
-                                <h6 class="text-center text-2xl font-clash text-white">May</h6>
+                            <div
+                                class="w-full p-6 rounded-xl bg-[#1d1919b2] border border-[#f8f8f8] shadow-lg px-6 hover:border-[#DA8F4D] transition-colors duration-300">
+                                <h6
+                                    class="text-center text-2xl font-clash text-white hover:text-[#DA8F4D] transition-colors duration-300">
+                                    May</h6>
                                 <div class="text-left space-y-2">
-                                    <h1 class="text-4xl font-semibold font-clash text-white py-4">Testing</h1>
-                                    <p class="text-[18px] font-clash text-white/90">
+                                    <h1
+                                        class="text-4xl font-semibold font-clash text-white py-4 hover:text-[#DA8F4D] transition-colors duration-300">
+                                        Testing</h1>
+                                    <p
+                                        class="text-[18px] font-clash text-white/90 hover:text-opacity-100 transition-opacity duration-300">
                                         Lorem ipsum dolor sit amet consectetur. Elit massa erat vitae non semper quis.
                                         Morbi
                                         sed
@@ -609,14 +744,20 @@ background: linear-gradient(90deg, rgba(250, 245, 235, 0) 0%, rgba(220, 181, 110
                             </div>
                         </div>
                         <!-- Card 2 -->
-                        <div class="w-full lg:w-1/2 px-2 py-2 rounded-xl  lg:mt-50 xl:mt-47"
+                        <div class="w-full lg:w-1/2 px-2 py-2 rounded-xl lg:mt-50 xl:mt-47 hover:scale-[1.02] transition-transform duration-300"
                             style="background: #FAF5EB;
 background: linear-gradient(270deg, rgba(250, 245, 235, 0) 0%, rgba(220, 181, 110, 0) 54%, rgba(207, 152, 51, 1) 85%, rgba(229, 224, 207, 1) 100%);">
-                            <div class="w-full p-6 rounded-xl bg-[#1d1919b2] border border-[#f8f8f8] shadow-lg px-6">
-                                <h6 class="text-center text-2xl font-clash text-white">June</h6>
+                            <div
+                                class="w-full p-6 rounded-xl bg-[#1d1919b2] border border-[#f8f8f8] shadow-lg px-6 hover:border-[#DA8F4D] transition-colors duration-300">
+                                <h6
+                                    class="text-center text-2xl font-clash text-white hover:text-[#DA8F4D] transition-colors duration-300">
+                                    June</h6>
                                 <div class="text-left space-y-2">
-                                    <h1 class="text-4xl font-semibold font-clash text-white py-4">Launch & Feedback</h1>
-                                    <p class="text-[18px] font-clash text-white/90">
+                                    <h1
+                                        class="text-4xl font-semibold font-clash text-white py-4 hover:text-[#DA8F4D] transition-colors duration-300">
+                                        Launch & Feedback</h1>
+                                    <p
+                                        class="text-[18px] font-clash text-white/90 hover:text-opacity-100 transition-opacity duration-300">
                                         Lorem ipsum dolor sit amet consectetur. Elit massa erat vitae non semper quis.
                                         Morbi
                                         sed
@@ -634,29 +775,42 @@ background: linear-gradient(270deg, rgba(250, 245, 235, 0) 0%, rgba(220, 181, 11
     </section>
 
     <!-- how it works -->
-    <section class="w-full mx-auto bg-black min-h-screen overflow-hidden mb-10">
+    <section class=" relative w-full mx-auto bg-black min-h-screen overflow-hidden mb-10">
+        <!-- RADIAL top right GRADIUNT -->
+        <div class="w-100 h-100 rounded-full  blur-[200px] absolute top-20% right-0 translate-x-1/2 translate-y-1/2 hover:opacity-80 transition-opacity duration-500"
+            style="background: #FFFFFF;
+background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);">
+
+        </div>
+        <!-- RADIAL bottom left GRADIUNT -->
+        <div class="w-100 h-100 rounded-full  blur-[200px] absolute top-[40%] left-0 translate-y-1/2 hover:opacity-80 transition-opacity duration-500"
+            style="background: #FFFFFF; 
+background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);"></div>
+
         <!-- Header -->
         <div class="text-center mb-8 mt-8 md:mb-12 md:mt-12">
-            <h2 class="text-2xl md:text-5xl font-bold mb-4">How it works</h2>
+            <h2 class="text-2xl md:text-5xl font-bold mb-4 hover:text-[#DA8F4D] transition-colors duration-300">How it
+                works</h2>
             <!-- Section 1 - Setup Wallet -->
             <article
                 class="w-full max-w-[1728px] px-4 sm:px-6 md:px-10 lg:px-20 flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12 mb-16 sm:mb-20 lg:mb-28">
                 <!-- Image -->
-                <figure class="w-full lg:w-1/2 order-2 lg:order-1">
+                <figure class="w-full lg:w-1/2 order-2 lg:order-1 hover:scale-105 transition-transform duration-500">
                     <img src="./assets/img/image 110.png" alt="Illustration of digital wallet connection"
                         class="object-contain w-full h-auto max-w-md mx-auto lg:max-w-none">
                 </figure>
                 <!-- Content -->
                 <div class="w-full lg:w-1/2 order-1 lg:order-2 text-center lg:text-left">
-                    <div class="mb-6 lg:mb-0">
+                    <div class="mb-6 lg:mb-0 hover:rotate-180 transition-transform duration-1000">
                         <img src="./assets/img/star-filled.png" alt="Visual divider icon"
                             class="w-8 sm:w-12 md:w-16 lg:w-32 mx-auto lg:mx-0 lg:ml-4 xl:ml-14">
                     </div>
                     <h2
-                        class="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl py-6 sm:py-8 lg:py-12 lg:pl-4 xl:pl-14 leading-tight lg:leading-snug">
+                        class="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl py-6 sm:py-8 lg:py-12 lg:pl-4 xl:pl-14 leading-tight lg:leading-snug hover:text-[#DA8F4D] transition-colors duration-300">
                         Setup and Connect your Wallet.
                     </h2>
-                    <p class="font-semibold text-xs sm:text-sm md:text-base mx-4 sm:mx-6 lg:mx-4 xl:mx-14">
+                    <p
+                        class="font-semibold text-xs sm:text-sm md:text-base mx-4 sm:mx-6 lg:mx-4 xl:mx-14 hover:text-opacity-80 transition-opacity duration-300">
                         Lorem ipsum dolor sit amet consectetur. Donec vitae pellentesque nunc ut sit a volutpat
                         elementum.
                         Nunc elit nisi pellentesque porta elementum. Id mattis neque diam nulla. Amet et a felis
@@ -671,17 +825,18 @@ background: linear-gradient(270deg, rgba(250, 245, 235, 0) 0%, rgba(220, 181, 11
                 <!-- Content -->
                 <div class="w-full lg:w-1/2 order-1 text-center lg:text-left">
                     <h2
-                        class="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl py-6 sm:py-8 lg:py-12 lg:pl-4 xl:pl-14 leading-tight lg:leading-snug">
+                        class="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl py-6 sm:py-8 lg:py-12 lg:pl-4 xl:pl-14 leading-tight lg:leading-snug hover:text-[#DA8F4D] transition-colors duration-300">
                         Create your Own Digital NFT
                     </h2>
-                    <p class="font-semibold text-xs sm:text-sm md:text-base mx-4 sm:mx-6 lg:mx-4 xl:mx-14 mb-8 lg:mb-0">
+                    <p
+                        class="font-semibold text-xs sm:text-sm md:text-base mx-4 sm:mx-6 lg:mx-4 xl:mx-14 mb-8 lg:mb-0 hover:text-opacity-80 transition-opacity duration-300">
                         Lorem ipsum dolor sit amet consectetur. Donec vitae pellentesque nunc ut sit a volutpat
                         elementum.
                         Nunc elit nisi pellentesque porta elementum. Id mattis neque diam nulla. Amet et a felis
                         pellentesque sed odio.
                     </p>
                     <div
-                        class="w-full flex items-center justify-center lg:items-end lg:justify-end lg:pr-10 xl:pr-40 pt-8 lg:pt-20 xl:pt-40">
+                        class="w-full flex items-center justify-center lg:items-end lg:justify-end lg:pr-10 xl:pr-40 pt-8 lg:pt-20 xl:pt-40 hover:rotate-180 transition-transform duration-1000">
                         <img src="./assets/img/star-filled.png" alt="Visual divider icon"
                             class="w-8 sm:w-12 md:w-16 lg:w-24 xl:w-36">
                     </div>
@@ -689,9 +844,9 @@ background: linear-gradient(270deg, rgba(250, 245, 235, 0) 0%, rgba(220, 181, 11
                 <!-- Image -->
                 <figure class="w-full lg:w-1/2 order-2 flex items-center justify-center">
                     <div
-                        class="bg-[#030303] rounded-3xl sm:rounded-[50px] lg:rounded-[100px] bg-gradient-to-r from-white/5 via-white/2 to-white/5 backdrop-blur-lg overflow-hidden sm:p-4 w-full max-w-xs sm:max-w-sm lg:max-w-md xl:w-[531px] xl:h-[460px] aspect-square xl:aspect-auto">
+                        class="bg-[#030303] rounded-3xl sm:rounded-[50px] lg:rounded-[100px] bg-gradient-to-r from-white/5 via-white/2 to-white/5 backdrop-blur-lg overflow-hidden sm:p-4 w-full max-w-xs sm:max-w-sm lg:max-w-md xl:w-[531px] xl:h-[460px] aspect-square xl:aspect-auto hover:scale-105 transition-transform duration-500">
                         <img src="./assets/img/image 111.png" alt="Colorful digital NFT example"
-                            class="object-contain w-full h-full">
+                            class="object-contain w-full h-full hover:scale-110 transition-transform duration-500">
                     </div>
                 </figure>
             </article>
@@ -700,17 +855,18 @@ background: linear-gradient(270deg, rgba(250, 245, 235, 0) 0%, rgba(220, 181, 11
             <article
                 class="w-full max-w-[1728px] px-4 sm:px-6 md:px-10 lg:px-20 flex flex-col lg:flex-row items-start justify-center gap-8 lg:gap-12 pb-16 sm:pb-20 lg:pb-28">
                 <!-- Image -->
-                <figure class="w-full lg:w-1/2 order-2 lg:order-1">
+                <figure class="w-full lg:w-1/2 order-2 lg:order-1 hover:scale-105 transition-transform duration-500">
                     <img src="./assets/img/image 113.png" alt="Illustration of earning digital money"
                         class="object-contain w-full h-auto max-w-md mx-auto lg:max-w-none">
                 </figure>
                 <!-- Content -->
                 <div class="w-full lg:w-1/2 order-1 lg:order-2 text-center lg:text-left">
                     <h2
-                        class="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl py-6 sm:py-8 lg:py-12 lg:pt-20 xl:pt-36 lg:pl-4 xl:pl-14 leading-tight lg:leading-snug">
+                        class="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl py-6 sm:py-8 lg:py-12 lg:pt-20 xl:pt-36 lg:pl-4 xl:pl-14 leading-tight lg:leading-snug hover:text-[#DA8F4D] transition-colors duration-300">
                         Setup and Connect your Wallet.
                     </h2>
-                    <p class="font-semibold text-xs sm:text-sm md:text-base mx-4 sm:mx-6 lg:mx-4 xl:mx-14">
+                    <p
+                        class="font-semibold text-xs sm:text-sm md:text-base mx-4 sm:mx-6 lg:mx-4 xl:mx-14 hover:text-opacity-80 transition-opacity duration-300">
                         Lorem ipsum dolor sit amet consectetur. Donec vitae pellentesque nunc ut sit a volutpat
                         elementum.
                         Nunc elit nisi pellentesque porta elementum. Id mattis neque diam nulla. Amet et a felis
@@ -730,13 +886,13 @@ background: linear-gradient(270deg, rgba(250, 245, 235, 0) 0%, rgba(220, 181, 11
 
                 <!-- Heading -->
                 <h1
-                    class="font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl pt-8 sm:pt-12 md:pt-16 lg:pt-20 text-center">
+                    class="font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl pt-8 sm:pt-12 md:pt-16 lg:pt-20 text-center hover:text-[#DA8F4D] transition-colors duration-300">
                     Join Our Community
                 </h1>
 
                 <!-- Description -->
                 <p
-                    class="text-xs sm:text-sm md:text-base font-semibold max-w-xs sm:max-w-lg md:max-w-2xl lg:max-w-3xl py-8 sm:py-12 md:py-16 text-center leading-relaxed">
+                    class="text-xs sm:text-sm md:text-base font-semibold max-w-xs sm:max-w-lg md:max-w-2xl lg:max-w-3xl py-8 sm:py-12 md:py-16 text-center leading-relaxed hover:text-opacity-80 transition-opacity duration-300">
                     Lorem ipsum dolor sit amet consectetur. Donec vitae pellentesque nunc ut sit a volutpat elementum.
                     Nunc elit nisi pellentesque porta elementum. Id mattis neque diam nulla. Amet et a felis
                     pellentesque
@@ -748,10 +904,10 @@ background: linear-gradient(270deg, rgba(250, 245, 235, 0) 0%, rgba(220, 181, 11
                     class="w-full max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl flex flex-col sm:flex-row gap-4 sm:gap-6 items-center"
                     aria-label="Newsletter Subscription Form">
                     <input type="email" placeholder="Your Email"
-                        class="bg-[#D9D9D9] px-4 sm:px-6 md:px-8 lg:px-12 py-3 sm:py-4 md:py-5 w-full flex-1 rounded-full text-black text-sm sm:text-base placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all duration-300"
+                        class="bg-[#D9D9D9] px-4 sm:px-6 md:px-8 lg:px-12 py-3 sm:py-4 md:py-5 w-full flex-1 rounded-full text-black text-sm sm:text-base placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-[#DA8F4D] transition-all duration-300"
                         required aria-label="Email Address">
                     <button type="submit"
-                        class="bg-[#EFE7D78F] hover:bg-white hover:text-black text-white text-sm sm:text-base lg:text-lg px-6 sm:px-8 lg:px-12 xl:px-14 py-3 sm:py-4 md:py-5 rounded-full border border-white transition-all duration-300 whitespace-nowrap w-full sm:w-auto"
+                        class="bg-[#EFE7D78F] hover:bg-[#DA8F4D] hover:text-white text-white text-sm sm:text-base lg:text-lg px-6 sm:px-8 lg:px-12 xl:px-14 py-3 sm:py-4 md:py-5 rounded-full border border-white hover:border-[#DA8F4D] hover:scale-105 transition-all duration-300 whitespace-nowrap w-full sm:w-auto"
                         aria-label="Join Newsletter">
                         Join Now
                     </button>
@@ -759,101 +915,55 @@ background: linear-gradient(270deg, rgba(250, 245, 235, 0) 0%, rgba(220, 181, 11
 
                 <!-- Copyright -->
                 <p
-                    class="text-xs sm:text-sm md:text-base font-worksans pt-12 sm:pt-16 md:pt-20 text-[#CCCCCC] text-center">
+                    class="text-xs sm:text-sm md:text-base font-worksans pt-12 sm:pt-16 md:pt-20 text-[#CCCCCC] text-center hover:text-opacity-80 transition-opacity duration-300">
                     Ⓒ NFT Market. Use this template freely.
                 </p>
             </div>
         </div>
     </footer>
-<script>
-  (function () {
-    const toggle = document.getElementById("nav-toggle");
-    const menu = document.getElementById("nav-menu");
+    <script>
+        (function () {
+            const toggle = document.getElementById("nav-toggle");
+            const menu = document.getElementById("nav-menu");
 
-    // Close menu when clicking outside
-    document.addEventListener("click", (e) => {
-      if (!menu.contains(e.target) && !toggle.contains(e.target)) {
-        if (menu.classList.contains("block")) {
-          menu.classList.remove("block");
-          menu.classList.add("hidden");
-          toggle.setAttribute("aria-expanded", "false");
-        }
-      }
-    });
+            // Close menu when clicking outside
+            document.addEventListener("click", (e) => {
+                if (!menu.contains(e.target) && !toggle.contains(e.target)) {
+                    if (menu.classList.contains("block")) {
+                        menu.classList.remove("block");
+                        menu.classList.add("hidden");
+                        toggle.setAttribute("aria-expanded", "false");
+                    }
+                }
+            });
 
-    toggle.addEventListener("click", (e) => {
-      const expanded = toggle.getAttribute("aria-expanded") === "true";
-      if (expanded) {
-        menu.classList.remove("block");
-        menu.classList.add("hidden");
-        toggle.setAttribute("aria-expanded", "false");
-      } else {
-        menu.classList.remove("hidden");
-        menu.classList.add("block");
-        toggle.setAttribute("aria-expanded", "true");
-      }
-    });
+            toggle.addEventListener("click", (e) => {
+                const expanded = toggle.getAttribute("aria-expanded") === "true";
+                if (expanded) {
+                    menu.classList.remove("block");
+                    menu.classList.add("hidden");
+                    toggle.setAttribute("aria-expanded", "false");
+                } else {
+                    menu.classList.remove("hidden");
+                    menu.classList.add("block");
+                    toggle.setAttribute("aria-expanded", "true");
+                }
+            });
 
-    // Keyboard accessibility: close on Escape
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") {
-        if (menu.classList.contains("block")) {
-          menu.classList.remove("block");
-          menu.classList.add("hidden");
-          toggle.setAttribute("aria-expanded", "false");
-          toggle.focus();
-        }
-      }
-    });
-  })();
-</script>
+            // Keyboard accessibility: close on Escape
+            document.addEventListener("keydown", (e) => {
+                if (e.key === "Escape") {
+                    if (menu.classList.contains("block")) {
+                        menu.classList.remove("block");
+                        menu.classList.add("hidden");
+                        toggle.setAttribute("aria-expanded", "false");
+                        toggle.focus();
+                    }
+                }
+            });
+        })();
+    </script>
 
 </body>
 
 </html>
-
-
-
-
-<!-- gradient card -->
-<!-- <div class="w-64 h-40 rounded-2xl p-2 mt-6 mx-auto"
-            style="background: linear-gradient(90deg,rgba(0, 0, 0, 1) 70%, rgba(237, 221, 83, 1) 93%, rgba(255, 255, 255, 1) 100%);">
-            <div class="w-full h-full bg-black p-2 rounded-2xl">
-                <div class="w-full h-full bg-blck border border-solid border-white rounded-2xl"></div>
-            </div>
-        </div> -->
-
-
-<!-- Footer -->
-<!-- <footer class="min-h-[477px] bg-footer-bg bg-cover bg-center w-full">
-      <div class="max-w-[1000px] mx-auto flex flex-col gap-12">
-        <h2
-          class="text-4xl lg:text-[59.76px] font-bold text-center pt-12 2xl:pt-24"
-        >
-          Join Our Community
-        </h2>
-        <p class="max-w-[816px] mx-auto text-[12px] lg:text-[14px] text-center">
-          Lorem ipsum dolor sit amet consectetur. Donec vitae pellentesque nunc
-          ut sit a volutpat elementum. Nunc elit nisi pellentesque porta
-          elementum. Id mattis neque diam nulla. Amet et a felis pellentesque
-          sed odio.
-        </p>
-        <form class="flex max-w-[816px] mx-auto w-full gap-6 px-6">
-          <input
-            type="email"
-            placeholder="Your Email"
-            class="w-full rounded-[41px] px-10 py-2 2xl:py-6 bg-[#D9D9D9] text-[14px] lg:text-[17px]"
-          />
-          <button
-            class="bg-[#EFE7D78F] w-[210px] text-[14px] lg:text-[17px] border-[1.35px] border-[#EA9112] py-2 3xl:py-6 text-white rounded-[41px]"
-          >
-            Join Now
-          </button>
-        </form>
-        <div class="copy_right">
-          <p class="text-center text-[#CCCCCC] text-[16px]">
-            Ⓒ NFT Market. Use this template freely.
-          </p>
-        </div>
-      </div>
-    </footer> -->
