@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SmartFit Product</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header id="header">
+    <div class="header-inner">
+      <img id="header-img" src="senseailog0-01.png" alt="SmartFit Logo" />
+      <nav id="nav-bar">
+        <h1 class="logo-text">SmartFit</h1>
+        <div class="links">
+          <a class="nav-link" href="#features">Features</a>
+          <a class="nav-link" href="#pricing">Pricing</a>
+          <a class="nav-link" href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="features" class="panel">
+      <h2>Features</h2>
+      <p>SmartFit is a wearable health product combining real-time monitoring, fall detection, and cloud integration.</p>
+      <div class="feature-cards">
+        <div class="card">
+          <h3>Real-time Metrics</h3>
+          <p>Heart rate, SpO₂, and temperature streaming live to the dashboard.</p>
+        </div>
+        <div class="card">
+          <h3>Edge AI Fall Detection</h3>
+          <p>On-device inference analyzes accelerometer patterns to detect falls instantly.</p>
+        </div>
+        <div class="card">
+          <h3>Cloud Sync</h3>
+          <p>Data uploads to Firebase for remote monitoring and history.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing" class="panel">
+      <h2>Pricing</h2>
+      <p>Choose a plan that fits your needs. No hidden fees, transparent usage.</p>
+      <div class="pricing-wrapper">
+        <div class="price-box">
+          <h3>Basic</h3>
+          <p>$29 / month</p>
+          <ul>
+            <li>Health metrics</li>
+            <li>Cloud backup (limited)</li>
+          </ul>
+        </div>
+        <div class="price-box featured">
+          <h3>Pro</h3>
+          <p>$59 / month</p>
+          <ul>
+            <li>All Basic features</li>
+            <li>Advanced fall detection</li>
+            <li>Priority sync</li>
+          </ul>
+        </div>
+        <div class="price-box">
+          <h3>Enterprise</h3>
+          <p>Contact us</p>
+          <ul>
+            <li>Custom integration</li>
+            <li>Team analytics</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="panel">
+      <h2>Get Early Access</h2>
+      <p>Enter your email to be notified when SmartFit launches or for beta access.</p>
+      <form id="form" action="https://www.freecodecamp.com/email-submit" method="POST">
+        <label for="email" class="visually-hidden">Email</label>
+        <input id="email" name="email" type="email" placeholder="you@example.com" required />
+        <input id="submit" type="submit" value="Request Access" />
+      </form>
+    </section>
+
+    <section id="demo" class="panel">
+      <h2>Product Overview</h2>
+      <p>Watch the short overview to see SmartFit in action.</p>
+      <div class="video-wrapper">
+        <iframe
+          id="video"
+          src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+          title="SmartFit Overview"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 SmartFit. All rights reserved.</p>
+  </footer>
+</body>
+</html>

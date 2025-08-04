@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Technical Documentation</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <nav id="navbar">
+    <header>Embedded Systems Docs</header>
+    <a class="nav-link" href="#Introduction_to_Embedded_Systems">Introduction to Embedded Systems</a>
+    <a class="nav-link" href="#Microcontrollers_vs_Microprocessors">Microcontrollers vs Microprocessors</a>
+    <a class="nav-link" href="#Development_Tools">Development Tools</a>
+    <a class="nav-link" href="#Sensor_Integration">Sensor Integration</a>
+    <a class="nav-link" href="#Edge_AI_and_Fall_Detection">Edge AI and Fall Detection</a>
+  </nav>
+
+  <main id="main-doc">
+    <section class="main-section" id="Introduction_to_Embedded_Systems">
+      <header>Introduction to Embedded Systems</header>
+      <p>Embedded systems combine hardware and software to perform dedicated functions within larger systems. They are pervasive—from smartwatches to industrial controllers.</p>
+      <p>Unlike general-purpose computers, embedded systems are optimized for specific tasks, often with real-time constraints.</p>
+      <p>Common features include constrained memory, low power usage, and specialized I/O interfaces.</p>
+      <p>They often run firmware directly on microcontrollers or SoCs.</p>
+      <code>void loop() { readSensor(); process(); }</code>
+      <ul>
+        <li>Real-time response</li>
+        <li>Dedicated function</li>
+        <li>Resource constrained</li>
+      </ul>
+    </section>
+
+    <section class="main-section" id="Microcontrollers_vs_Microprocessors">
+      <header>Microcontrollers vs Microprocessors</header>
+      <p>Microcontrollers integrate CPU, RAM, storage, and peripherals on a single chip; microprocessors rely on external components.</p>
+      <p>MCUs are used in embedded devices where power and cost must be minimized. MPs power desktops and servers with heavy OSes.</p>
+      <p>Examples of microcontrollers: ESP32, STM32, AVR. Examples of microprocessors: x86 CPUs, ARM Cortex-A series.</p>
+      <p>Microcontrollers often run bare-metal code or lightweight RTOS, while microprocessors typically run full operating systems.</p>
+      <code>#define LED_PIN 2</code>
+      <code>digitalWrite(LED_PIN, HIGH);</code>
+      <ul>
+        <li>Integrated peripherals (MCU)</li>
+        <li>External RAM/IO (MP)</li>
+      </ul>
+    </section>
+
+    <section class="main-section" id="Development_Tools">
+      <header>Development Tools</header>
+      <p>Developers use tools like Arduino IDE, PlatformIO, and Wokwi for simulation and flashing firmware.</p>
+      <p>Version control (e.g., Git) is essential for managing firmware changes and collaboration.</p>
+      <p>Edge deployment requires converting machine learning models (e.g., TensorFlow Lite) into C arrays for inclusion in code. Example conversion snippet:</p>
+      <code>const unsigned char model[] = {0x20, 0x00, 0x00, ...};</code>
+      <p>Serial monitors help debug sensor data in real time.</p>
+      <p>Automated builds can be scripted with Makefiles or CI pipelines.</p>
+      <ul>
+        <li>Arduino IDE</li>
+        <li>Wokwi simulation</li>
+        <li>TensorFlow Lite conversion</li>
+      </ul>
+    </section>
+
+    <section class="main-section" id="Sensor_Integration">
+      <header>Sensor Integration</header>
+      <p>Common health-monitoring sensors include:</p>
+      <p>MAX30102 for SpO₂ and heart rate, MAX30205 for temperature, and ADXL345 for motion/fall detection.</p>
+      <p>Libraries simplify interfacing: for MAX30205 use ClosedCube, for ADXL345 use appropriate Adafruit or vendor library.</p>
+      <code>sensor.readTemperature();</code>
+      <code>accel.getAcceleration(&x, &y, &z);</code>
+      <p>Data from multiple sensors can be fused or sent to a cloud database like Firebase for real-time dashboarding.</p>
+      <p>Timestamp synchronization (e.g., via NTP) ensures consistent logging across devices.</p>
+      <ul>
+        <li>Temperature sensing</li>
+        <li>Pulse oximetry</li>
+        <li>Accelerometer-driven logic</li>
+      </ul>
+    </section>
+
+    <section class="main-section" id="Edge_AI_and_Fall_Detection">
+      <header>Edge AI and Fall Detection</header>
+      <p>Edge AI enables on-device inference without relying on constant cloud connectivity.</p>
+      <p>Fall detection typically uses accelerometer time-series data (x, y, z) fed into a lightweight ML model.</p>
+      <p>Training occurs offline; the resulting TensorFlow Lite model is quantized and embedded in firmware.</p>
+      <code>if (model_predict(accel_window) == FALL) alertUser();</code>
+      <p>Using a sliding window over recent accelerometer samples improves detection robustness.</p>
+      <p>False positives are reduced by combining motion patterns and context.</p>
+      <ul>
+        <li>On-device inference</li>
+        <li>Windowed acceleration analysis</li>
+        <li>Alert logic</li>
+      </ul>
+    </section>
+  </main>
+
+  <script>
+    // Smooth scroll for nav links
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+          history.replaceState(null, '', link.getAttribute('href'));
+        }
+      });
+    });
+  </script>
+</body>
+</html>
