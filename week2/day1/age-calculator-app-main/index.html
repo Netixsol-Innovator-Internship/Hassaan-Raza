@@ -1,37 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
   <title>Frontend Mentor | Age calculator app</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <link rel="stylesheet" href="output.css">
+  <script src="script.js"></script>
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+
+    /* Custom styles */
+    .age-card {
+      width: 90%;
+      max-width: 700px;
+      transition: all 0.3s ease;
+    }
+
+    .group-form {
+      margin-right: 1.5rem;
+    }
+
+    .in-field {
+      width: 100%;
+      max-width: 120px;
+      padding: 0.75rem;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.5rem;
+      font-size: 1.25rem;
+      font-weight: 700;
+      transition: all 0.3s ease;
+    }
+
+    .in-field:focus {
+      outline: none;
+      border-color: #8b5cf6;
+      box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.2);
+    }
+
+    .lbl {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      color: #6b7280;
+      font-weight: 700;
+    }
+
+    .arrow-btn button {
+      transition: all 0.3s ease;
+    }
+
+    .arrow-btn button:hover {
+      background-color: #000000;
+      transform: scale(1.05);
+    }
+
+    .arrow-btn button:active {
+      background-color: #000000;
+      transform: scale(0.95);
+    }
+
+    .arrow-btn button:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.5);
+    }
+
+    @media (max-width: 640px) {
+      .age-card {
+        padding: 2rem 1.5rem;
+        border-radius: 1.5rem 1.5rem 6rem 1.5rem;
+      }
+
+      .group-form {
+        margin-right: 1rem;
+      }
+
+      .in-field {
+        max-width: 80px;
+        padding: 0.5rem;
+        font-size: 1rem;
+      }
+
+      .arrow-btn {
+        margin: 2rem 0;
+      }
+
+      .arrow-btn button {
+        padding: 0.75rem;
+      }
+
+      .font-bold.text-7xl {
+        font-size: 3rem;
+        line-height: 1.2;
+      }
+    }
+
+    /* Animation for results */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-result {
+      animation: fadeIn 0.5s ease-out forwards;
+    }
   </style>
 </head>
-<body>
 
-  Day
-  DD
+<body class="font-poppins min-h-screen flex flex-col items-center justify-center bg-gray-100 p-4">
 
-  Month
-  MM
+  <div class="age-card p-12 bg-white shadow-lg rounded-3xl rounded-br-[25%] w-full max-w-2xl">
+    <form action="#" class="flex flex-wrap gap pb-8 border-b border-gray-200 relative">
+      <div class="group-form flex-1 min-w-[100px]">
+        <label for="day" class="lbl" id="lbl_day">DAY</label>
+        <input type="text" id="in_day" placeholder="DD" class="in-field" maxlength="2">
+        <p id="day_error" class="text-xs text-red-400 italic pt-1 hidden">This is error</p>
+      </div>
 
-  Year
-  YYYY
+      <div class="group-form flex-1 min-w-[100px]">
+        <label for="month" class="lbl" id="lbl_month">MONTH</label>
+        <input type="text" id="in_month" placeholder="MM" class="in-field" maxlength="2">
+        <p id="month_error" class="text-xs text-red-400 italic pt-1 hidden">This is error</p>
+      </div>
 
-  -- years
-  -- months
-  -- days
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+      <div class="group-form flex-1 min-w-[100px]">
+        <label for="YEAR" class="lbl" id="lbl_year">YEAR</label>
+        <input type="text" id="in_year" placeholder="YYYY" class="in-field" maxlength="4">
+        <p id="year_error" class="text-xs text-red-400 italic pt-1 hidden">This is error</p>
+      </div>
+
+      <div class="absolute bottom-0 right-1/2 md:right-0 transform translate-y-1/2 arrow-btn">
+        <button type="button" onclick="calculate_age();"
+          class="bg-purple-600 hover:bg-purple-800 active:bg-black rounded-full p-4 transition-all duration-300 hover:scale-105 active:scale-95 focus:outline-none focus:ring-4 focus:ring-purple-300">
+          <img src="assets/images/icon-arrow.svg" alt="Arrow Icon" class="w-6 h-6">
+        </button>
+      </div>
+    </form>
+
+    <div class="font-extrabold italic text-6xl md:text-7xl mt-8 space-y-2">
+      <h1 class="animate-result"><span id="year-span" class="text-purple-600">--</span> years</h1>
+      <h1 class="animate-result"><span id="month-span" class="text-purple-600">--</span> months</h1>
+      <h1 class="animate-result"><span id="day-span" class="text-purple-600">--</span> days</h1>
+    </div>
   </div>
+
+  <div class="attribution mt-10">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Hassaan Raza</a>.
+  </div>
+
 </body>
+
 </html>
