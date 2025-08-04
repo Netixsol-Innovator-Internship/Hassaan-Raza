@@ -2,7 +2,7 @@
 
 A simple, responsive **Age Calculator** that takes a birth date and outputs the age in years, months, and days with validation and smooth animation.
 
-🔗 **Live Demo**: [https://your-vercel-link.vercel.app](https://your-vercel-link.vercel.app)  
+🔗 **Live Demo**: [https://hassaan-week2-day1-age-calc.vercel.app/](https://hassaan-week2-day1-age-calc.vercel.app/)  
 
 ---
 
