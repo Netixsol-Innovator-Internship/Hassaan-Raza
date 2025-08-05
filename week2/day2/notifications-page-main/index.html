@@ -1,21 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
+
   <title>Frontend Mentor | Notifications page</title>
+  <link rel="stylesheet" href="output.css">
+  <script src="script.js"></script>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
-<body>
 
+<body class="sm:bg-gray-100  sm:max-w-360 sm:px-[5%] xl:px-[25%] md:px-[15%] sm:pt-15 ">
+  <!-- Notification section -->
+  <section class="bg-white sm:shadow sm:rounded-lg p-5 ">
+    <!-- Notification header -->
+    <div class="flex justify-between items-center">
+      <!-- Notification header left -->
+      <div class="flex gap-2 items-center ">
+        <div class="text-lg font-bold text-blue-950">Notifications</div>
+        <div class="bg-blue-950 text-white font-semibold text-xs rounded-md px-2 py-0.5 pt-0.25 ">1</div>
+      </div>
+      <!--Notification header right mark all as read  -->
+      <div>
+        <p class="text-xs text-gray-600 font-medium cursor-pointer hover:text-blue-900 active:text-blue-900 active:underline">Mark all as read</p>
+      </div>
+    </div>
+
+    <!-- Notification container -->
+    <div id="notificationContainer" class="pt-5 flex flex-col gap-2">
+      <!-- Notification div -->
+       <div  class="flex gap-3 w-full p-3 bg-Navy-50 rounded-md">
+        <!-- profile pic -->
+        <div class="w-8 h-8 sm:w-15 sm:h-15 shadow rounded-full shrink-0">
+          <img src="assets/images/avatar-angela-gray.webp" alt="" class="">
+        </div>
+        <!-- Notification content -->
+        <div>
+          <!-- Notification text -->
+          <div class="flex justify-between gap-3">
+
+            <p><span id="user-name" class="text-Navy-950 font-bold cursor-pointer hover:text-blue-900 active:text-blue-900 active:underline">Hassaan Raza</span>
+              <span id="notify-txt" class="text-gray-600">recieved a message</span> <span id="txt-post"
+                class="font-bold text-gray-600 cursor-pointer hover:text-blue-900 active:text-blue-900 active:underline">My day at NetixSol</span> <span id="txt-group"
+                class="font-bold text-blue-950 cursor-pointer hover:text-blue-900 active:text-blue-900 active:underline">Chess Club</span> <span id="dot"
+                class="bg-red-500 w-1.5 h-1.5 rounded-full inline-block align-middle"></span>
+            </p>
+            <div class="w-8 h-8 sm:w-15 sm:h-15 shadow shrink-0">
+              <img src="assets/images/image-chess.webp" alt="">
+            </div>
+          </div>
+          <!-- time -->
+          <div>
+            <p class="text-xs text-gray-500 font-medium"><span id="notify-time">1m</span> ago</p>
+          </div>
+          <!-- optional message box -->
+          <div class="border-3 p-2 border-gray-100 rounded-xs text-gray-500 mt-3 cursor-pointer hover:bg-blue-100 active:text-blue-100">
+            <p class="">Hello there</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- 
   Notifications 3
 
   Mark all as read
@@ -31,7 +83,7 @@
 
   Rizky Hasanuddin sent you a private message
   5 days ago
-  Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and 
+  Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and
   I'm already having lots of fun and improving my game.
 
   Kimberly Smith commented on your picture
@@ -42,10 +94,11 @@
 
   Anna Kim left the group Chess Club
   2 weeks ago
-  
+
   <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
     Coded by <a href="#">Your Name Here</a>.
-  </div>
+  </div> -->
 </body>
+
 </html>
