@@ -28,7 +28,7 @@ const notifications = [
         txtPost: "",
         txtGroup: "Chess Club",
         time: "1 day ago",
-        isRead: true,
+        isRead: false,
         post: "",
         message: "",
     },
@@ -52,7 +52,7 @@ const notifications = [
         time: "1 week ago",
         isRead: false,
         post: "./assets/images/image-chess.webp",
-        message: "",
+        message: "Hey Looking Good 😎",
     },
     {
         name: "Nathan Peterson",
