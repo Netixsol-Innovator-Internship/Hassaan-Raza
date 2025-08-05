@@ -9,7 +9,6 @@ const notifications = [
         isRead: false,
         post: "",
         message: "",
-
     },
     {
         name: "Angela Gray",
@@ -21,7 +20,6 @@ const notifications = [
         isRead: false,
         post: "",
         message: "",
-
     },
     {
         name: "Jacob Thompson",
@@ -33,7 +31,6 @@ const notifications = [
         isRead: true,
         post: "",
         message: "",
-
     },
     {
         name: "Rizky Hasanuddin",
@@ -45,7 +42,6 @@ const notifications = [
         isRead: false,
         post: "",
         message: "Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and I'm already having lots of fun and improving my game.",
-
     },
     {
         name: "Kimberly Smith",
@@ -57,7 +53,6 @@ const notifications = [
         isRead: false,
         post: "./assets/images/image-chess.webp",
         message: "",
-
     },
     {
         name: "Nathan Peterson",
@@ -69,7 +64,6 @@ const notifications = [
         isRead: false,
         post: "",
         message: "",
-
     },
     {
         name: "Anna Kim",
@@ -81,40 +75,34 @@ const notifications = [
         isRead: false,
         post: "",
         message: "",
-
     }
 ];
 
-
-
-
 function writeNotification() {
-
+    document.getElementById('notificationContainer').innerHTML = '';
     notifications.forEach((notification, i) => {
         document.getElementById('notificationContainer').innerHTML +=
             `     
-    <div ${notification.isRead ? "" : `onclick = notificationRead(i)` } class="flex gap-3 w-full p-3 bg-Navy-50 ${notification.isRead ? `bg-white` : ""}rounded-md">
+    <div ${notification.isRead ? "" : `onclick="notificationRead(${i})"`} class="flex gap-3 w-full p-3 bg-Navy-50 ${notification.isRead ? `bg-white` : ""} rounded-md">
         <!-- profile pic -->
         <div class="w-8 h-8 sm:w-15 sm:h-15 shadow rounded-full shrink-0">
           <img src="${notification.avatar}" alt="" class="">
         </div>
         <!-- Notification content -->
-        <div>
+        <div class="w-full">
           <!-- Notification text -->
           <div class="flex justify-between gap-3">
-
             <p><span id="user-name" class="text-Navy-950 font-bold cursor-pointer hover:text-blue-900 active:text-blue-900 active:underline">${notification.name}</span>
               <span id="notify-txt" class="text-gray-600">${notification.notifyText}</span> <span id="txt-post"
                 class="font-bold text-gray-600 cursor-pointer hover:text-blue-900 active:text-blue-900 active:underline">${notification.txtPost}</span> <span id="txt-group"
-                class="font-bold text-blue-950 cursor-pointer hover:text-blue-900 active:text-blue-900 active:underline">${notification.txtGroup}</span> <span id="dot"
-                class="bg-red-500 w-1.5 h-1.5 rounded-full inline-block align-middle ${notification.isRead ? `hidden` : ""}"></span>
+                class="font-bold text-blue-950 cursor-pointer hover:text-blue-900 active:text-blue-900 active:underline">${notification.txtGroup}</span> 
+               ${notification.isRead ? '' : `<span id="dot"
+                class="bg-red-500 w-1.5 h-1.5 rounded-full inline-block align-middle"></span>` }
             </p>
             ${notification.post ?
                 ` <div class="w-8 h-8 sm:w-15 sm:h-15 shadow shrink-0">
               <img src="${notification.post}" alt="">
             </div>`: ""}
-
-             
           </div>
           
           <!-- time -->
@@ -122,46 +110,52 @@ function writeNotification() {
             <p class="text-xs text-gray-500 font-medium">${notification.time}</p>
           </div>
           ${notification.message ? `
-            
-          <!-- optional message box -->
-          <div class="border-3 p-2 border-gray-100 rounded-lg text-gray-500 mt-3 cursor-pointer hover:bg-blue-100 ">
-            <p class="">${notification.message}</p>
+          <!-- optional message box - initially hidden -->
+          <div id="message-${i}" class="border-3 p-2 border-gray-100 rounded-lg text-gray-500 mt-3 cursor-pointer hover:bg-blue-100 hidden">
+            <p>${notification.message}</p>
+          </div>
+          <div onclick="event.stopPropagation(); toggleMessage(${i})" class="text-xs text-blue-500 cursor-pointer mt-1">
+            Click to ${notification.isRead ? 'show' : 'view'} message
           </div>
           ` : ""}
-
         </div>
       </div>
       `;
     });
-
-
 }
 
-writeNotification();
+function toggleMessage(index) {
+    const messageBox = document.getElementById(`message-${index}`);
+    messageBox.classList.toggle('hidden');
+}
 
 function notificationRead(i) {
     if (notifications[i].isRead == false) {
         notifications[i].isRead = true;
+        writeNotification();
     }
     countUnRead();
 }
 
 function countUnRead() {
-    count = 0;
+    let count = 0;
     notifications.forEach(notification => {
         if (notification.isRead == false) {
             count++;
         }
-
-        return count;
-
     });
+    document.getElementById('counter').innerText = count;
+    return count;
 }
-
-
-document.getElementById('counter').innerText =countUnRead();
-
 
 function markAllAsRead(){
-    
+    notifications.forEach(notification => {
+        notification.isRead = true;
+    });
+    writeNotification();
+    countUnRead();
 }
+
+// Initialize the page
+writeNotification();
+countUnRead();
