@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order.Uk</title>
+    <link rel="stylesheet" href="output.css">
+</head>
+
+<body class="lg:pt-4 lg:px-[5%] ">
+
+    <!-- Header -->
+    <header class="flex justify-between items-center px-4 py-4 text-xs lg:text-lg font-medium ">
+        <!-- logo -->
+        <div>
+            <img src="assets/img/LOGO 1.png" alt="Order.Uk">
+        </div>
+        <nav class="hidden md:flex xl:space-x-2 ">
+            <a class="hover:text-white hover:bg-primary active:text-white active:bg-primary transition-all duration-75 active:rounded-full hover:rounded-full py-2 px-8"
+                href="#">Home</a>
+            <a class="hover:text-white hover:bg-primary active:text-white active:bg-primary transition-all duration-75 active:rounded-full hover:rounded-full py-2 px-8"
+                href="#">Special Offers</a>
+            <a class="hover:text-white hover:bg-primary active:text-white active:bg-primary transition-all duration-75 active:rounded-full hover:rounded-full py-2 px-8"
+                href="#">Resturants</a>
+            <a class="hover:text-white hover:bg-primary active:text-white active:bg-primary transition-all duration-75 active:rounded-full hover:rounded-full py-2 px-8"
+                href="#">Track Order</a>
+        </nav>
+
+        <div class="flex gap-1 items-center">
+            <div id="mode_toggler"></div>
+            <div class="bg-secondary rounded-full p-2">
+                <img src="assets/img/shopping_cart_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24 1.png" alt="">
+            </div>
+            <div>
+                <p>cart</p>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Hero Section -->
+    <section class="relative sm:mt-7 sm:rounded-xl overflow-hidden">
+        <!-- Background Image + Overlay -->
+        <div class="absolute inset-0 bg-[url('assets/img/Rectangle-44.png')] bg-cover bg-center ">
+            <div class="absolute inset-0 bg-secondary/90"></div>
+
+        </div>
+
+        <!-- Content -->
+        <div class="relative grid sm:grid-cols-2 text-white sm:gap-4 p-4">
+
+            <div class="place-content-end lg:p-8">
+                <p class="text-xl py-2">I'm loving it!</p>
+                <h1 class="text-5xl md:text-6xl font-semibold py-2">McDonald's East London</h1>
+                <div class="flex flex-col sm:flex-row gap-2 py-2">
+                    <div
+                        class="flex gap-2 items-center justify-center border rounded-full text-xs p-2 xl:text-lg font-semibold hover:bg-primary transition-all duration-75">
+                        <div>
+                            <img src="assets/img/Order Completed.png" alt="">
+                        </div>
+                        <div>
+                            Minimum Order: 12 GBP
+                        </div>
+                    </div>
+
+                    <div
+                        class="flex gap-2 items-center justify-center border rounded-full text-xs p-2 xl:text-lg font-semibold hover:bg-primary transition-all duration-75">
+                        <div class="">
+                            <img src="assets/img/Motocross.png" alt="">
+                        </div>
+                        <div>
+                            Delivery in 20-25 Minutes
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="place-self-end">
+                <div class="relative">
+                    <div><img class="rounded-2xl p-5" src="assets/img/Rectangle-44.png" alt=""></div>
+                    <div class="absolute left-[40%] -bottom-0.25 sm:-left-2 lg:-left-5  w-[17%] h-auto shadow">
+                        <img src="assets/img/Rectangle-64.png" alt="">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
