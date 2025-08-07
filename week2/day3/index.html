@@ -28,20 +28,24 @@
                     href="#">Track Order</a>
             </nav>
 
-            <div class="flex gap-1 items-center text-white">
+            <div class="flex gap-1 items-center dark:text-white">
                 <div id="mode_toggler"
                     class="cursor-pointer p-2 w-8 h-8 lg:w-12 lg:h-12 bg-secondary hover:bg-primary rounded-full dark:bg-white">
                     <img id="theme-icon" src="assets/img/moon.png" alt="Toggle Theme"
                         class="w-full invert dark:invert-0 hover:invert " />
                 </div>
-                <div
-                    class="cursor-pointer bg-secondary rounded-full p-2 w-8 h-8 lg:w-12 lg:h-12 dark:bg-white hover:bg-primary active:bg-primary  ">
+                <div onclick="openCloseCartModal()"
+                    class="relative flex gap-3 cursor-pointer bg-secondary rounded-full p-2 w-8 h-8 lg:w-12 lg:h-12 dark:bg-white hover:bg-primary active:bg-primary  ">
                     <img class="dark:invert hover:invert"
                         src="assets/img/shopping_cart_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24 1.png" alt="">
+                    <div
+                        class="absolute left-[70%] top-0 font-bold text-xs  text-white w-4 h-4 pb-1 dark:invert-0 bg-primary rounded-full text-center ">
+                        2</div>
+                    <div class="hidden md:flex">
+                        <p>cart</p>
+                    </div>
                 </div>
-                <div class="hidden md:flex">
-                    <p>cart</p>
-                </div>
+
             </div>
         </div>
     </header>
@@ -162,6 +166,57 @@
             Orbit<span>&reg</span></div>
     </section>
 
+    <!-- Burger Items section -->
+    <section class="lg:px-[5%]">
+        <div class="px-4 py-[3%] flex flex-col">
+            <!-- grid type name -->
+            <div>
+                <h1 class="text-4xl 2xl:text-5xl font-bold py-[3%] text-black dark:text-white">Burgers</h1>
+            </div>
+            <!-- grid card -->
+            <div id="burger-menu-grid" class="grid sm:grid-cols-2 xl:grid-cols-3 gap-4">
+
+            </div>
+            <div id="show-more" class="self-center mt-4"><button class=" text-white bg-primary px-5 py-3 font-bold cursor-pointer hover:text-white dark:hover:bg-white/20 dark:active:bg-white/20 hover:bg-secondary active:text-white active:bg-secondary transition-all duration-75 rounded-2xl
+">Show More</button></div>
+        </div>
+    </section>
+    <!-- Fries section -->
+
+    <!-- fries Items section -->
+    <section class="lg:px-[5%]">
+        <div class="px-4 py-[3%] flex flex-col">
+            <!-- grid type name -->
+            <div>
+                <h1 class="text-4xl 2xl:text-5xl font-bold py-[3%] text-primary">Fries</h1>
+            </div>
+            <!-- grid card -->
+            <div id="fries-menu-grid" class="grid sm:grid-cols-2 xl:grid-cols-3 gap-4">
+
+            </div>
+            <div id="show-more" class="self-center mt-4"><button class=" text-white bg-primary px-5 py-3 font-bold cursor-pointer hover:text-white dark:hover:bg-white/20 dark:active:bg-white/20 hover:bg-secondary active:text-white active:bg-secondary transition-all duration-75 rounded-2xl
+">Show More</button></div>
+        </div>
+    </section>
+
+    <!-- Cold Drinks section -->
+
+    <!-- Cold driks Items section -->
+    <section class="lg:px-[5%]">
+        <div class="px-4 py-[3%] flex flex-col">
+            <!-- grid type name -->
+            <div>
+                <h1 class="text-4xl 2xl:text-5xl font-bold py-[3%] text-primary ">Cold Drinks</h1>
+            </div>
+            <!-- grid card -->
+            <div id="drinks-menu-grid" class="grid sm:grid-cols-2 xl:grid-cols-3 gap-4">
+
+            </div>
+            <div id="show-more" class="self-center mt-4"><button class=" text-white bg-primary px-5 py-3 font-bold cursor-pointer hover:text-white dark:hover:bg-white/20 dark:active:bg-white/20 hover:bg-secondary active:text-white active:bg-secondary transition-all duration-75 rounded-2xl
+">Show More</button></div>
+        </div>
+    </section>
+
     <!-- burger section -->
     <section class="lg:px-[5%]">
         <div class="px-4 py-[3%] flex flex-col">
@@ -189,75 +244,23 @@
                             <div
                                 class="absolute right-0 bottom-0 w-[44%] h-[40%] bg-white/90 rounded-tl-[55%] dark:invert dark:bg-white/60">
                                 <div
-                                    class="absolute left-[25%] top-[25%] dark:hover:invert active: transition-all duration-75 cursor-pointer">
+                                    class=" absolute left-[25%] top-[25%] dark:hover:invert active: transition-all duration-75 cursor-pointer">
                                     <img src="assets/img/Plus.png" alt="">
+                                    <div
+                                        class="absolute left-[70%] top-0 font-bold text-xs  text-white w-4 h-4 pb-1 dark:invert-0 bg-primary rounded-full text-center ">
+                                        2</div>
                                 </div>
+
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- delele -->
-                <!-- card -->
-                <div
-                    class="shadow-xl grid grid-cols-2 gap-1 xl:gap-2 p-8 text-black  dark:text-primary dark:bg-white/30 rounded-2xl">
-                    <div class="flex flex-col justify-between">
-                        <div class="text-lg lg:text-xl font-semibold ">Royal Cheese Burger with extra Fries</div>
-                        <div class="text-xs lg:text-sm dark:text-white ">1 McChicken™, 1 Big Mac™, 1 Royal Cheeseburger,
-                            3 medium
-                        </div>
-                        <div class="text-base lg:text-lg font-bold text-secondary dark:text-white">GBP 23.10</div>
-                    </div>
-                    <div class="place-self-end-safe">
-                        <div class="relative">
-                            <!-- food pic -->
-                            <img src="assets/img/Rectangle 46 (1).png" alt="">
-                            <!-- plus cart -->
-                            <div
-                                class="absolute right-0 bottom-0 w-[44%] h-[40%] bg-white/90 rounded-tl-[55%] dark:invert dark:bg-white/60">
-                                <div
-                                    class="absolute left-[25%] top-[25%] dark:hover:invert active: transition-all duration-75 cursor-pointer">
-                                    <img src="assets/img/Plus.png" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- card -->
-                <div
-                    class="shadow-xl grid grid-cols-2 gap-1 xl:gap-2 p-8 text-black  dark:text-primary dark:bg-white/30 rounded-2xl">
-                    <div class="flex flex-col justify-between">
-                        <div class="text-lg lg:text-xl font-semibold ">Royal Cheese Burger with extra Fries</div>
-                        <div class="text-xs lg:text-sm dark:text-white ">1 McChicken™, 1 Big Mac™, 1 Royal Cheeseburger,
-                            3 medium
-                        </div>
-                        <div class="text-base lg:text-lg font-bold text-secondary dark:text-white">GBP 23.10</div>
-                    </div>
-                    <div class="place-self-end-safe">
-                        <div class="relative">
-                            <!-- food pic -->
-                            <img src="assets/img/Rectangle 46 (1).png" alt="">
-                            <!-- plus cart -->
-                            <div
-                                class="absolute right-0 bottom-0 w-[44%] h-[40%] bg-white/90 rounded-tl-[55%] dark:invert dark:bg-white/60">
-                                <div
-                                    class="absolute left-[25%] top-[25%] dark:hover:invert active: transition-all duration-75 cursor-pointer">
-                                    <img src="assets/img/Plus.png" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- delele -->
             </div>
             <div class="self-center mt-4"><button class=" text-white bg-primary px-5 py-3 font-bold cursor-pointer hover:text-white dark:hover:bg-white/20 dark:active:bg-white/20 hover:bg-secondary active:text-white active:bg-secondary transition-all duration-75 rounded-2xl
 ">Show More</button></div>
         </div>
     </section>
-    <!-- Fries section -->
-    <!-- Cold Drinks section -->
 
     <!-- Review Section -->
 
@@ -417,79 +420,7 @@
     <section class="lg:px-[5%]">
         <div class="py-10">
             <div class="p-3 text-black dark:text-primary font-bold text-xl lg:text-3xl">Similar Restaurants</div>
-            <div class="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-6 gap-2 py-10 px-3 md:px-0">
-
-                <!-- resturant card -->
-                <div class="flex flex-col items-center">
-                    <div class="rounded-t-xl">
-                        <img src="assets/img/Rectangle 13-1.png" alt="">
-                        <div
-                            class="px-4 py-3 text-center bg-primary text-white font-bold text-sm sm:text-lg xl:text-sm 2xl:text-lg w-full rounded-b-xl">
-                            McDonald’s London
-                        </div>
-                    </div>
-                </div>
-
-
-                <!-- resturant card -->
-                <div class="flex flex-col items-center">
-                    <div class="rounded-t-xl">
-                        <img src="assets/img/Rectangle 13-1.png" alt="">
-                        <div
-                            class="px-4 py-3 text-center bg-primary text-white font-bold text-sm sm:text-lg xl:text-sm 2xl:text-lg w-full rounded-b-xl">
-                            McDonald’s London
-                        </div>
-                    </div>
-                </div>
-
-
-                <!-- resturant card -->
-                <div class="flex flex-col items-center">
-                    <div class="rounded-t-xl">
-                        <img src="assets/img/Rectangle 13-1.png" alt="">
-                        <div
-                            class="px-4 py-3 text-center bg-primary text-white font-bold text-sm sm:text-lg xl:text-sm 2xl:text-lg w-full rounded-b-xl">
-                            McDonald’s London
-                        </div>
-                    </div>
-                </div>
-
-
-                <!-- resturant card -->
-                <div class="flex flex-col items-center">
-                    <div class="rounded-t-xl">
-                        <img src="assets/img/Rectangle 13-1.png" alt="">
-                        <div
-                            class="px-4 py-3 text-center bg-primary text-white font-bold text-sm sm:text-lg xl:text-sm 2xl:text-lg w-full rounded-b-xl">
-                            McDonald’s London
-                        </div>
-                    </div>
-                </div>
-
-
-                <!-- resturant card -->
-                <div class="flex flex-col items-center">
-                    <div class="rounded-t-xl">
-                        <img src="assets/img/Rectangle 13-1.png" alt="">
-                        <div
-                            class="px-4 py-3 text-center bg-primary text-white font-bold text-sm sm:text-lg xl:text-sm 2xl:text-lg w-full rounded-b-xl">
-                            McDonald’s London
-                        </div>
-                    </div>
-                </div>
-
-
-                <!-- resturant card -->
-                <div class="flex flex-col items-center">
-                    <div class="rounded-t-xl">
-                        <img src="assets/img/Rectangle 13-1.png" alt="">
-                        <div
-                            class="px-4 py-3 text-center bg-primary text-white font-bold text-sm sm:text-lg xl:text-sm 2xl:text-lg w-full rounded-b-xl">
-                            McDonald’s London
-                        </div>
-                    </div>
-                </div>
-
+            <div id="resturants" class="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-6 gap-2 py-10 px-3 md:px-0">
 
             </div>
         </div>
@@ -582,7 +513,7 @@
         <!-- Modal content -->
         <div class="bg-white w-full max-w-2xl rounded-xl  relative">
             <!-- Close button -->
-            <button onclick="closeCartModal()"
+            <button onclick="openCloseCartModal()"
                 class="absolute -top-3 -right-3 text-white bg-primary rounded-full p-2 px-4 font-bold text-3xl">&times</button>
 
             <!-- Header image -->
@@ -591,93 +522,23 @@
             <!-- food list -->
             <div class="p-4 space-y-4">
 
-                <!-- food item -->
-                <div
-                    class="group flex items-center justify-between cursor-pointer bg-[#D9D9D9]/60 p-4 rounded-lg hover:bg-secondary dark:bg-secondary">
-                    <div class="flex items-center gap-3">
-                        <img src="assets/img/Rectangle 46 (5).png" alt=""
-                            class="w-[25%] h-[25%] border-2 border-white rounded-full">
-                        <div
-                            class="w-0.25 h-12 sm:h-15 bg-black/40  group-hover:invert group-active:invert dark:invert">
-                        </div>
-                        <span
-                            class="font-bold text-2xl pl-1 text-secondary group-hover:text-primary dark:group-hover:text-white group-active:text-primary  dark:text-primary">Burger</span>
-                    </div>
-                    <div class="flex items-center gap-2 ">
-                        <button
-                            class="w-5 sm:w-8 lg:w-10 group-hover:invert group-active:invert dark:invert  cursor-pointer"
-                            onclick="decrementQty(this)"><img src="assets/img/Minus.png" alt=""></button>
-                        <div
-                            class="relative w-10 h-10 sm:w-15 sm:h-15 self-center bg-white text-xl font-bold rounded-sm text-center">
-                            <div class="absolute top-[25%] left-[40%]">1</div>
-                        </div>
-                        <button
-                            class="w-5 sm:w-8 lg:w-10 group-hover:invert group-active:invert dark:invert  cursor-pointer"
-                            onclick="decrementQty(this)"><img src="assets/img/MacOS Maximize.png" alt=""></button>
-                    </div>
+                <div id="cart-item" class="space-y-4">
+                    <!-- food item -->
+                 
                 </div>
-
-                <div
-                    class="group flex items-center justify-between cursor-pointer bg-[#D9D9D9]/60 p-4 rounded-lg hover:bg-secondary dark:bg-secondary">
-                    <div class="flex items-center gap-3">
-                        <img src="assets/img/Rectangle 46 (5).png" alt=""
-                            class="w-[25%] h-[25%] border-2 border-white rounded-full">
-                        <div
-                            class="w-0.25 h-12 sm:h-15 bg-black/40  group-hover:invert group-active:invert dark:invert">
-                        </div>
-                        <span
-                            class="font-bold text-2xl pl-1 text-secondary group-hover:text-primary dark:group-hover:text-white group-active:text-primary  dark:text-primary">Burger</span>
-                    </div>
-                    <div class="flex items-center gap-2 ">
-                        <button
-                            class="w-5 sm:w-8 lg:w-10 group-hover:invert group-active:invert dark:invert  cursor-pointer"
-                            onclick="decrementQty(this)"><img src="assets/img/Minus.png" alt=""></button>
-                        <div
-                            class="relative w-10 h-10 sm:w-15 sm:h-15 self-center bg-white text-xl font-bold rounded-sm text-center">
-                            <div class="absolute top-[25%] left-[40%]">1</div>
-                        </div>
-                        <button
-                            class="w-5 sm:w-8 lg:w-10 group-hover:invert group-active:invert dark:invert  cursor-pointer"
-                            onclick="decrementQty(this)"><img src="assets/img/MacOS Maximize.png" alt=""></button>
-                    </div>
-                </div>
-
-                <div
-                    class="group flex items-center justify-between cursor-pointer bg-[#D9D9D9]/60 p-4 rounded-lg hover:bg-secondary dark:bg-secondary">
-                    <div class="flex items-center gap-3">
-                        <img src="assets/img/Rectangle 46 (5).png" alt=""
-                            class="w-[25%] h-[25%] border-2 border-white rounded-full">
-                        <div
-                            class="w-0.25 h-12 sm:h-15 bg-black/40  group-hover:invert group-active:invert dark:invert">
-                        </div>
-                        <span
-                            class="font-bold text-2xl pl-1 text-secondary group-hover:text-primary dark:group-hover:text-white group-active:text-primary  dark:text-primary">Burger</span>
-                    </div>
-                    <div class="flex items-center gap-2 ">
-                        <button
-                            class="w-5 sm:w-8 lg:w-10 group-hover:invert group-active:invert dark:invert  cursor-pointer"
-                            onclick="decrementQty(this)"><img src="assets/img/Minus.png" alt=""></button>
-                        <div
-                            class="relative w-10 h-10 sm:w-15 sm:h-15 self-center bg-white text-xl font-bold rounded-sm text-center">
-                            <div class="absolute top-[25%] left-[40%]">1</div>
-                        </div>
-                        <button
-                            class="w-5 sm:w-8 lg:w-10 group-hover:invert group-active:invert dark:invert  cursor-pointer"
-                            onclick="decrementQty(this)"><img src="assets/img/MacOS Maximize.png" alt=""></button>
-                    </div>
-                </div>
-
 
                 <!-- Total & actions -->
                 <div class="flex flex-col sm:flex-row justify-between items-center mt-6">
                     <span
                         class="font-semibold text-sm text-white text-center bg-primary p-2 rounded-sm  hover:bg-secondary dark:bg-secondary">Total
-                        to pay <span class="text-xl"> £127.90 </span></span>
+                        to pay <span class="text-xl"> £ <span id="total-ammount">0.00</span> </span></span>
                     <div class="sm:self-end-safe">
                         <div class="text-xs p-3">Delivery & Tax will be calculated in the next step</div>
                         <div class="flex gap-2 items-center">
-                            <a class="underline font-semibold cursor-pointer" onclick="closeCartModal()">Take me Back</a>
-                            <button class="bg-[#028643] text-white px-8 py-2 rounded text-lg font-semibold flex gap-1 justify-center items-center">
+                            <a class="underline font-semibold cursor-pointer" onclick="closeCartModal()">Take me
+                                Back</a>
+                            <button
+                                class="bg-[#028643] text-white px-8 py-2 rounded text-lg font-semibold flex gap-1 justify-center items-center">
                                 <div><img src="assets/img/Forward Button.png" alt=""></div>
                                 <div>Next Step
                                 </div>
