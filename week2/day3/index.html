@@ -261,7 +261,7 @@
 
     <!-- Review Section -->
 
-    <section class="lg:px-[5%] px-4 py-[3%] text-black bg-[#D9D9D9] dark:text-white dark:bg-[#262626]">
+    <section class="relative lg:px-[5%] px-4 py-[3%] text-black bg-[#D9D9D9] dark:text-white dark:bg-[#262626]">
         <!-- grid Review Heading -->
         <div class="flex gap-4 justify-between items-center">
             <div>
@@ -275,16 +275,100 @@
                 </div>
                 <!-- slider right -->
                 <div class="relative bg-primary rounded-full w-10 h-10 sm:w-12 sm:h-12 lg:w-18 lg:h-18 shadow">
-                    <img class="absolute top-1/4 left-1/4 rotate-180 w-[50%] dark:invert" src="assets/img/Back.png" alt="">
+                    <img class="absolute top-1/4 left-1/4 rotate-180 w-[50%] dark:invert" src="assets/img/Back.png"
+                        alt="">
                 </div>
             </div>
         </div>
         <!-- Review card -->
-        <div class="grid sm:grid-cols-2 xl:grid-cols-3 gap-4">
+        <div class="grid sm:grid-cols-2 xl:grid-cols-3 gap-4 mb-[4%] py-[4%]">
             <!-- card -->
             <div class="shadow-lg p-8 text-black bg-white dark:bg-white/30 ">
                 <div class="flex flex-col gap-4 sm:gap-8 justify-between">
-                    <div class="flex flex-col sm:flex-row self-start sm:self-auto gap-2 sm:justify-between items-center">
+                    <div
+                        class="flex flex-col sm:flex-row self-start sm:self-auto gap-2 sm:justify-between items-center">
+                        <!-- User Review -->
+                        <div class="flex gap-2">
+                            <div>
+                                <img src="assets/img/Ellipse 3.png" alt="">
+                            </div>
+                            <div class="w-0.5 h-12.5 bg-primary">
+                            </div>
+                            <div>
+                                <p class="text-lg font-semibold text-secondary dark:text-white">ST Glx</p>
+                                <p class="text-primary">South London</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex sm:justify-end-safe">
+                                <img src="assets/img/Star.png" alt="">
+                                <img src="assets/img/Star.png" alt="">
+                                <img src="assets/img/Star.png" alt="">
+                                <img src="assets/img/Star.png" alt="">
+                                <img src="assets/img/Star.png" alt="">
+                            </div>
+                            <div class="flex gap-2 justify-end-safe">
+                                <div>
+                                    <img src="assets/img/Time Span.png" alt="">
+                                </div>
+                                <div class="text-sm dark:text-white">
+                                    24th September, 2023
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dark:text-white">
+                        The positive aspect was undoubtedly the efficiency of the service. The queue moved quickly,
+                        the staff was friendly, and the food was up to the usual McDonald's standard – hot and
+                        satisfying.
+                    </div>
+                </div>
+            </div>
+            <div class="shadow-lg p-8 text-black bg-white dark:bg-white/30 ">
+                <div class="flex flex-col gap-4 sm:gap-8 justify-between">
+                    <div
+                        class="flex flex-col sm:flex-row self-start sm:self-auto gap-2 sm:justify-between items-center">
+                        <!-- User Review -->
+                        <div class="flex gap-2">
+                            <div>
+                                <img src="assets/img/Ellipse 3.png" alt="">
+                            </div>
+                            <div class="w-0.5 h-12.5 bg-primary">
+                            </div>
+                            <div>
+                                <p class="text-lg font-semibold text-secondary dark:text-white">ST Glx</p>
+                                <p class="text-primary">South London</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex sm:justify-end-safe">
+                                <img src="assets/img/Star.png" alt="">
+                                <img src="assets/img/Star.png" alt="">
+                                <img src="assets/img/Star.png" alt="">
+                                <img src="assets/img/Star.png" alt="">
+                                <img src="assets/img/Star.png" alt="">
+                            </div>
+                            <div class="flex gap-2 justify-end-safe">
+                                <div>
+                                    <img src="assets/img/Time Span.png" alt="">
+                                </div>
+                                <div class="text-sm dark:text-white">
+                                    24th September, 2023
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dark:text-white">
+                        The positive aspect was undoubtedly the efficiency of the service. The queue moved quickly,
+                        the staff was friendly, and the food was up to the usual McDonald's standard – hot and
+                        satisfying.
+                    </div>
+                </div>
+            </div>
+            <div class="shadow-lg p-8 text-black bg-white dark:bg-white/30 ">
+                <div class="flex flex-col gap-4 sm:gap-8 justify-between">
+                    <div
+                        class="flex flex-col sm:flex-row self-start sm:self-auto gap-2 sm:justify-between items-center">
                         <!-- User Review -->
                         <div class="flex gap-2">
                             <div>
@@ -324,6 +408,9 @@
             </div>
         </div>
 
+        <div class="absolute -bottom-[3%] sm:-bottom-[10%] xl:-bottom-[14%] left-[45%]  w-[15%] sm:w-[20%]">
+            <img class="shadow" src="assets/img/Rectangle-64.png" alt="">
+        </div>
     </section>
 
     <!-- Similar Resturants -->
@@ -486,6 +573,122 @@
         </div>
         <div></div>
     </footer>
+
+
+
+    <!-- Cart -->
+    <!-- Backdrop -->
+    <div id="cart-modal-backdrop" class="fixed inset-0 bg-black/50 flex justify-center items-center z-50  hidden">
+        <!-- Modal content -->
+        <div class="bg-white w-full max-w-2xl rounded-xl  relative">
+            <!-- Close button -->
+            <button onclick="closeCartModal()"
+                class="absolute -top-3 -right-3 text-white bg-primary rounded-full p-2 px-4 font-bold text-3xl">&times</button>
+
+            <!-- Header image -->
+            <img src="assets/img/Rectangle 53.png" alt="Pizza Banner" class="w-full object-cover">
+
+            <!-- food list -->
+            <div class="p-4 space-y-4">
+
+                <!-- food item -->
+                <div
+                    class="group flex items-center justify-between cursor-pointer bg-[#D9D9D9]/60 p-4 rounded-lg hover:bg-secondary dark:bg-secondary">
+                    <div class="flex items-center gap-3">
+                        <img src="assets/img/Rectangle 46 (5).png" alt=""
+                            class="w-[25%] h-[25%] border-2 border-white rounded-full">
+                        <div
+                            class="w-0.25 h-12 sm:h-15 bg-black/40  group-hover:invert group-active:invert dark:invert">
+                        </div>
+                        <span
+                            class="font-bold text-2xl pl-1 text-secondary group-hover:text-primary dark:group-hover:text-white group-active:text-primary  dark:text-primary">Burger</span>
+                    </div>
+                    <div class="flex items-center gap-2 ">
+                        <button
+                            class="w-5 sm:w-8 lg:w-10 group-hover:invert group-active:invert dark:invert  cursor-pointer"
+                            onclick="decrementQty(this)"><img src="assets/img/Minus.png" alt=""></button>
+                        <div
+                            class="relative w-10 h-10 sm:w-15 sm:h-15 self-center bg-white text-xl font-bold rounded-sm text-center">
+                            <div class="absolute top-[25%] left-[40%]">1</div>
+                        </div>
+                        <button
+                            class="w-5 sm:w-8 lg:w-10 group-hover:invert group-active:invert dark:invert  cursor-pointer"
+                            onclick="decrementQty(this)"><img src="assets/img/MacOS Maximize.png" alt=""></button>
+                    </div>
+                </div>
+
+                <div
+                    class="group flex items-center justify-between cursor-pointer bg-[#D9D9D9]/60 p-4 rounded-lg hover:bg-secondary dark:bg-secondary">
+                    <div class="flex items-center gap-3">
+                        <img src="assets/img/Rectangle 46 (5).png" alt=""
+                            class="w-[25%] h-[25%] border-2 border-white rounded-full">
+                        <div
+                            class="w-0.25 h-12 sm:h-15 bg-black/40  group-hover:invert group-active:invert dark:invert">
+                        </div>
+                        <span
+                            class="font-bold text-2xl pl-1 text-secondary group-hover:text-primary dark:group-hover:text-white group-active:text-primary  dark:text-primary">Burger</span>
+                    </div>
+                    <div class="flex items-center gap-2 ">
+                        <button
+                            class="w-5 sm:w-8 lg:w-10 group-hover:invert group-active:invert dark:invert  cursor-pointer"
+                            onclick="decrementQty(this)"><img src="assets/img/Minus.png" alt=""></button>
+                        <div
+                            class="relative w-10 h-10 sm:w-15 sm:h-15 self-center bg-white text-xl font-bold rounded-sm text-center">
+                            <div class="absolute top-[25%] left-[40%]">1</div>
+                        </div>
+                        <button
+                            class="w-5 sm:w-8 lg:w-10 group-hover:invert group-active:invert dark:invert  cursor-pointer"
+                            onclick="decrementQty(this)"><img src="assets/img/MacOS Maximize.png" alt=""></button>
+                    </div>
+                </div>
+
+                <div
+                    class="group flex items-center justify-between cursor-pointer bg-[#D9D9D9]/60 p-4 rounded-lg hover:bg-secondary dark:bg-secondary">
+                    <div class="flex items-center gap-3">
+                        <img src="assets/img/Rectangle 46 (5).png" alt=""
+                            class="w-[25%] h-[25%] border-2 border-white rounded-full">
+                        <div
+                            class="w-0.25 h-12 sm:h-15 bg-black/40  group-hover:invert group-active:invert dark:invert">
+                        </div>
+                        <span
+                            class="font-bold text-2xl pl-1 text-secondary group-hover:text-primary dark:group-hover:text-white group-active:text-primary  dark:text-primary">Burger</span>
+                    </div>
+                    <div class="flex items-center gap-2 ">
+                        <button
+                            class="w-5 sm:w-8 lg:w-10 group-hover:invert group-active:invert dark:invert  cursor-pointer"
+                            onclick="decrementQty(this)"><img src="assets/img/Minus.png" alt=""></button>
+                        <div
+                            class="relative w-10 h-10 sm:w-15 sm:h-15 self-center bg-white text-xl font-bold rounded-sm text-center">
+                            <div class="absolute top-[25%] left-[40%]">1</div>
+                        </div>
+                        <button
+                            class="w-5 sm:w-8 lg:w-10 group-hover:invert group-active:invert dark:invert  cursor-pointer"
+                            onclick="decrementQty(this)"><img src="assets/img/MacOS Maximize.png" alt=""></button>
+                    </div>
+                </div>
+
+
+                <!-- Total & actions -->
+                <div class="flex flex-col sm:flex-row justify-between items-center mt-6">
+                    <span
+                        class="font-semibold text-sm text-white text-center bg-primary p-2 rounded-sm  hover:bg-secondary dark:bg-secondary">Total
+                        to pay <span class="text-xl"> £127.90 </span></span>
+                    <div class="sm:self-end-safe">
+                        <div class="text-xs p-3">Delivery & Tax will be calculated in the next step</div>
+                        <div class="flex gap-2 items-center">
+                            <a class="underline font-semibold cursor-pointer" onclick="closeCartModal()">Take me Back</a>
+                            <button class="bg-[#028643] text-white px-8 py-2 rounded text-lg font-semibold flex gap-1 justify-center items-center">
+                                <div><img src="assets/img/Forward Button.png" alt=""></div>
+                                <div>Next Step
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 
