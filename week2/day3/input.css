@@ -8,5 +8,15 @@
 @theme {
     --color-primary :#FC8A06;
     --color-secondary :#03081F;
-    
+    --font-poppins: 'Poppins', sans-serif;
+}
+
+@layer components{
+    .hover-button{
+        @apply hover:text-white hover:bg-primary active:text-white active:bg-primary transition-all duration-75 active:rounded-full
+    }
+    .hover-text{
+        @apply hover:text-primary active:text-primary transition-all duration-75
+
+    }
 }
