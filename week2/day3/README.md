@@ -21,4 +21,4 @@ A responsive food ordering platform with interactive cart functionality, built w
 
 ## Live Demo  
 
-🔗 [View Live Demo](#) *(Add your deployment link here)*  
+🔗 [View Live Demo](#) *(hassaan-week2-day3-4-order-uk.vercel.app)*  
