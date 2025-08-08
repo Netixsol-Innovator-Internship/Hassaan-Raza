@@ -1,543 +1,603 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order.Uk</title>
     <link rel="stylesheet" href="output.css">
+    <style>
+        /* Professional animations and transitions */
+        * {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        /* Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Card hover animations */
+        .menu-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .menu-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        /* Button animations */
+        .btn-animate {
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-animate::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .btn-animate:hover::before {
+            left: 100%;
+        }
+        
+        /* Cart animation */
+        .cart-bounce {
+            animation: cartBounce 0.6s ease;
+        }
+        
+        @keyframes cartBounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+        
+        /* Fade in animation */
+        .fade-in {
+            animation: fadeIn 0.6s ease forwards;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Slide animations */
+        .slide-in-left {
+            animation: slideInLeft 0.6s ease forwards;
+        }
+        
+        .slide-in-right {
+            animation: slideInRight 0.6s ease forwards;
+        }
+        
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        /* Mobile nav animation */
+        .mobile-nav {
+            transition: all 0.3s ease;
+            transform: translateX(-100%);
+        }
+        
+        .mobile-nav.active {
+            transform: translateX(0);
+        }
+        
+        /* Review slider animation */
+        .review-slide {
+            transition: all 0.5s ease;
+        }
+        
+        /* Tab animation */
+        .tab-content {
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        
+        .tab-content.hidden {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        
+        .tab-content:not(.hidden) {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Pulse animation for cart count */
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        /* Hover effects for links */
+        .link-hover {
+            position: relative;
+        }
+        
+        .link-hover::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 50%;
+            background-color: #FC8A06;
+            transition: all 0.3s ease;
+        }
+        
+        .link-hover:hover::after {
+            width: 100%;
+            left: 0;
+        }
+    </style>
 </head>
-
-<body class="lg:pt-4  dark:bg-secondary font-poppins ">
-    <!-- Header -->
-    <header class="lg:px-[5%]">
-        <div class="flex justify-between items-center px-4 py-4 text-xs lg:text-base xl:text-lg font-medium  ">
-            <!-- logo -->
-            <div>
-                <img class="dark:invert" src="assets/img/LOGO 1.png" alt="Order.Uk">
+<body class="lg:pt-4 dark:bg-secondary font-poppins">
+     <!-- Header  -->
+    <header class="lg:px-[5%] relative">
+        <div class="flex justify-between items-center px-4 py-4 text-xs lg:text-base xl:text-lg font-medium">
+             <!-- logo  -->
+            <div class="fade-in">
+                <img class="dark:invert hover:scale-105 transition-transform duration-300" src="assets/img/LOGO 1.png" alt="Order.Uk">
             </div>
-            <nav class="hidden md:flex 2xl:space-x-2 dark:text-white ">
-                <a class="hover:text-white hover:bg-primary active:text-white active:bg-primary transition-all duration-75 active:rounded-full hover:rounded-full py-2 px-6 xl:px-8"
-                    href="#">Home</a>
-                <a class="hover:text-white hover:bg-primary active:text-white active:bg-primary transition-all duration-75 active:rounded-full hover:rounded-full py-2 px-6 xl:px-8"
-                    href="#">Special Offers</a>
-                <a class="hover:text-white hover:bg-primary active:text-white active:bg-primary transition-all duration-75 active:rounded-full hover:rounded-full py-2 px-6 xl:px-8"
-                    href="#">Resturants</a>
-                <a class="hover:text-white hover:bg-primary active:text-white active:bg-primary transition-all duration-75 active:rounded-full hover:rounded-full py-2 px-6 xl:px-8"
-                    href="#">Track Order</a>
+            
+             <!-- Desktop Navigation  -->
+            <nav class="hidden md:flex 2xl:space-x-2 dark:text-white">
+                <a class="link-hover hover:text-white hover:bg-primary active:text-white active:bg-primary transition-all duration-300 active:rounded-full hover:rounded-full py-2 px-6 xl:px-8" href="#">Home</a>
+                <a class="link-hover hover:text-white hover:bg-primary active:text-white active:bg-primary transition-all duration-300 active:rounded-full hover:rounded-full py-2 px-6 xl:px-8" href="#">Special Offers</a>
+                <a class="link-hover hover:text-white hover:bg-primary active:text-white active:bg-primary transition-all duration-300 active:rounded-full hover:rounded-full py-2 px-6 xl:px-8" href="#">Restaurants</a>
+                <a class="link-hover hover:text-white hover:bg-primary active:text-white active:bg-primary transition-all duration-300 active:rounded-full hover:rounded-full py-2 px-6 xl:px-8" href="#">Track Order</a>
             </nav>
-            <div class="flex gap-1 items-center dark:text-white">
-                <div id="mode_toggler"
-                    class="cursor-pointer p-2 w-8 h-8 lg:w-12 lg:h-12 bg-secondary hover:bg-primary rounded-full dark:bg-white">
-                    <img id="theme-icon" src="assets/img/moon.png" alt="Toggle Theme"
-                        class="w-full invert dark:invert-0 hover:invert " />
+            
+             <!-- Mobile Menu Button  -->
+            <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300">
+                <div class="w-6 h-6 flex flex-col justify-center items-center">
+                    <span class="block w-5 h-0.5 bg-black dark:bg-white mb-1 transition-all duration-300" id="line1"></span>
+                    <span class="block w-5 h-0.5 bg-black dark:bg-white mb-1 transition-all duration-300" id="line2"></span>
+                    <span class="block w-5 h-0.5 bg-black dark:bg-white transition-all duration-300" id="line3"></span>
                 </div>
-                <div onclick="openCloseCartModal()"
-                    class="relative flex gap-3 cursor-pointer bg-secondary rounded-full p-2 w-8 h-8 lg:w-12 lg:h-12 dark:bg-white hover:bg-primary active:bg-primary  ">
-                    <img class="dark:invert hover:invert"
-                        src="assets/img/shopping_cart_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24 1.png" alt="">
-                    <div id="cart-count"
-                        class="absolute left-[70%] top-0 font-bold text-xs  text-white w-4 h-4 pb-1 dark:invert-0 bg-primary rounded-full text-center ">
-                        0</div>
+            </button>
+            
+            <div class="flex gap-1 items-center dark:text-white">
+                <div id="mode_toggler" class="cursor-pointer p-2 w-8 h-8 lg:w-12 lg:h-12 bg-secondary hover:bg-primary rounded-full dark:bg-white transition-all duration-300 hover:scale-110">
+                    <img id="theme-icon" src="assets/img/moon.png" alt="Toggle Theme" class="w-full invert dark:invert-0 hover:invert transition-all duration-300" />
+                </div>
+                <div onclick="openCloseCartModal()" class="relative flex gap-3 cursor-pointer bg-secondary rounded-full p-2 w-8 h-8 lg:w-12 lg:h-12 dark:bg-white hover:bg-primary active:bg-primary transition-all duration-300 hover:scale-110">
+                    <img class="dark:invert hover:invert transition-all duration-300" src="assets/img/shopping_cart_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24 1.png" alt="">
+                    <div id="cart-count" class="absolute left-[70%] top-0 font-bold text-xs text-white w-4 h-4 pb-1 dark:invert-0 bg-primary rounded-full text-center transition-all duration-300">0</div>
                     <div class="hidden md:flex">
                         <p>cart</p>
                     </div>
                 </div>
             </div>
         </div>
+        
+         <!-- Mobile Navigation  -->
+        <div id="mobile-nav" class="mobile-nav md:hidden fixed top-0 left-0 w-64 h-full bg-white dark:bg-secondary z-50 shadow-lg">
+            <div class="p-4">
+                <div class="flex justify-between items-center mb-8">
+                    <img class="dark:invert h-8" src="assets/img/LOGO 1.png" alt="Order.Uk">
+                    <button id="close-mobile-nav" class="p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors duration-300">
+                        <span class="text-2xl">&times;</span>
+                    </button>
+                </div>
+                <nav class="flex flex-col space-y-4">
+                    <a class="link-hover py-3 px-4 hover:bg-primary hover:text-white rounded-lg transition-all duration-300" href="#">Home</a>
+                    <a class="link-hover py-3 px-4 hover:bg-primary hover:text-white rounded-lg transition-all duration-300" href="#">Special Offers</a>
+                    <a class="link-hover py-3 px-4 hover:bg-primary hover:text-white rounded-lg transition-all duration-300" href="#">Restaurants</a>
+                    <a class="link-hover py-3 px-4 hover:bg-primary hover:text-white rounded-lg transition-all duration-300" href="#">Track Order</a>
+                </nav>
+            </div>
+        </div>
+        
+         <!-- Mobile Nav Overlay  -->
+        <div id="mobile-nav-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden transition-opacity duration-300"></div>
     </header>
-    <!-- Hero Section -->
-    <section class="lg:px-[5%]">
-        <div class="relative sm:mt-7 sm:rounded-xl sm:rounded-bl-none ">
-            <!-- Background Image + Overlay -->
-            <div class="absolute inset-0 bg-[url('assets/img/Rectangle-44.png')] bg-cover bg-center ">
+
+     <!-- Hero Section  -->
+    <section class="lg:px-[5%] slide-in-left">
+        <div class="relative sm:mt-7 sm:rounded-xl sm:rounded-bl-none">
+             <!-- Background Image + Overlay  -->
+            <div class="absolute inset-0 bg-[url('assets/img/Rectangle-44.png')] bg-cover bg-center">
                 <div class="absolute inset-0 bg-secondary/90"></div>
             </div>
-            <!-- Content -->
+             <!-- Content  -->
             <div class="relative grid sm:grid-cols-2 text-white sm:gap-4 p-4">
-                <div class="place-content-end lg:p-8 sm:mb-7">
+                <div class="place-content-end lg:p-8 sm:mb-7 fade-in">
                     <p class="text-xl py-2">I'm loving it!</p>
                     <h1 class="text-5xl md:text-6xl font-semibold py-2">McDonald's East London</h1>
                     <div class="flex flex-col sm:flex-row gap-2 py-2">
-                        <div
-                            class="flex gap-2 items-center justify-center border rounded-full text-xs p-2 xl:text-lg font-semibold hover:bg-primary transition-all duration-75">
+                        <div class="btn-animate flex gap-2 items-center justify-center border rounded-full text-xs p-2 xl:text-lg font-semibold hover:bg-primary transition-all duration-300 hover:scale-105">
                             <div>
                                 <img src="assets/img/Order Completed.png" alt="">
                             </div>
-                            <div>
-                                Minimum Order: 12 GBP
-                            </div>
+                            <div>Minimum Order: 12 GBP</div>
                         </div>
-                        <div
-                            class="flex gap-2 items-center justify-center border rounded-full text-xs p-2 xl:text-lg font-semibold hover:bg-primary transition-all duration-75">
-                            <div class="">
+                        <div class="btn-animate flex gap-2 items-center justify-center border rounded-full text-xs p-2 xl:text-lg font-semibold hover:bg-primary transition-all duration-300 hover:scale-105">
+                            <div>
                                 <img src="assets/img/Motocross.png" alt="">
                             </div>
-                            <div>
-                                Delivery in 20-25 Minutes
-                            </div>
+                            <div>Delivery in 20-25 Minutes</div>
                         </div>
                     </div>
                 </div>
-                <div class="place-self-end">
+                <div class="place-self-end slide-in-right">
                     <div class="relative">
-                        <div><img class="rounded-2xl p-5" src="assets/img/Rectangle-44.png" alt=""></div>
-                        <div class="absolute left-[40%] -bottom-0.25 sm:-left-2 lg:-left-5  w-[17%] h-auto shadow">
+                        <div><img class="rounded-2xl p-5 hover:scale-105 transition-transform duration-500" src="assets/img/Rectangle-44.png" alt=""></div>
+                        <div class="absolute left-[40%] -bottom-0.25 sm:-left-2 lg:-left-5 w-[17%] h-auto shadow">
                             <img src="assets/img/Rectangle-64.png" alt="">
                         </div>
                     </div>
                 </div>
             </div>
             <div>
-                <div
-                    class="absolute -bottom-[5%] w-full sm:w-auto left-0 z-10 bg-primary text-white flex gap-2 lg:text-lg font-semibold py-1 px-2 items-center sm:rounded-r-lg lg:px-12 lg:py-2">
+                <div class="absolute -bottom-[5%] w-full sm:w-auto left-0 z-10 bg-primary text-white flex gap-2 lg:text-lg font-semibold py-1 px-2 items-center sm:rounded-r-lg lg:px-12 lg:py-2 hover:bg-secondary transition-colors duration-300">
                     <img src="assets/img/Clock.png" alt="">
-                    <div class="">
+                    <div>
                         <p>Open until 3:00 AM</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Section Search from Menu  -->
-    <section class="lg:px-[5%]">
+
+     <!-- Section Search from Menu  -->
+    <section class="lg:px-[5%] fade-in">
         <div class="px-5 py-5 mt-10 lg:mt-13 flex flex-col sm:flex-row justify-between items-center">
-            <div class="text-lg md:text-2xl lg:text-3xl font-bold pb-2 dark:text-primary ">
-                <h1>All Offers from McDonald'East London</h1>
+            <div class="text-lg md:text-2xl lg:text-3xl font-bold pb-2 dark:text-primary">
+                <h1>All Offers from McDonald's East London</h1>
             </div>
-            <div
-                class="flex p-3 px-5 w-full sm:w-auto items-center text-lg font-semibold text-secondary rounded-full border border-secondary dark:invert">
+            <div class="flex p-3 px-5 w-full sm:w-auto items-center text-lg font-semibold text-secondary rounded-full border border-secondary dark:invert hover:border-primary transition-colors duration-300">
                 <div>
                     <img src="assets/img/Search More.png" alt="">
                 </div>
-                <input type="text" placeholder="Search from menu" id="search" name="search">
+                <input type="text" placeholder="Search from menu" id="search" name="search" class="bg-transparent outline-none ml-2">
             </div>
         </div>
     </section>
-    <!-- Menu Category bar -->
-    <section
-        class="w-full py-3 bg-primary text-white font-bold text-xs lg:text-sm  2xl:text-xl flex flex-wrap justify-center">
-        <div
-            class="cursor-pointer px-4 xl:px-6 py-1 hover:bg-secondary hover:rounded-full active:bg-secondary active:rounded-full">
-            Offers</div>
-        <div
-            class="cursor-pointer px-4 xl:px-6 py-1 hover:bg-secondary hover:rounded-full active:bg-secondary active:rounded-full">
-            Burgers</div>
-        <div
-            class="cursor-pointer px-4 xl:px-6 py-1 hover:bg-secondary hover:rounded-full active:bg-secondary active:rounded-full">
-            Fries</div>
-        <div
-            class="cursor-pointer px-4 xl:px-6 py-1 hover:bg-secondary hover:rounded-full active:bg-secondary active:rounded-full">
-            Snacks</div>
-        <div
-            class="cursor-pointer px-4 xl:px-6 py-1 hover:bg-secondary hover:rounded-full active:bg-secondary active:rounded-full">
-            Salads</div>
-        <div
-            class="cursor-pointer px-4 xl:px-6 py-1 hover:bg-secondary hover:rounded-full active:bg-secondary active:rounded-full">
-            Cold drink</div>
-        <div
-            class="cursor-pointer px-4 xl:px-6 py-1 hover:bg-secondary hover:rounded-full active:bg-secondary active:rounded-full">
-            Happy Meals<span>&reg</span></div>
-        <div
-            class="cursor-pointer px-4 xl:px-6 py-1 hover:bg-secondary hover:rounded-full active:bg-secondary active:rounded-full">
-            Desserts</div>
-        <div
-            class="cursor-pointer px-4 xl:px-6 py-1 hover:bg-secondary hover:rounded-full active:bg-secondary active:rounded-full">
-            Hot drinks</div>
-        <div
-            class="cursor-pointer px-4 xl:px-6 py-1 hover:bg-secondary hover:rounded-full active:bg-secondary active:rounded-full">
-            Sauces</div>
-        <div
-            class="cursor-pointer px-4 xl:px-6 py-1 hover:bg-secondary hover:rounded-full active:bg-secondary active:rounded-full">
-            Orbit<span>&reg</span></div>
+
+     <!-- Menu Category bar  -->
+    <section class="w-full py-3 bg-primary text-white font-bold text-xs lg:text-sm 2xl:text-xl flex flex-wrap justify-center">
+        <div class="cursor-pointer px-4 xl:px-6 py-1 hover:bg-secondary hover:rounded-full active:bg-secondary active:rounded-full transition-all duration-300 hover:scale-105">Offers</div>
+        <div class="cursor-pointer px-4 xl:px-6 py-1 hover:bg-secondary hover:rounded-full active:bg-secondary active:rounded-full transition-all duration-300 hover:scale-105">Burgers</div>
+        <div class="cursor-pointer px-4 xl:px-6 py-1 hover:bg-secondary hover:rounded-full active:bg-secondary active:rounded-full transition-all duration-300 hover:scale-105">Fries</div>
+        <div class="cursor-pointer px-4 xl:px-6 py-1 hover:bg-secondary hover:rounded-full active:bg-secondary active:rounded-full transition-all duration-300 hover:scale-105">Snacks</div>
+        <div class="cursor-pointer px-4 xl:px-6 py-1 hover:bg-secondary hover:rounded-full active:bg-secondary active:rounded-full transition-all duration-300 hover:scale-105">Salads</div>
+        <div class="cursor-pointer px-4 xl:px-6 py-1 hover:bg-secondary hover:rounded-full active:bg-secondary active:rounded-full transition-all duration-300 hover:scale-105">Cold drink</div>
+        <div class="cursor-pointer px-4 xl:px-6 py-1 hover:bg-secondary hover:rounded-full active:bg-secondary active:rounded-full transition-all duration-300 hover:scale-105">Happy Meals<span>&reg</span></div>
+        <div class="cursor-pointer px-4 xl:px-6 py-1 hover:bg-secondary hover:rounded-full active:bg-secondary active:rounded-full transition-all duration-300 hover:scale-105">Desserts</div>
+        <div class="cursor-pointer px-4 xl:px-6 py-1 hover:bg-secondary hover:rounded-full active:bg-secondary active:rounded-full transition-all duration-300 hover:scale-105">Hot drinks</div>
+        <div class="cursor-pointer px-4 xl:px-6 py-1 hover:bg-secondary hover:rounded-full active:bg-secondary active:rounded-full transition-all duration-300 hover:scale-105">Sauces</div>
+        <div class="cursor-pointer px-4 xl:px-6 py-1 hover:bg-secondary hover:rounded-full active:bg-secondary active:rounded-full transition-all duration-300 hover:scale-105">Orbit<span>&reg</span></div>
     </section>
-    <!-- Burger Items section -->
-    <section class="lg:px-[5%]">
+
+     <!-- Burger Items section  -->
+    <section class="lg:px-[5%] fade-in">
         <div class="px-4 py-[3%] flex flex-col">
-            <!-- grid type name -->
             <div>
                 <h1 class="text-4xl 2xl:text-5xl font-bold py-[3%] text-black dark:text-white">Burgers</h1>
             </div>
-            <!-- grid card -->
-            <div id="burger-menu-grid" class="grid sm:grid-cols-2 xl:grid-cols-3 gap-4">
+            <div id="burger-menu-grid" class="grid sm:grid-cols-2 xl:grid-cols-3 gap-4"></div>
+            <div class="self-center mt-4">
+                <button class="btn-animate text-white bg-primary px-5 py-3 font-bold cursor-pointer hover:text-white dark:hover:bg-white/20 dark:active:bg-white/20 hover:bg-secondary active:text-white active:bg-secondary transition-all duration-300 rounded-2xl hover:scale-105">Show More</button>
             </div>
-            <div id="show-more" class="self-center mt-4"><button
-                    class=" text-white bg-primary px-5 py-3 font-bold cursor-pointer hover:text-white dark:hover:bg-white/20 dark:active:bg-white/20 hover:bg-secondary active:text-white active:bg-secondary transition-all duration-75 rounded-2xl">Show
-                    More</button></div>
         </div>
     </section>
-    <!-- Fries section -->
-    <!-- fries Items section -->
-    <section class="lg:px-[5%]">
+
+     <!-- Fries section  -->
+    <section class="lg:px-[5%] fade-in">
         <div class="px-4 py-[3%] flex flex-col">
-            <!-- grid type name -->
             <div>
                 <h1 class="text-4xl 2xl:text-5xl font-bold py-[3%] text-primary">Fries</h1>
             </div>
-            <!-- grid card -->
-            <div id="fries-menu-grid" class="grid sm:grid-cols-2 xl:grid-cols-3 gap-4">
+            <div id="fries-menu-grid" class="grid sm:grid-cols-2 xl:grid-cols-3 gap-4"></div>
+            <div class="self-center mt-4">
+                <button class="btn-animate text-white bg-primary px-5 py-3 font-bold cursor-pointer hover:text-white dark:hover:bg-white/20 dark:active:bg-white/20 hover:bg-secondary active:text-white active:bg-secondary transition-all duration-300 rounded-2xl hover:scale-105">Show More</button>
             </div>
-            <div id="show-more" class="self-center mt-4"><button
-                    class=" text-white bg-primary px-5 py-3 font-bold cursor-pointer hover:text-white dark:hover:bg-white/20 dark:active:bg-white/20 hover:bg-secondary active:text-white active:bg-secondary transition-all duration-75 rounded-2xl">Show
-                    More</button></div>
         </div>
     </section>
-    <!-- Cold Drinks section -->
-    <!-- Cold driks Items section -->
-    <section class="lg:px-[5%]">
+
+     <!-- Cold Drinks section  -->
+    <section class="lg:px-[5%] fade-in">
         <div class="px-4 py-[3%] flex flex-col">
-            <!-- grid type name -->
             <div>
-                <h1 class="text-4xl 2xl:text-5xl font-bold py-[3%] text-primary ">Cold Drinks</h1>
+                <h1 class="text-4xl 2xl:text-5xl font-bold py-[3%] text-primary">Cold Drinks</h1>
             </div>
-            <!-- grid card -->
-            <div id="drinks-menu-grid" class="grid sm:grid-cols-2 xl:grid-cols-3 gap-4">
+            <div id="drinks-menu-grid" class="grid sm:grid-cols-2 xl:grid-cols-3 gap-4"></div>
+            <div class="self-center mt-4">
+                <button class="btn-animate text-white bg-primary px-5 py-3 font-bold cursor-pointer hover:text-white dark:hover:bg-white/20 dark:active:bg-white/20 hover:bg-secondary active:text-white active:bg-secondary transition-all duration-300 rounded-2xl hover:scale-105">Show More</button>
             </div>
-            <div id="show-more" class="self-center mt-4"><button
-                    class=" text-white bg-primary px-5 py-3 font-bold cursor-pointer hover:text-white dark:hover:bg-white/20 dark:active:bg-white/20 hover:bg-secondary active:text-white active:bg-secondary transition-all duration-75 rounded-2xl">Show
-                    More</button></div>
         </div>
     </section>
-    <!-- Information Cards Section -->
-    <section class="lg:px-[5%] px-4 py-[3%]">
-        <div class="grid md:grid-cols-3 gap-4 shadow-2xl rounded-2xl bg-[#FBFBFB] dark:bg-white/10">
-            <!-- Delivery Information Card -->
-            <div class="p-6 xl:p-10 py-12 xl:py-17">
+
+     <!-- Information Cards Section  -->
+    <section class="lg:px-[5%] px-4 py-[3%] fade-in">
+        <div class="grid md:grid-cols-3 gap-4 shadow-2xl rounded-2xl bg-[#FBFBFB] dark:bg-white/10 hover:shadow-3xl transition-shadow duration-500">
+             <!-- Delivery Information Card  -->
+            <div class="p-6 xl:p-10 py-12 xl:py-17 hover:bg-gray-50 dark:hover:bg-white/5 transition-colors duration-300 rounded-l-2xl">
                 <div class="flex items-center gap-2 mb-4">
-                    <img src="assets/img/Tracking.png" alt="" class="dark:invert">
-                    <h3 class="text-2xl xl:text-3xl font-bold text-secondary dark:text-primary">Delivery information
-                    </h3>
+                    <img src="assets/img/Tracking.png" alt="" class="dark:invert hover:scale-110 transition-transform duration-300">
+                    <h3 class="text-2xl xl:text-3xl font-bold text-secondary dark:text-primary">Delivery information</h3>
                 </div>
                 <div class="space-y-2 text-sm text-black dark:text-white">
-                    <div class="xl:text-lg dark:text-white py-1 lg:py-2"><span
-                            class="font-bold  text-secondary dark:text-primary">Monday:</span> 12:00 AM–3:00 AM, 8:00
-                        AM–3:00 AM</div>
-                    <div class="xl:text-lg dark:text-white py-1 lg:py-2"><span
-                            class="font-bold  text-secondary dark:text-primary">Tuesday:</span> 8:00 AM–3:00 AM</div>
-                    <div class="xl:text-lg dark:text-white py-1 lg:py-2"><span
-                            class="font-bold  text-secondary dark:text-primary">Wednesday:</span> 8:00 AM–3:00 AM</div>
-                    <div class="xl:text-lg dark:text-white py-1 lg:py-2"><span
-                            class="font-bold  text-secondary dark:text-primary">Thursday:</span> 8:00 AM–3:00 AM</div>
-                    <div class="xl:text-lg dark:text-white py-1 lg:py-2"><span
-                            class="font-bold  text-secondary dark:text-primary">Friday:</span> 8:00 AM–3:00 AM</div>
-                    <div class="xl:text-lg dark:text-white py-1 lg:py-2"><span
-                            class="font-bold  text-secondary dark:text-primary">Saturday:</span> 8:00 AM–3:00 AM</div>
-                    <div class="xl:text-lg dark:text-white py-1 lg:py-2"><span
-                            class="font-bold  text-secondary dark:text-primary">Sunday:</span> 8:00 AM–12:00 AM</div>
-                    <div class="xl:text-lg dark:text-white py-1 lg:py-2"><span
-                            class="font-bold  text-secondary dark:text-primary">Estimated time until delivery:</span> 20
-                        min</div>
+                    <div class="xl:text-lg dark:text-white py-1 lg:py-2 hover:text-primary dark:hover:text-primary transition-colors duration-300"><span class="font-bold text-secondary dark:text-primary">Monday:</span> 12:00 AM–3:00 AM, 8:00 AM–3:00 AM</div>
+                    <div class="xl:text-lg dark:text-white py-1 lg:py-2 hover:text-primary dark:hover:text-primary transition-colors duration-300"><span class="font-bold text-secondary dark:text-primary">Tuesday:</span> 8:00 AM–3:00 AM</div>
+                    <div class="xl:text-lg dark:text-white py-1 lg:py-2 hover:text-primary dark:hover:text-primary transition-colors duration-300"><span class="font-bold text-secondary dark:text-primary">Wednesday:</span> 8:00 AM–3:00 AM</div>
+                    <div class="xl:text-lg dark:text-white py-1 lg:py-2 hover:text-primary dark:hover:text-primary transition-colors duration-300"><span class="font-bold text-secondary dark:text-primary">Thursday:</span> 8:00 AM–3:00 AM</div>
+                    <div class="xl:text-lg dark:text-white py-1 lg:py-2 hover:text-primary dark:hover:text-primary transition-colors duration-300"><span class="font-bold text-secondary dark:text-primary">Friday:</span> 8:00 AM–3:00 AM</div>
+                    <div class="xl:text-lg dark:text-white py-1 lg:py-2 hover:text-primary dark:hover:text-primary transition-colors duration-300"><span class="font-bold text-secondary dark:text-primary">Saturday:</span> 8:00 AM–3:00 AM</div>
+                    <div class="xl:text-lg dark:text-white py-1 lg:py-2 hover:text-primary dark:hover:text-primary transition-colors duration-300"><span class="font-bold text-secondary dark:text-primary">Sunday:</span> 8:00 AM–12:00 AM</div>
+                    <div class="xl:text-lg dark:text-white py-1 lg:py-2 hover:text-primary dark:hover:text-primary transition-colors duration-300"><span class="font-bold text-secondary dark:text-primary">Estimated time until delivery:</span> 20 min</div>
                 </div>
             </div>
 
-            <!-- Contact Information Card -->
-            <div class="p-6 xl:p-10 py-12 xl:py-">
+             <!-- Contact Information Card  -->
+            <div class="p-6 xl:p-10 py-12 xl:py-17 hover:bg-gray-50 dark:hover:bg-white/5 transition-colors duration-300">
                 <div class="flex items-center gap-2 mb-4">
-                    <img src="assets/img/ID Verified.png" alt="" class="dark:invert">
+                    <img src="assets/img/ID Verified.png" alt="" class="dark:invert hover:scale-110 transition-transform duration-300">
                     <h3 class="text-2xl xl:text-3xl font-bold text-secondary dark:text-primary">Contact information</h3>
                 </div>
                 <div class="space-y-2 text-sm text-black dark:text-white">
-                    <div class="xl:text-lg dark:text-white py-1 lg:py-2">If you have allergies or other dietary
-                        restrictions, please contact the restaurant. The restaurant will provide food-specific
-                        information upon request.</div>
+                    <div class="xl:text-lg dark:text-white py-1 lg:py-2">If you have allergies or other dietary restrictions, please contact the restaurant. The restaurant will provide food-specific information upon request.</div>
                     <div class="text-lg xl:text-2xl dark:text-white py-1 lg:py-2">
-                        <span class="font-bold text-secondary dark:text-primary xl:text-lg text-base">Phone number:</span><br><br> +934443-43
+                        <span class="font-bold text-secondary dark:text-primary xl:text-lg text-base">Phone number:</span><br><br> 
+                        <a href="tel:+934443-43" class="hover:text-primary transition-colors duration-300">+934443-43</a>
                     </div>
                     <div class="text-lg xl:text-2xl dark:text-white py-1 lg:py-2">
-                        <span class="font-bold text-secondary dark:text-primary xl:text-lg text-base">Website:</span><br> <br>http://mcdonalds.uk/</span>
+                        <span class="font-bold text-secondary dark:text-primary xl:text-lg text-base">Website:</span><br><br>
+                        <a href="http://mcdonalds.uk/" class="hover:text-primary transition-colors duration-300">http://mcdonalds.uk/</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Operational Times Card -->
-            <div class="bg-secondary dark:bg-[#FBFBFB] rounded-r-2xl p-6 xl:p-10 py-12 xl:py-17 ">
+             <!-- Operational Times Card  -->
+            <div class="bg-secondary dark:bg-[#FBFBFB] rounded-r-2xl p-6 xl:p-10 py-12 xl:py-17 hover:bg-opacity-90 transition-all duration-300">
                 <div class="flex items-center gap-2 mb-4">
-                    <img src="assets/img/Clock2.png" alt="" class="dark:invert">
+                    <img src="assets/img/Clock2.png" alt="" class="dark:invert hover:scale-110 transition-transform duration-300">
                     <h3 class="text-2xl xl:text-3xl font-bold dark:text-secondary text-white">Operational Times</h3>
                 </div>
                 <div class="space-y-2 text-sm text-white dark:text-secondary">
-                    <div class="xl:text-lg dark:text-black py-1 lg:py-2"><span
-                            class="font-bold text-white dark:text-black">Monday:</span> 8:00 AM–3:00 AM</div>
-                    <div class="xl:text-lg dark:text-black py-1 lg:py-2"><span
-                            class="font-bold text-white dark:text-black">Tuesday:</span> 8:00 AM–3:00 AM</div>
-                    <div class="xl:text-lg dark:text-black py-1 lg:py-2"><span
-                            class="font-bold text-white dark:text-black">Wednesday:</span> 8:00 AM–3:00 AM</div>
-                    <div class="xl:text-lg dark:text-black py-1 lg:py-2"><span
-                            class="font-bold text-white dark:text-black">Thursday:</span> 8:00 AM–3:00 AM</div>
-                    <div class="xl:text-lg dark:text-black py-1 lg:py-2"><span
-                            class="font-bold text-white dark:text-black">Friday:</span> 8:00 AM–3:00 AM</div>
-                    <div class="xl:text-lg dark:text-black py-1 lg:py-2"><span
-                            class="font-bold text-white dark:text-black">Saturday:</span> 8:00 AM–3:00 AM</div>
-                    <div class="xl:text-lg dark:text-black py-1 lg:py-2"><span
-                            class="font-bold text-white dark:text-black">Sunday:</span> 8:00 AM–3:00 AM</div>
+                    <div class="xl:text-lg dark:text-black py-1 lg:py-2 hover:text-primary dark:hover:text-primary transition-colors duration-300"><span class="font-bold text-white dark:text-black">Monday:</span> 8:00 AM–3:00 AM</div>
+                    <div class="xl:text-lg dark:text-black py-1 lg:py-2 hover:text-primary dark:hover:text-primary transition-colors duration-300"><span class="font-bold text-white dark:text-black">Tuesday:</span> 8:00 AM–3:00 AM</div>
+                    <div class="xl:text-lg dark:text-black py-1 lg:py-2 hover:text-primary dark:hover:text-primary transition-colors duration-300"><span class="font-bold text-white dark:text-black">Wednesday:</span> 8:00 AM–3:00 AM</div>
+                    <div class="xl:text-lg dark:text-black py-1 lg:py-2 hover:text-primary dark:hover:text-primary transition-colors duration-300"><span class="font-bold text-white dark:text-black">Thursday:</span> 8:00 AM–3:00 AM</div>
+                    <div class="xl:text-lg dark:text-black py-1 lg:py-2 hover:text-primary dark:hover:text-primary transition-colors duration-300"><span class="font-bold text-white dark:text-black">Friday:</span> 8:00 AM–3:00 AM</div>
+                    <div class="xl:text-lg dark:text-black py-1 lg:py-2 hover:text-primary dark:hover:text-primary transition-colors duration-300"><span class="font-bold text-white dark:text-black">Saturday:</span> 8:00 AM–3:00 AM</div>
+                    <div class="xl:text-lg dark:text-black py-1 lg:py-2 hover:text-primary dark:hover:text-primary transition-colors duration-300"><span class="font-bold text-white dark:text-black">Sunday:</span> 8:00 AM–3:00 AM</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Know More About Us Section -->
-    <section class="lg:px-[5%] px-4 py-[3%] bg-[#F8F9FA] dark:bg-[#1a1a1a]">
+     <!-- Know More About Us Section  -->
+    <section class="lg:px-[5%] px-4 py-[3%] bg-[#F8F9FA] dark:bg-[#1a1a1a] fade-in">
         <div class="text-center mb-8 flex flex-col lg:flex-row justify-between">
             <h2 class="text-2xl 2xl:text-3xl font-bold text-black dark:text-white mb-6">Know more about us!</h2>
-
-            <!-- Tab Navigation -->
+             <!-- Tab Navigation  -->
             <div class="flex flex-wrap justify-center gap-2 mb-8">
-                <button onclick="switchTab('frequent-questions')" id="tab-frequent-questions"
-                    class="tab-button active px-6 py-3 rounded-full  font-medium transition-all duration-75  dark:text-white">Frequent
-                    Questions</button>
-                <button onclick="switchTab('who-we-are')" id="tab-who-we-are"
-                    class="tab-button px-6 py-2 rounded-full  font-medium transition-all duration-75 dark:text-white">Who
-                    we are?</button>
-                <button onclick="switchTab('partner-program')" id="tab-partner-program"
-                    class="tab-button px-6 py-2 rounded-full  font-medium transition-all duration-75 dark:text-white">Partner
-                    Program</button>
-                <button onclick="switchTab('help-support')" id="tab-help-support"
-                    class="tab-button px-6 py-2 rounded-full  font-medium transition-all duration-75 dark:text-white">Help
-                    & Support</button>
+                <button onclick="switchTab('frequent-questions')" id="tab-frequent-questions" class="tab-button active px-6 py-3 rounded-full font-medium transition-all duration-300 dark:text-white hover:scale-105">Frequent Questions</button>
+                <button onclick="switchTab('who-we-are')" id="tab-who-we-are" class="tab-button px-6 py-2 rounded-full font-medium transition-all duration-300 dark:text-white hover:scale-105">Who we are?</button>
+                <button onclick="switchTab('partner-program')" id="tab-partner-program" class="tab-button px-6 py-2 rounded-full font-medium transition-all duration-300 dark:text-white hover:scale-105">Partner Program</button>
+                <button onclick="switchTab('help-support')" id="tab-help-support" class="tab-button px-6 py-2 rounded-full font-medium transition-all duration-300 dark:text-white hover:scale-105">Help & Support</button>
             </div>
         </div>
-
-        <!-- Tab Content -->
-        <div class="bg-secondary rounded-2xl p-8 text-white">
+         <!-- Tab Content  -->
+        <div class="bg-secondary rounded-2xl p-8 text-white hover:shadow-lg transition-shadow duration-300">
             <div id="frequent-questions" class="tab-content">
-                <!-- <div class="grid  lg:grid-cols-[1fr_2fr] gap-8">
-                     -->
                 <div class="flex flex-col md:flex-row gap-4">
-                    <!-- FAQ Questions -->
+                     <!-- FAQ Questions  -->
                     <div class="space-y-4">
-                        <div
-                            class="px-6 py-3 text-center font-bold  rounded-full hover:bg-white/10 cursor-pointer transition-all duration-75">
-                            How does Order.UK work?
-                        </div>
-                        <div
-                            class="px-6 py-3 text-center font-bold  rounded-full hover:bg-white/10 cursor-pointer transition-all duration-75">
-                            What payment methods are accepted?</div>
-                        <div
-                            class="px-6 py-3 text-center font-bold  rounded-full hover:bg-white/10 cursor-pointer transition-all duration-75">
-                            Can I track my order in real-time?</div>
-                        <div
-                            class="px-6 py-3 text-center font-bold  rounded-full hover:bg-white/10 cursor-pointer transition-all duration-75">
-                            Are there any special discounts or promotions available?</div>
-                        <div
-                            class="px-6 py-3 text-center font-bold  rounded-full hover:bg-white/10 cursor-pointer transition-all duration-75">
-                            Is Order.UK available in my area?</div>
+                        <div class="px-6 py-3 text-center font-bold rounded-full hover:bg-white/10 cursor-pointer transition-all duration-300 hover:scale-105">How does Order.UK work?</div>
+                        <div class="px-6 py-3 text-center font-bold rounded-full hover:bg-white/10 cursor-pointer transition-all duration-300 hover:scale-105">What payment methods are accepted?</div>
+                        <div class="px-6 py-3 text-center font-bold rounded-full hover:bg-white/10 cursor-pointer transition-all duration-300 hover:scale-105">Can I track my order in real-time?</div>
+                        <div class="px-6 py-3 text-center font-bold rounded-full hover:bg-white/10 cursor-pointer transition-all duration-300 hover:scale-105">Are there any special discounts or promotions available?</div>
+                        <div class="px-6 py-3 text-center font-bold rounded-full hover:bg-white/10 cursor-pointer transition-all duration-300 hover:scale-105">Is Order.UK available in my area?</div>
                     </div>
-                    <!-- line section break -->
+                     <!-- line section break  -->
                     <div class="w-0.25 h-[100] bg-white/10"></div>
-                    <!-- Service Cards -->
+                     <!-- Service Cards  -->
                     <div>
-                        <!-- <div class="grid grid-cols-1 sm:grid-cols-3 gap-4"> -->
                         <div class="flex flex-col lg:flex-row gap-8 p-8 lg:mt-18">
-                            <div
-                                class="bg-[#d9d9d9] rounded-lg p-5 text-center mx-auto mb-3 lg:h-80  flex  flex-col items-center justify-between">
-
-                                <h4 class="font-bold text-lg  mb-2 text-secondary">Place an Order!</h4>
-                                <div class="">
-                                    <img src="assets/img/order-food 1.png" alt="" class="">
+                            <div class="bg-[#d9d9d9] rounded-lg p-5 text-center mx-auto mb-3 lg:h-80 flex flex-col items-center justify-between hover:scale-105 transition-transform duration-300 hover:shadow-lg">
+                                <h4 class="font-bold text-lg mb-2 text-secondary">Place an Order!</h4>
+                                <div>
+                                    <img src="assets/img/order-food 1.png" alt="" class="hover:scale-110 transition-transform duration-300">
                                 </div>
                                 <p class="font-medium text-black">Place order through our website or Mobile app</p>
                             </div>
-                            <!--  -->
-                            <div
-                                class="bg-[#d9d9d9] rounded-lg p-5 text-center mx-auto mb-3 lg:h-80  flex  flex-col items-center justify-between">
-
-                                <h4 class="font-bold text-lg  mb-2 text-secondary">Track Progress</h4>
-                                <div class="">
-                                    <img src="assets/img/food 1.png" alt="" class="">
+                            <div class="bg-[#d9d9d9] rounded-lg p-5 text-center mx-auto mb-3 lg:h-80 flex flex-col items-center justify-between hover:scale-105 transition-transform duration-300 hover:shadow-lg">
+                                <h4 class="font-bold text-lg mb-2 text-secondary">Track Progress</h4>
+                                <div>
+                                    <img src="assets/img/food 1.png" alt="" class="hover:scale-110 transition-transform duration-300">
                                 </div>
-                                <p class="font-medium text-black">Your can track your order status with delivery time
-                                </p>
+                                <p class="font-medium text-black">Your can track your order status with delivery time</p>
                             </div>
-
-                            <div
-                                class="bg-[#d9d9d9] rounded-lg p-5 text-center mx-auto mb-3 lg:h-80  flex  flex-col items-center justify-between">
-
-                                <h4 class="font-bold text-lg  mb-2 text-secondary">Get your Order!</h4>
-                                <div class="">
-                                    <img src="assets/img/order 1.png" alt="" class="">
+                            <div class="bg-[#d9d9d9] rounded-lg p-5 text-center mx-auto mb-3 lg:h-80 flex flex-col items-center justify-between hover:scale-105 transition-transform duration-300 hover:shadow-lg">
+                                <h4 class="font-bold text-lg mb-2 text-secondary">Get your Order!</h4>
+                                <div>
+                                    <img src="assets/img/order 1.png" alt="" class="hover:scale-110 transition-transform duration-300">
                                 </div>
-                                <p class="font-medium text-black">Receive your order at alighting fast speed!</p>
+                                <p class="font-medium text-black">Receive your order at a lighting fast speed!</p>
                             </div>
                         </div>
                         <div class="p-3 max-w-200 mx-auto text-center">
-                            Order.UK simplifies the food ordering process. Browse through our diverse menus, select your
-                            favorite dishes, and proceed to checkout. Your delicious meal will be on its way to your
-                            doorstep in
-                            no time!
+                            Order.UK simplifies the food ordering process. Browse through our diverse menus, select your favorite dishes, and proceed to checkout. Your delicious meal will be on its way to your doorstep in no time!
                         </div>
                     </div>
-
                 </div>
             </div>
 
             <div id="who-we-are" class="tab-content hidden">
                 <div class="text-center">
                     <h3 class="text-2xl font-bold mb-4">Who We Are</h3>
-                    <p class="text-lg">We are Order.UK, your trusted food delivery partner connecting you with the best
-                        restaurants in your area.</p>
+                    <p class="text-lg">We are Order.UK, your trusted food delivery partner connecting you with the best restaurants in your area.</p>
                 </div>
             </div>
 
             <div id="partner-program" class="tab-content hidden">
                 <div class="text-center">
                     <h3 class="text-2xl font-bold mb-4">Partner Program</h3>
-                    <p class="text-lg">Join our partner program and grow your restaurant business with Order.UK's
-                        extensive delivery network.</p>
+                    <p class="text-lg">Join our partner program and grow your restaurant business with Order.UK's extensive delivery network.</p>
                 </div>
             </div>
 
             <div id="help-support" class="tab-content hidden">
                 <div class="text-center">
                     <h3 class="text-2xl font-bold mb-4">Help & Support</h3>
-                    <p class="text-lg">Need help? Our customer support team is available 24/7 to assist you with any
-                        questions or concerns.</p>
+                    <p class="text-lg">Need help? Our customer support team is available 24/7 to assist you with any questions or concerns.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="relative lg:px-[5%] px-4 py-[3%] text-black bg-[#D9D9D9] dark:text-white dark:bg-[#262626]">
-        <!-- grid Review Heading -->
+    <section class="relative lg:px-[5%] px-4 py-[3%] text-black bg-[#D9D9D9] dark:text-white dark:bg-[#262626] fade-in">
+         <!-- grid Review Heading  -->
         <div class="flex gap-4 justify-between items-center">
             <div>
                 <h1 class="text-4xl 2xl:text-5xl font-bold py-[3%] text-black dark:text-white">Customer Reviews</h1>
             </div>
-            <!-- slider -->
+             <!-- slider  -->
             <div class="flex gap-3 items-center">
-                <!-- slider left -->
-                <div onclick="previousReview()"
-                    class="relative bg-primary rounded-full w-10 h-10 sm:w-12 sm:h-12 lg:w-18 lg:h-18 shadow cursor-pointer">
+                 <!-- slider left  -->
+                <div onclick="previousReview()" class="relative bg-primary rounded-full w-10 h-10 sm:w-12 sm:h-12 lg:w-18 lg:h-18 shadow cursor-pointer hover:bg-secondary transition-all duration-300 hover:scale-110">
                     <img class="absolute top-1/4 left-1/4 w-[50%] dark:invert" src="assets/img/Back.png" alt="">
                 </div>
-                <!-- slider right -->
-                <div onclick="nextReview()"
-                    class="relative bg-primary rounded-full w-10 h-10 sm:w-12 sm:h-12 lg:w-18 lg:h-18 shadow cursor-pointer">
-                    <img class="absolute top-1/4 left-1/4 rotate-180 w-[50%] dark:invert" src="assets/img/Back.png"
-                        alt="">
+                 <!-- slider right  -->
+                <div onclick="nextReview()" class="relative bg-primary rounded-full w-10 h-10 sm:w-12 sm:h-12 lg:w-18 lg:h-18 shadow cursor-pointer hover:bg-secondary transition-all duration-300 hover:scale-110">
+                    <img class="absolute top-1/4 left-1/4 rotate-180 w-[50%] dark:invert" src="assets/img/Back.png" alt="">
                 </div>
             </div>
         </div>
-        <!-- Review card -->
-        <div id="reviews-container" class="grid sm:grid-cols-2 xl:grid-cols-3 gap-4 mb-[4%] py-[4%]">
-            <!-- Reviews will be populated by JavaScript -->
+         <!-- Review card  -->
+        <div id="reviews-container" class="grid sm:grid-cols-2 xl:grid-cols-3 gap-4 mb-[4%] py-[4%] review-slide">
+             <!-- Reviews will be populated by JavaScript  -->
         </div>
-        <div class="absolute -bottom-[3%] sm:-bottom-[10%] xl:-bottom-[14%] left-[45%]  w-[15%] sm:w-[20%]">
-            <img class="shadow" src="assets/img/Rectangle-64.png" alt="">
+        <div class="absolute -bottom-[3%] sm:-bottom-[10%] xl:-bottom-[14%] left-[45%] w-[15%] sm:w-[20%]">
+            <img class="shadow hover:scale-105 transition-transform duration-300" src="assets/img/Rectangle-64.png" alt="">
         </div>
     </section>
-    <!-- Similar Resturants -->
-    <section class="lg:px-[5%]">
+
+     <!-- Similar Restaurants  -->
+    <section class="lg:px-[5%] fade-in">
         <div class="py-10">
             <div class="p-3 text-black dark:text-primary font-bold text-xl lg:text-3xl">Similar Restaurants</div>
-            <div id="resturants" class="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-6 gap-2 py-10 px-3 md:px-0">
-            </div>
+            <div id="resturants" class="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-6 gap-2 py-10 px-3 md:px-0"></div>
         </div>
     </section>
-    <!-- footer -->
+
+     <!-- footer  -->
     <footer class="lg:px-[5%] px-4 py-10 lg:py-14 2xl:py-18 bg-[#D9D9D9]/60 dark:bg-[#262626]/60 dark:text-white">
-        <div class="grid sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-[1fr_1fr_0.5fr_0.5fr] gap-4 ">
-            <!-- col1 -->
+        <div class="grid sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-[1fr_1fr_0.5fr_0.5fr] gap-4">
+             <!-- col1  -->
             <div class="flex flex-col gap-5 2xl:gap-8">
                 <div class="dark:invert">
-                    <img src="assets/img/LOGO 2.png" alt="">
+                    <img src="assets/img/LOGO 2.png" alt="" class="hover:scale-105 transition-transform duration-300">
                 </div>
                 <div class="flex gap-1">
                     <div>
-                        <img src="assets/img/Group.png" alt="">
+                        <img src="assets/img/Group.png" alt="" class="hover:scale-110 transition-transform duration-300">
                     </div>
                     <div>
-                        <img src="assets/img/Group.png" alt="">
+                        <img src="assets/img/Group.png" alt="" class="hover:scale-110 transition-transform duration-300">
                     </div>
                 </div>
-                <div>
-                    Company # 490039-445, Registered with House of companies.
-                </div>
+                <div>Company # 490039-445, Registered with House of companies.</div>
             </div>
-            <!-- col2 -->
+             <!-- col2  -->
             <div class="flex flex-col gap-5 2xl:gap-8">
-                <div class="text-lg font-bold text-secondary dark:text-primary">
-                    Get Exclusive Deals in your Inbox
-                </div>
+                <div class="text-lg font-bold text-secondary dark:text-primary">Get Exclusive Deals in your Inbox</div>
                 <div>
-                    <div class="flex flex-col xl:relative ">
+                    <div class="flex flex-col xl:relative">
                         <div class="text-base text-black/60 decoration-0 rounded-full bg-[#D9D9D9] px-7 py-4">
-                            <input type="email" placeholder="youremail@gmail.com">
+                            <input type="email" placeholder="youremail@gmail.com" class="bg-transparent outline-none">
                         </div>
-                        <div
-                            class="xl:absolute xl:right-0 xl:top-0 mt-2 xl:mt-0 px-7 py-3.5 cursor-pointer hover:bg-secondary active:bg-secondary transition-all duration-75 bg-primary text-white rounded-full font-medium text-lg">
-                            Subscribe
-                        </div>
+                        <div class=" xl:absolute xl:right-0 xl:top-0 mt-2 xl:mt-0 px-7 py-3.5 cursor-pointer hover:bg-secondary active:bg-secondary transition-all duration-300 bg-primary text-white rounded-full font-medium text-lg hover:scale-105">Subscribe</div>
                     </div>
                     <div class="text-xs text-secondary dark:text-primary p-2 ml-5">
-                        we wont spam, read our <a href="#" class="underline">email policy</a>
+                        we won't spam, read our <a href="#" class="underline hover:text-primary transition-colors duration-300">email policy</a>
                     </div>
                 </div>
                 <div class="flex gap-4 ml-5 dark:invert">
                     <div>
-                        <img src="assets/img/Facebook.png" alt="">
+                        <img src="assets/img/Facebook.png" alt="" class="hover:scale-110 transition-transform duration-300">
                     </div>
                     <div>
-                        <img src="assets/img/Instagram.png" alt="">
+                        <img src="assets/img/Instagram.png" alt="" class="hover:scale-110 transition-transform duration-300">
                     </div>
                     <div>
-                        <img src="assets/img/Snapchat.png" alt="">
+                        <img src="assets/img/Snapchat.png" alt="" class="hover:scale-110 transition-transform duration-300">
                     </div>
                     <div>
-                        <img src="assets/img/TikTok.png" alt="">
+                        <img src="assets/img/TikTok.png" alt="" class="hover:scale-110 transition-transform duration-300">
                     </div>
                 </div>
             </div>
-            <!-- col3 -->
+             <!-- col3  -->
             <div class="flex flex-col gap-2 2xl:gap-5">
-                <div class="text-lg font-bold text-secondary dark:text-primary">
-                    Legal Pages </div>
-                <a href="#" class="underline hover-text">Terms and conditions</a>
-                <a href="#" class="underline hover-text">Privacy</a>
-                <a href="#" class="underline hover-text">Cookies</a>
-                <a href="#" class="underline hover-text">Modern Slavery Statement</a>
+                <div class="text-lg font-bold text-secondary dark:text-primary">Legal Pages</div>
+                <a href="#" class="link-hover underline hover:text-primary transition-colors duration-300">Terms and conditions</a>
+                <a href="#" class="link-hover underline hover:text-primary transition-colors duration-300">Privacy</a>
+                <a href="#" class="link-hover underline hover:text-primary transition-colors duration-300">Cookies</a>
+                <a href="#" class="link-hover underline hover:text-primary transition-colors duration-300">Modern Slavery Statement</a>
             </div>
-            <!-- col3 -->
+             <!-- col4  -->
             <div class="flex flex-col gap-2 2xl:gap-5">
-                <div class="text-lg font-bold text-secondary dark:text-primary">
-                    Important Links</div>
-                <a href="#" class="underline hover-text">Get help</a>
-                <a href="#" class="underline hover-text">Add your restaurant</a>
-                <a href="#" class="underline hover-text">Sign up to deliver</a>
-                <a href="#" class="underline hover-text">Create a business account</a>
+                <div class="text-lg font-bold text-secondary dark:text-primary">Important Links</div>
+                <a href="#" class="link-hover underline hover:text-primary transition-colors duration-300">Get help</a>
+                <a href="#" class="link-hover underline hover:text-primary transition-colors duration-300">Add your restaurant</a>
+                <a href="#" class="link-hover underline hover:text-primary transition-colors duration-300">Sign up to deliver</a>
+                <a href="#" class="link-hover underline hover:text-primary transition-colors duration-300">Create a business account</a>
             </div>
         </div>
-        <div></div>
     </footer>
-    <!-- Cart -->
-    <!-- Backdrop -->
-    <div id="cart-modal-backdrop" class="fixed inset-0 bg-black/50 flex justify-center items-center z-50  hidden">
-        <!-- Modal content -->
-        <div class="bg-white w-full max-w-2xl rounded-xl  relative">
-            <!-- Close button -->
-            <button onclick="openCloseCartModal()"
-                class="absolute -top-3 -right-3 text-white bg-primary rounded-full p-2 px-4 font-bold text-3xl">&times</button>
-            <!-- Header image -->
-            <img src="assets/img/Rectangle 53.png" alt="Pizza Banner" class="w-full object-cover">
-            <!-- food list -->
+
+     <!-- Cart  -->
+     <!-- Backdrop  -->
+    <div id="cart-modal-backdrop" class="fixed inset-0 bg-black/50 flex justify-center items-center z-50 hidden transition-opacity duration-300">
+         <!-- Modal content  -->
+        <div class="bg-white w-full max-w-2xl rounded-xl relative transform transition-all duration-300 scale-95 opacity-0" id="cart-modal">
+             <!-- Close button  -->
+            <button onclick="openCloseCartModal()" class="absolute -top-3 -right-3 text-white bg-primary rounded-full p-2 px-4 font-bold text-3xl hover:bg-secondary transition-colors duration-300 hover:scale-110">&times;</button>
+             <!-- Header image  -->
+            <img src="assets/img/Rectangle 53.png" alt="Pizza Banner" class="w-full object-cover rounded-t-xl">
+             <!-- food list  -->
             <div class="p-4 space-y-4">
-                <div id="cart-item" class="space-y-4">
-                    <!-- food item -->
+                <div class="flex justify-between items-center">
+                    <h3 class="text-lg font-bold text-secondary">Your Cart</h3>
+                    <button onclick="clearCart()" class="text-sm text-red-500 hover:text-red-700 underline transition-colors duration-300">Clear Cart</button>
                 </div>
-                <!-- Total & actions -->
+                <div id="cart-item" class="space-y-4">
+                     <!-- food item  -->
+                </div>
+                 <!-- Total & actions  -->
                 <div class="flex flex-col sm:flex-row justify-between items-center mt-6">
-                    <span
-                        class="font-semibold text-sm text-white text-center bg-primary p-2 rounded-sm  hover:bg-secondary dark:bg-secondary">Total
-                        to pay <span class="text-xl"> £ <span id="total-ammount">0.00</span> </span></span>
+                    <span class="font-semibold text-sm text-white text-center bg-primary p-2 rounded-sm hover:bg-secondary dark:bg-secondary transition-colors duration-300">Total to pay <span class="text-xl"> £ <span id="total-ammount">0.00</span> </span></span>
                     <div class="sm:self-end-safe">
                         <div class="text-xs p-3">Delivery & Tax will be calculated in the next step</div>
                         <div class="flex gap-2 items-center">
-                            <a class="underline font-semibold cursor-pointer" onclick="openCloseCartModal()">Take me
-                                Back</a>
-                            <button
-                                class="bg-[#028643] text-white px-8 py-2 rounded text-lg font-semibold flex gap-1 justify-center items-center">
+                            <a class="underline font-semibold cursor-pointer hover:text-primary transition-colors duration-300" onclick="openCloseCartModal()">Take me Back</a>
+                            <button class="btn-animate bg-[#028643] text-white px-8 py-2 rounded text-lg font-semibold flex gap-1 justify-center items-center hover:bg-[#026d37] transition-colors duration-300">
                                 <div><img src="assets/img/Forward Button.png" alt=""></div>
-                                <div>Next Step
-                                </div>
+                                <div>Next Step</div>
                             </button>
                         </div>
                     </div>
@@ -545,7 +605,7 @@
             </div>
         </div>
     </div>
-    <script src="script2.js"></script>
-</body>
 
+    <script src="script.js"></script>
+</body>
 </html>
