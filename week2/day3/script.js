@@ -684,22 +684,22 @@ const resturants = [
     {
         id: 3,
         name: "KFC West London",
-        logo: "./assets/img/Kfc.jpg",
+        logo: "./assets/img/4.png",
     },
     {
         id: 4,
         name: "Texas Chicken",
-        logo: "./assets/img/Texas.jpg",
+        logo: "./assets/img/3.png",
     },
     {
         id: 5,
         name: "Burger King",
-        logo: "./assets/img/King.jpg",
+        logo: "./assets/img/2.png",
     },
     {
         id: 6,
         name: "Shaurma 1",
-        logo: "./assets/img/Shaurma.jpg",}
+        logo: "./assets/img/1.png",}
 
 ];
 
