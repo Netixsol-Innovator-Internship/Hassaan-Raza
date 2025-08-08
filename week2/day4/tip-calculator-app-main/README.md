@@ -38,4 +38,4 @@ A responsive tip calculator that helps users split bills and calculate tips accu
 
 ## Live Demo
 
-🔗 [View Live Demo](#) *(Hssaan-week2-day4-tip-calc.vercel.app)*
+🔗 [View Live Demo](#) *(Hassaan-week2-day4-tip-calc.vercel.app)*
