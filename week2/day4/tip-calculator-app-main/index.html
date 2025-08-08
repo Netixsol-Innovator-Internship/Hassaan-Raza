@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip Calculator</title>
+    <link href="./output.css" rel="stylesheet">
+
+    <style>
+        /* Custom input styling */
+        input[type="number"]::-webkit-outer-spin-button,
+        input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        input[type="number"] {
+            -moz-appearance: textfield;
+        }
+        
+        /* Focus styles */
+        .input-focus:focus {
+            outline: none;
+            border-color: hsl(172, 67%, 45%);
+            box-shadow: 0 0 0 2px hsl(172, 67%, 45%, 0.2);
+        }
+        
+        /* Custom button hover and active states */
+        .tip-btn {
+            transition: all 0.2s ease;
+        }
+        
+        .tip-btn:hover {
+            background-color: hsl(172, 67%, 45%);
+            color: hsl(183, 100%, 15%);
+        }
+        
+        .tip-btn.active {
+            background-color: hsl(172, 67%, 45%);
+            color: hsl(183, 100%, 15%);
+        }
+        
+        /* Error state */
+        .error {
+            border-color: #ef4444;
+        }
+        
+        .error:focus {
+            border-color: #ef4444;
+            box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.2);
+        }
+
+    </style>
+</head>
+<body class="bg-grey-200 min-h-screen font-space-mono">
+    <!-- Background Pattern -->
+    <div class="min-h-screen flex flex-col items-center justify-center p-4 relative">
+        <!-- Logo -->
+        <div class="mb-8 md:mb-12">
+            <div class="text-dark-green text-2xl font-bold tracking-[0.5em] text-center">
+                <div>SPLI</div>
+                <div>TTER</div>
+            </div>
+        </div>
+        
+        <!-- Calculator Container -->
+        <div class="bg-white rounded-3xl shadow-xl w-full max-w-4xl overflow-hidden">
+            <div class="flex flex-col lg:flex-row">
+                <!-- Input Section -->
+                <div class="p-6 md:p-8 lg:p-10 flex-1">
+                    <!-- Bill Input -->
+                    <div class="mb-6 md:mb-8">
+                        <label for="bill" class="block text-grey-500 text-sm font-bold mb-2">
+                            Bill
+                        </label>
+                        <div class="relative">
+                            <span class="absolute left-4 top-1/2 transform -translate-y-1/2 text-grey-400 text-xl">$</span>
+                            <input 
+                                type="number" 
+                                id="bill" 
+                                placeholder="0" 
+                                class="w-full bg-grey-50 border-2 border-transparent rounded-lg px-4 py-3 pl-8 text-right text-2xl font-bold text-dark-green input-focus"
+                                step="0.01"
+                                min="0"
+                            >
+                        </div>
+                        <div id="bill-error" class="text-red-500 text-sm mt-1 hidden">Can't be zero</div>
+                    </div>
+                    
+                    <!-- Tip Selection -->
+                    <div class="mb-6 md:mb-8">
+                        <label class="block text-grey-500 text-sm font-bold mb-4">
+                            Select Tip %
+                        </label>
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+                            <button class="tip-btn bg-dark-green text-white rounded-lg py-3 px-4 text-xl font-bold" data-tip="5">
+                                5%
+                            </button>
+                            <button class="tip-btn bg-dark-green text-white rounded-lg py-3 px-4 text-xl font-bold" data-tip="10">
+                                10%
+                            </button>
+                            <button class="tip-btn bg-dark-green text-white rounded-lg py-3 px-4 text-xl font-bold" data-tip="15">
+                                15%
+                            </button>
+                            <button class="tip-btn bg-dark-green text-white rounded-lg py-3 px-4 text-xl font-bold" data-tip="25">
+                                25%
+                            </button>
+                            <button class="tip-btn bg-dark-green text-white rounded-lg py-3 px-4 text-xl font-bold" data-tip="50">
+                                50%
+                            </button>
+                            <input 
+                                type="number" 
+                                id="custom-tip" 
+                                placeholder="Custom" 
+                                class="bg-grey-50 border-2 border-transparent rounded-lg py-3 px-4 text-xl font-bold text-dark-green text-center input-focus"
+                                min="0"
+                                max="100"
+                            >
+                            <div id="custom-tip-error" class="text-red-500 text-sm mt-1 hidden">Must be 100 or less</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Number of People -->
+                    <div class="mb-6 md:mb-8">
+                        <div class="flex justify-between items-center mb-2">
+                            <label for="people" class="text-grey-500 text-sm font-bold">
+                                Number of People
+                            </label>
+                            <div id="people-error" class="text-red-500 text-sm hidden">Can't be zero</div>
+                        </div>
+                        <div class="relative">
+                            <svg class="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-grey-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+                            </svg>
+                            <input 
+                                type="number" 
+                                id="people" 
+                                placeholder="0" 
+                                class="w-full bg-grey-50 border-2 border-transparent rounded-lg px-4 py-3 pl-12 text-right text-2xl font-bold text-dark-green input-focus"
+                                min="1"
+                            >
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Results Section -->
+                <div class="bg-dark-green p-6 md:p-8 lg:p-10 lg:rounded-2xl lg:m-6 flex-1 lg:max-w-md">
+                    <!-- Tip Amount -->
+                    <div class="flex justify-between items-center mb-6 md:mb-8">
+                        <div>
+                            <div class="text-white text-sm md:text-base font-bold">Tip Amount</div>
+                            <div class="text-grey-400 text-xs md:text-sm">/ person</div>
+                        </div>
+                        <div id="tip-amount" class="text-primary-green text-3xl md:text-4xl lg:text-5xl font-bold">
+                            $0.00
+                        </div>
+                    </div>
+                    
+                    <!-- Total Amount -->
+                    <div class="flex justify-between items-center mb-8 md:mb-12">
+                        <div>
+                            <div class="text-white text-sm md:text-base font-bold">Total</div>
+                            <div class="text-grey-400 text-xs md:text-sm">/ person</div>
+                        </div>
+                        <div id="total-amount" class="text-primary-green text-3xl md:text-4xl lg:text-5xl font-bold">
+                            $0.00
+                        </div>
+                    </div>
+                    
+                    <!-- Reset Button -->
+                    <button 
+                        id="reset-btn" 
+                        class="w-full bg-primary-green text-dark-green py-3 rounded-lg text-xl font-bold hover:bg-opacity-80 transition-all duration-200 disabled:opacity-30 disabled:cursor-not-allowed"
+                        disabled
+                    >
+                        RESET
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Calculator state
+        const calculator = {
+            bill: 0,
+            tipPercentage: 0,
+            numberOfPeople: 0,
+            customTip: 0
+        };
+
+        // DOM elements
+        const billInput = document.getElementById('bill');
+        const customTipInput = document.getElementById('custom-tip');
+        const peopleInput = document.getElementById('people');
+        const tipButtons = document.querySelectorAll('.tip-btn');
+        const tipAmountDisplay = document.getElementById('tip-amount');
+        const totalAmountDisplay = document.getElementById('total-amount');
+        const resetButton = document.getElementById('reset-btn');
+        const billError = document.getElementById('bill-error');
+        const peopleError = document.getElementById('people-error');
+        const customTipError = document.getElementById('custom-tip-error');
+
+        // Utility functions
+        const formatCurrency = (amount) => {
+            return new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: 'USD',
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+            }).format(amount);
+        };
+
+        const validateInput = (input, errorElement, canBeZero = false, maxValue = null) => {
+            const value = parseFloat(input.value);
+            const isValid = !isNaN(value) && (canBeZero ? value >= 0 : value > 0) && (maxValue ? value <= maxValue : true);
+            
+            if (!isValid && input.value !== '') {
+                input.classList.add('error');
+                errorElement.classList.remove('hidden');
+                return false;
+            } else {
+                input.classList.remove('error');
+                errorElement.classList.add('hidden');
+                return true;
+            }
+        };
+
+        const calculateTip = () => {
+            // Validate inputs
+            const billValid = validateInput(billInput, billError);
+            const peopleValid = validateInput(peopleInput, peopleError);
+            
+            if (!billValid || !peopleValid || calculator.bill <= 0 || calculator.numberOfPeople <= 0) {
+                tipAmountDisplay.textContent = '$0.00';
+                totalAmountDisplay.textContent = '$0.00';
+                resetButton.disabled = true;
+                return;
+            }
+
+            // Calculate tip and total per person
+            const tipAmount = (calculator.bill * calculator.tipPercentage) / 100;
+            const tipPerPerson = tipAmount / calculator.numberOfPeople;
+            const totalPerPerson = (calculator.bill + tipAmount) / calculator.numberOfPeople;
+
+            // Update display
+            tipAmountDisplay.textContent = formatCurrency(tipPerPerson);
+            totalAmountDisplay.textContent = formatCurrency(totalPerPerson);
+            
+            // Enable reset button if there are values
+            resetButton.disabled = false;
+        };
+
+        const resetCalculator = () => {
+            calculator.bill = 0;
+            calculator.tipPercentage = 0;
+            calculator.numberOfPeople = 0;
+            calculator.customTip = 0;
+
+            billInput.value = '';
+            customTipInput.value = '';
+            peopleInput.value = '';
+            
+            // Remove active states from tip buttons
+            tipButtons.forEach(btn => btn.classList.remove('active'));
+            
+            // Reset displays
+            tipAmountDisplay.textContent = '$0.00';
+            totalAmountDisplay.textContent = '$0.00';
+            
+            // Disable reset button
+            resetButton.disabled = true;
+            
+            // Clear errors
+            billInput.classList.remove('error');
+            peopleInput.classList.remove('error');
+            customTipInput.classList.remove('error');
+            billError.classList.add('hidden');
+            peopleError.classList.add('hidden');
+            customTipError.classList.add('hidden');
+        };
+
+        // Event listeners
+        billInput.addEventListener('input', (e) => {
+            calculator.bill = parseFloat(e.target.value) || 0;
+            calculateTip();
+        });
+
+        customTipInput.addEventListener('input', (e) => {
+            const customValue = parseFloat(e.target.value) || 0;
+            
+            // Validate custom tip input
+            const isValidCustomTip = validateInput(customTipInput, customTipError, true, 100);
+            
+            if (isValidCustomTip) {
+                calculator.customTip = customValue;
+                calculator.tipPercentage = customValue;
+                
+                // Remove active state from preset buttons when custom is used
+                if (e.target.value !== '') {
+                    tipButtons.forEach(btn => btn.classList.remove('active'));
+                }
+                
+                calculateTip();
+            }
+        });
+
+        peopleInput.addEventListener('input', (e) => {
+            calculator.numberOfPeople = parseInt(e.target.value) || 0;
+            calculateTip();
+        });
+
+        // Tip button event listeners
+        tipButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                const tipValue = parseInt(e.target.dataset.tip);
+                
+                if (tipValue) {
+                    calculator.tipPercentage = tipValue;
+                    
+                    // Update active state
+                    tipButtons.forEach(btn => btn.classList.remove('active'));
+                    e.target.classList.add('active');
+                    
+                    // Clear custom input
+                    customTipInput.value = '';
+                    calculator.customTip = 0;
+                    
+                    calculateTip();
+                }
+            });
+        });
+
+        // Reset button event listener
+        resetButton.addEventListener('click', resetCalculator);
+
+        // Input validation on blur
+        billInput.addEventListener('blur', () => {
+            validateInput(billInput, billError);
+        });
+
+        peopleInput.addEventListener('blur', () => {
+            validateInput(peopleInput, peopleError);
+        });
+
+        customTipInput.addEventListener('blur', () => {
+            validateInput(customTipInput, customTipError, true, 100);
+        });
+
+        // Prevent negative values
+        [billInput, customTipInput, peopleInput].forEach(input => {
+            input.addEventListener('keydown', (e) => {
+                // Allow: backspace, delete, tab, escape, enter
+                if ([46, 8, 9, 27, 13].indexOf(e.keyCode) !== -1 ||
+                    // Allow: Ctrl+A, Ctrl+C, Ctrl+V, Ctrl+X
+                    (e.keyCode === 65 && e.ctrlKey === true) ||
+                    (e.keyCode === 67 && e.ctrlKey === true) ||
+                    (e.keyCode === 86 && e.ctrlKey === true) ||
+                    (e.keyCode === 88 && e.ctrlKey === true) ||
+                    // Allow: home, end, left, right, down, up
+                    (e.keyCode >= 35 && e.keyCode <= 40)) {
+                    return;
+                }
+                // Ensure that it is a number and stop the keypress
+                if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+                    e.preventDefault();
+                }
+            });
+        });
+
+        // Initialize calculator
+        calculateTip();
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+@import "tailwindcss";
+@theme {
+    --font-space-mono: 'Space Mono', 'monospace';
+}
+
+@layer components{
+    
+        /* Custom color classes for installed Tailwind */
+        .bg-primary-green { background-color: hsl(172, 67%, 45%); }
+        .bg-dark-green { background-color: hsl(183, 100%, 15%); }
+        .bg-grey-500 { background-color: hsl(186, 14%, 43%); }
+        .bg-grey-400 { background-color: hsl(184, 14%, 56%); }
+        .bg-grey-200 { background-color: hsl(185, 41%, 84%); }
+        .bg-grey-50 { background-color: hsl(189, 47%, 97%); }
+        
+        .text-primary-green { color: hsl(172, 67%, 45%); }
+        .text-dark-green { color: hsl(183, 100%, 15%); }
+        .text-grey-500 { color: hsl(186, 14%, 43%); }
+        .text-grey-400 { color: hsl(184, 14%, 56%); }
+        .text-grey-200 { color: hsl(185, 41%, 84%); }
+        .text-grey-50 { color: hsl(189, 47%, 97%); }
+        
+        /* .font-space-mono { font-family: 'Space Mono', monospace; } */
+}
