@@ -699,7 +699,7 @@ const resturants = [
     {
         id: 6,
         name: "Shaurma 1",
-        logo: "./assets/img/shaurma.jpg",
+        logo: "./assets/img/shaurma.jpg",}
 
 ];
 
