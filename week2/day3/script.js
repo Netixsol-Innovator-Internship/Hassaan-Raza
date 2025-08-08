@@ -684,23 +684,23 @@ const resturants = [
     {
         id: 3,
         name: "KFC West London",
-        logo: "./assets/img/kfc.png",
+        logo: "./assets/img/kfc.jpg",
     },
     {
         id: 4,
         name: "Texas Chicken",
-        logo: "./assets/img/texas.png",
+        logo: "./assets/img/texas.jpg",
     },
     {
         id: 5,
         name: "Burger King",
-        logo: "./assets/img/king.png",
+        logo: "./assets/img/king.jpg",
     },
     {
         id: 6,
         name: "Shaurma 1",
-        logo: "./assets/img/shaurma.png",
-    },
+        logo: "./assets/img/shaurma.jpg",
+
 ];
 
 const customerReviews = [
