@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/img/ico-fav.png" type="image/x-icon">
+    <link rel="stylesheet" href="output.css">
+    <title>Quiz Master</title>
+
+</head>
+
+<body class="font-manrope text-primary">
+    <!-- Header -->
+
+    <header class="border-b-1 border-[#E5E8EB]">
+        <div class="flex justify-between items-center px-3 py-5 md:px-[3%]">
+            <!-- left -->
+            <div class="flex gap-4 items-center ">
+                <div><img src="assets/img/ico-fav.png" alt=""></div>
+                <div class="text-lg font-bold text-primary">QuizMaster</div>
+            </div>
+            <!-- right -->
+            <div class="flex gap-8 items-center">
+                <nav class="space-x-9">
+                    <a href="" class="font-medium text-sm">Home</a>
+                    <a href="" class="font-medium text-sm">Quizzez</a>
+                    <a href="" class="font-medium text-sm">LeaderBoard</a>
+                    <a href="" class="font-medium text-sm">Profile</a>
+                </nav>
+                <div class="bg-secondary-l w-10 h-10 rounded-lg flex justify-center items-center">
+                    <img class="w-[50%] self-center-safe justify-self-center" src="assets/img/ico-bell.png" alt="">
+                </div>
+                <div>
+                    <img class="rounded-full w-10 h-10" src="assets/img/user-r.png" alt="">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 1st page -->
+    <section class="md:w-[85%] lg:w-[75%]  mx-auto py-[2%] h-screen pb-8 hidden">
+        <!-- cover photo section -->
+        <div
+            class="relative bg-[url('assets/img/cover.png')] bg-cover h-[50%] bg-center h-120 overflow-hidden rounded-lg flex  flex-col justify-end">
+            <!-- gradient -->
+            <div class="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,0.1)_0%,rgba(0,0,0,0.4)_100%)] "></div>
+            <div class="relative  z-10 flex flex-col justify-center items-center p-10 text-center gap-2">
+                <div class="font-extrabold text-5xl text-white">
+                    <h1>Welcome to QuizMaster</h1>
+                </div>
+                <div class="text-white">
+                    <p>Test your knowledge with our engaging quizzes. Compete with friends and climb the leaderboard.
+                        Start your quiz journey today!</p>
+                </div>
+                <div class="pt-6">
+                    <button class="text-white font-bold bg-secondary rounded-lg px-5 py-3"><a href="">Get
+                            Started</a></button>
+                </div>
+
+            </div>
+        </div>
+        <!-- key feature div -->
+        <div class="p-4">
+            <div>
+                <div class="text-4xl font-extrabold py-2">
+                    <h1>Key Features</h1>
+                </div>
+                <div class="py-2">Explore the exciting features that make QuizMaster the ultimate quiz app.</div>
+            </div>
+            <div class="grid sm:grid-cols-3 gap-3">
+                <div class="flex flex-col gap-1 border rounded-lg border-[#DBE0E5] p-4">
+                    <div class="p-2">
+                        <img src="assets/img/ico-timer.png" alt="">
+                    </div>
+                    <div class="font-bold">
+                        Timed Quizzes
+                    </div>
+                    <div class="text-primary-l pb-4">
+                        Challenge yourself with timed quizzes to test your speed and accuracy.
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Sign-Up page -->
+    <section class="md:w-[85%] lg:w-[75%]  mx-auto py-[5%] h-screen hidden">
+        <div class="flex flex-col items-center justify-center">
+            <div class="font-bold text-3xl p-3">Create your account</div>
+            <div class="md:self-start p-3">
+                <form action="" class="flex flex-col gap-3">
+                    <div class="text-primary-l  border border-[#DBE0E5] p-4 rounded-lg w-112"><input class=""
+                            type="text" name="name" id="name" placeholder="Full Name"></div>
+                    <div class="text-primary-l  border border-[#DBE0E5] p-4 rounded-lg w-112"><input class=""
+                            type="text" name="name" id="name" placeholder="Full Name"></div>
+                    <div class="text-primary-l  border border-[#DBE0E5] p-4 rounded-lg w-112"><input class=""
+                            type="text" name="name" id="name" placeholder="Full Name"></div>
+                    <div class="text-primary-l  border border-[#DBE0E5] p-4 rounded-lg w-112"><input class=""
+                            type="text" name="name" id="name" placeholder="Full Name"></div>
+                    <div class="text-white font-bold bg-secondary px-5 py-3 rounded-lg w-112 text-center"><button><a
+                                href="">Sign Up</a></button></div>
+
+                </form>
+            </div>
+            <div class="text-primary-l text-sm p-3"><a href="#">Already have an account? Sign In</a></div>
+        </div>
+    </section>
+
+    <!-- sign in -->
+
+
+    <!-- Profile Section -->
+
+    <section class="md:w-[85%] lg:w-[75%]  mx-auto py-[2%] h-screen hidden">
+        <div class="flex flex-col items-center justify-center">
+            <div class=""><img class="rounded-full w-30" src="assets/img/user-2.png" alt=""></div>
+            <div class="font-bold  text-xl">Sophia Bennett</div>
+            <div class="text-primary-l">Quiz Enthusiast</div>
+            <div class="text-primary-l">Joined 2021</div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="flex gap-4 items-center border-b border-[#DBE0E5]">
+            <div class="p-3 border-b-3 border-[#E5E8EB] font-bold active:text-primary-l ">
+                <a href="">Activity</a>
+            </div>
+            <div class="p-3 border-b-3 border-[#E5E8EB] font-bold active:text-primary-l ">
+                <a href="">Profile</a>
+            </div>
+        </div>
+
+        <!-- Bio -->
+        <div class="p-4">
+            <div class="text-2xl font-bold dark:text-white py-4">
+                <h1>Personal Information</h1>
+            </div>
+            <div class=" flex flex-col sm:flex-row">
+                <div class="border-t md:w-[20%] sm:mr-[2%] py-4 border-[#E5E8EB]">
+                    <div class="text-sm text-primary-l py-1">Name</div>
+                    <div class="text-sm py-1">Sophia Bennett</div>
+                </div>
+                <div class="border-t w-full py-4 border-[#E5E8EB]">
+                    <div class="text-sm text-primary-l py-1">Name</div>
+                    <div class="text-sm py-1">Sophia Bennett</div>
+                </div>
+            </div>
+            <div class="border-t md:w-[17%] sm:mr-5 mt-3 py-4 border-[#E5E8EB]">
+                <div class="text-sm text-primary-l py-1">Bio</div>
+                <div class="text-sm py-1">Sophia Bennett</div>
+            </div>
+        </div>
+
+        <!-- Quiz History -->
+        <div class="p-4">
+            <div class="text-2xl font-bold dark:text-white py-4">
+                <h1>Quiz History</h1>
+            </div>
+
+            <!-- history grid header -->
+
+            <div class="grid grid-cols-[1fr_1fr_1fr] text-sm border border-[#DBE0E5] p-3 rounded-t-lg">
+                <div class="font-medium ">Quiz Name</div>
+                <div class="font-medium">Score</div>
+                <div class="font-medium">Date</div>
+            </div>
+
+            <!-- history grid items -->
+
+
+            <div class="grid grid-cols-[1fr_1fr_1fr] text-sm border border-[#DBE0E5] p-3 border-t-0">
+                <div class=" ">Quiz Name</div>
+                <div class=" text-primary-l">Score</div>
+                <div class=" text-primary-l">Date</div>
+            </div>
+
+
+            <!--  -->
+
+        </div>
+
+
+    </section>
+
+
+    <section class="md:w-[85%] lg:w-[75%]  mx-auto py-[2%] h-screen hidden ">
+        <div class="font-bold text-4xl p-4">
+            Select a Quiz
+        </div>
+        <!-- quiz type buttons -->
+        <div id="quiz-type" class="flex gap-3 flex-wrap p-4">
+            <div id="" onclick="" class="text-sm font-medium bg-secondary-l px-5 py-2 text-left rounded-lg ">
+                All
+            </div>
+        </div>
+
+        <!-- Featured Quizz -->
+        <div class="p-4">
+            <div class="text-2xl font-bold dark:text-white pb-4">
+                <h1>Featured Quizzes</h1>
+            </div>
+
+            <div class="flex gap-3 p-2 flex-wrap">
+
+
+                <!-- Featured quiz item  -->
+                <div class="w-63">
+                    <div class="max-h-35 w-full object-cover overflow-hidden rounded-lg shadow">
+                        <img src="assets/img/cover.png" alt="">
+                    </div>
+                    <div class="py-3">
+                        <div class="font-medium ">The Univese</div>
+                        <div class="text-primary-l text-sm">Test your testi as the test so ok ko</div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+
+        <!-- All Quizzez -->
+        <div class="p-4">
+            <div class="text-2xl font-bold dark:text-white pb-4">
+                <h1>All Quizzes</h1>
+            </div>
+
+            <!-- Featured quiz item  -->
+            <div onclick="" class="cursor-pointer flex flex-col sm:flex-row justify-between gap-2 sm:items-center p-3">
+                <div class="sm:self-start">
+                    <div class="font-bold ">The Univese</div>
+                    <div class="text-primary-l text-sm">Test your testi as the test so ok ko</div>
+                </div>
+
+                <div class="w-80 h-42  overflow-hidden rounded-lg shadow">
+                    <img src="assets/img/cover.png" alt="">
+                </div>
+            </div>
+        </div>
+
+
+
+    </section>
+
+
+    <section class="md:w-[85%] lg:w-[75%]  mx-auto py-[2%] h-screen  ">
+        <!-- progress section -->
+        <div class="p-4 flex flex-col gap-3 ">
+            <div class="font-medium">
+                Progress
+            </div>
+            <div class="w-full bg-[#DBE0E5] rounded-full h-2.5">
+                <div class="bg-primary h-2.5 rounded-full" style="width: 10%"></div>
+            </div>
+
+            <div class="text-primary-l">
+                Question <span>1</span> of <span>4</span>
+            </div>
+        </div>
+
+        <!-- Timer Quiz -->
+        <div class="grid grid-cols-3 gap-3 p-4">
+            <div class="flex flex-col text-center">
+                <div class="text-lg font-bold w-full py-2 bg-secondary-l rounded-lg">
+                    00
+                </div>
+                <div class="text-sm py-3">
+                    Hours
+                </div>
+            </div>
+
+            <div class="flex flex-col text-center">
+                <div class="text-lg font-bold w-full py-2 bg-secondary-l rounded-lg">
+                    00
+                </div>
+                <div class="text-sm py-3">
+                    Hours
+                </div>
+            </div>
+
+            <div class="flex flex-col text-center">
+                <div class="text-lg font-bold w-full py-2 bg-secondary-l rounded-lg">
+                    00
+                </div>
+                <div class="text-sm py-3">
+                    Hours
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
