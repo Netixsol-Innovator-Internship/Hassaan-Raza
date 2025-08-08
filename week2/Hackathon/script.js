@@ -5,7 +5,7 @@ const quizData = [
         title: 'HTML Basics',
         category: 'HTML',
         description: 'Test your knowledge of HTML fundamentals',
-        image: 'assets/img/cover.png',
+        image: 'assets/img/html.jpeg',
         featured: true,
         questions: [
             {
@@ -95,7 +95,7 @@ const quizData = [
         title: 'CSS Fundamentals',
         category: 'CSS',
         description: 'Master the basics of CSS styling',
-        image: 'assets/img/cover.png',
+        image: 'assets/img/css.png',
         featured: true,
         questions: [
             {
@@ -190,7 +190,7 @@ const quizData = [
         title: 'JavaScript Basics',
         category: 'JavaScript',
         description: 'Learn JavaScript fundamentals and syntax',
-        image: 'assets/img/cover.png',
+        image: 'assets/img/js.png',
         featured: false,
         questions: [
             {
@@ -285,7 +285,7 @@ const quizData = [
         title: 'React Fundamentals',
         category: 'React',
         description: 'Test your React knowledge and concepts',
-        image: 'assets/img/cover.png',
+        image: 'assets/img/react.jpeg',
         featured: true,
         questions: [
             {

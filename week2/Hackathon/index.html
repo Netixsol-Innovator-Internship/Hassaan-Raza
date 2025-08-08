@@ -13,9 +13,9 @@
     <header id="main-header" class="border-b-1 border-gray-sh">
         <div class="flex justify-between items-center px-3 py-5 md:px-[3%]">
              <!-- left  -->
-            <div class="flex gap-4 items-center">
+            <div onclick="showSection('landing')" class="flex gap-4 items-center cursor-pointer">
                 <div class=""><img class="dark:invert" src="assets/img/ico-fav.png" alt=""></div>
-                <div class="text-lg font-bold">QuizMaster</div>
+                <div onclick="showSection('landing')" class="text-lg font-bold">QuizMaster</div>
             </div>
              <!-- right  -->
             <div class="flex gap-2 sm:gap-5 items-center shrink-0">
@@ -73,9 +73,9 @@
      <!-- Header for signup page & Quiz question page and quiz review page  -->
     <header id="simple-header" class="border-b-1 border-gray-sh hidden">
         <div class="flex justify-between items-center px-3 py-5 md:px-[3%]">
-             left 
-            <div class="flex gap-4 items-center">
-                <div class="text-lg font-bold">Quiz App</div>
+             <!-- left  -->
+            <div onclick="showSection('landing')" class="flex gap-4 items-center cursor-pointer">
+                <div onclick="showSection('landing')" class="text-lg font-bold">Quiz App</div>
             </div>
         </div>
     </header>
@@ -108,7 +108,7 @@
                 <div class="py-2 dark:text-gray-sh">Explore the exciting features that make QuizMaster the ultimate quiz app.</div>
             </div>
             <div id="features-grid" class="grid sm:grid-cols-3 gap-3">
-                 Features will be populated by JavaScript 
+                 <!-- Features will be populated by JavaScript  -->
             </div>
         </div>
     </section>
