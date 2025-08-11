@@ -128,5 +128,7 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 // global error handler (must be after routes)
 app.use(errorHandler);
 
-const PORT = process.env.PORT || 3002;
-app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+// const PORT = process.env.PORT || 3002;
+// app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+
+module.exports = app;

@@ -1,13 +1,13 @@
 {
   "name": "restfulapi",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Task Manager RESTful API with Node.js, Express, Swagger",
+  "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js",
     "dev": "nodemon src/index.js"
   },
-  "keywords": [],
+  "keywords": ["express", "restapi", "swagger", "vercel"],
   "author": "",
   "license": "ISC",
   "dependencies": {
