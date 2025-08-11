@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="output.css">
+    <title>Responsive Navbar</title>
+</head>
+
+<body>
+    <header class="px-[7%]">
+        <div class="flex justify-between items-center">
+            <div class="py-2.5 cursor-pointer flex-shrink-0">
+                <img src="/assets/img/Logo.png" alt="">
+            </div>
+            <nav class="md:flex space-x-4 items-center hidden">
+                <div class="hover:bg-linear-to-r from-[#08BBDD] to-[#1668C7] rounded-b-xs  pb-2.5">
+                    <a class=" bg-white py-2.5 px-4 font-medium text-primary text-sm  hover:text-black transition-all duration-75"
+                        href="">Home</a>
+                </div>
+
+                <div class="hover:bg-linear-to-r from-[#08BBDD] to-[#1668C7] rounded-b-xs  pb-2.5">
+                    <a class=" bg-white py-2.5 px-4 font-medium text-primary text-sm  hover:text-black transition-all duration-75"
+                        href="">About Us</a>
+                </div>
+
+                <div class="relative group hover:bg-linear-to-r from-[#08BBDD] to-[#1668C7] rounded-b-xs pb-0.25">
+                    <!-- DropDown -->
+                    <a class="flex bg-white py-2.5 px-4 items-center gap-3 cursor-pointer">
+                        <span class="  font-medium text-primary text-sm  hover:text-black transition-all duration-75"
+                            href="">Features </span>
+                        <img src="assets/img/Vector.svg" alt="">
+                    </a>
+
+                    <!--dropdown Menu -->
+                    <div
+                        class="absolute w-30 left-0 mt-2 rounded-b-sm opacity-0 shadow-md flex flex-col invisible group-hover:visible group-hover:opacity-100 transition duration-200">
+                        <a class="p-2 font-medium text-primary text-sm bg-gray-50 border-gray-200 border-b hover:text-black transition-all duration-75"
+                            href="">Chacha samosa</a>
+                        <a class="p-2 font-medium text-primary text-sm bg-gray-50 border-gray-200 border-b hover:text-black transition-all duration-75"
+                            href="">14 street</a>
+                        <a class="p-2 font-medium text-primary text-sm bg-gray-50 border-gray-200 border-b hover:text-black transition-all duration-75"
+                            href="">Subway</a>
+
+                    </div>
+                </div>
+
+                <div class="relative group hover:bg-linear-to-r from-[#08BBDD] to-[#1668C7] rounded-b-xs pb-0.25">
+                    <!-- DropDown -->
+                    <a class="flex bg-white py-2.5 px-4 items-center gap-3 cursor-pointer">
+                        <span class="  font-medium text-primary text-sm  hover:text-black transition-all duration-75"
+                            href="">Our Services </span>
+                        <img src="assets/img/Vector.svg" alt="">
+                    </a>
+
+                    <!--dropdown Menu -->
+                    <div
+                        class="absolute w-30 left-0 mt-2 rounded-b-sm opacity-0 shadow-md flex flex-col invisible group-hover:visible group-hover:opacity-100 transition duration-200">
+                        <a class="p-2 font-medium text-primary text-sm bg-gray-50 border-gray-200 border-b hover:text-black transition-all duration-75"
+                            href="">Chacha samosa</a>
+                        <a class="p-2 font-medium text-primary text-sm bg-gray-50 border-gray-200 border-b hover:text-black transition-all duration-75"
+                            href="">14 street</a>
+                        <a class="p-2 font-medium text-primary text-sm bg-gray-50 border-gray-200 border-b hover:text-black transition-all duration-75"
+                            href="">Subway</a>
+
+                    </div>
+                </div>
+
+                <div class="hover:bg-linear-to-r from-[#08BBDD] to-[#1668C7] rounded-b-xs  pb-2.5">
+                    <a class=" bg-white py-2.5 px-4 font-medium text-primary text-sm  hover:text-black transition-all duration-75"
+                        href="">Why ADS?</a>
+                </div>
+
+
+
+            </nav>
+            <div>
+                <button class="btn-grad text-white font-lg font-medium py-3 px-6 rounded-lg hidden md:flex">Contact
+                    Us</button>
+            </div>
+        </div>
+    </header>
+</body>
+
+</html>
