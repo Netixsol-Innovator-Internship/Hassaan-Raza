@@ -1,0 +1,388 @@
+{
+    "info": {
+        "name": "Tea E-Commerce API",
+        "description": "Complete API collection for testing the Tea E-Commerce backend",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "auth": {
+        "type": "bearer",
+        "bearer": [
+            {
+                "key": "token",
+                "value": "{{jwt_token}}",
+                "type": "string"
+            }
+        ]
+    },
+    "variable": [
+        {
+            "key": "base_url",
+            "value": "http://localhost:5000",
+            "type": "string"
+        },
+        {
+            "key": "jwt_token",
+            "value": "",
+            "type": "string"
+        },
+        {
+            "key": "user_id",
+            "value": "",
+            "type": "string"
+        },
+        {
+            "key": "product_id",
+            "value": "",
+            "type": "string"
+        },
+        {
+            "key": "cart_item_id",
+            "value": "",
+            "type": "string"
+        }
+    ],
+    "item": [
+        {
+            "name": "Authentication",
+            "item": [
+                {
+                    "name": "Register User",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"name\": \"Test User\",\n  \"email\": \"test@example.com\",\n  \"password\": \"Password123\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/api/auth/register",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "auth",
+                                "register"
+                            ]
+                        }
+                    },
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "if (pm.response.code === 201) {",
+                                    "    const response = pm.response.json();",
+                                    "    pm.collectionVariables.set('jwt_token', response.data.token);",
+                                    "    pm.collectionVariables.set('user_id', response.data.user.id);",
+                                    "}"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Login User",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"email\": \"test@example.com\",\n  \"password\": \"Password123\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/api/auth/login",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "auth",
+                                "login"
+                            ]
+                        }
+                    },
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "if (pm.response.code === 200) {",
+                                    "    const response = pm.response.json();",
+                                    "    pm.collectionVariables.set('jwt_token', response.data.token);",
+                                    "    pm.collectionVariables.set('user_id', response.data.user.id);",
+                                    "}"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Get Profile",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{jwt_token}}"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/auth/profile",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "auth",
+                                "profile"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Products",
+            "item": [
+                {
+                    "name": "Get All Products",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "{{base_url}}/api/products",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "products"
+                            ]
+                        }
+                    },
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "if (pm.response.code === 200) {",
+                                    "    const response = pm.response.json();",
+                                    "    if (response.data && response.data.length > 0) {",
+                                    "        pm.collectionVariables.set('product_id', response.data[0]._id);",
+                                    "    }",
+                                    "}"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Get Products with Filters",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "{{base_url}}/api/products?collection=Green Tea&page=1&limit=5",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "products"
+                            ],
+                            "query": [
+                                {
+                                    "key": "collection",
+                                    "value": "Green Tea"
+                                },
+                                {
+                                    "key": "page",
+                                    "value": "1"
+                                },
+                                {
+                                    "key": "limit",
+                                    "value": "5"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Search Products",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "{{base_url}}/api/products/search?q=green",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "products",
+                                "search"
+                            ],
+                            "query": [
+                                {
+                                    "key": "q",
+                                    "value": "green"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Get Single Product",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "{{base_url}}/api/products/{{product_id}}",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "products",
+                                "{{product_id}}"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Cart",
+            "item": [
+                {
+                    "name": "Add to Cart",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{jwt_token}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"productId\": \"{{product_id}}\",\n  \"quantity\": 2\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/api/cart",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "cart"
+                            ]
+                        }
+                    },
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "if (pm.response.code === 200) {",
+                                    "    const response = pm.response.json();",
+                                    "    if (response.data && response.data.items && response.data.items.length > 0) {",
+                                    "        pm.collectionVariables.set('cart_item_id', response.data.items[0]._id);",
+                                    "    }",
+                                    "}"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Get Cart",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{jwt_token}}"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/cart",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "cart"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Update Cart Item",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{jwt_token}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"quantity\": 3\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/api/cart/{{cart_item_id}}",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "cart",
+                                "{{cart_item_id}}"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Remove from Cart",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{jwt_token}}"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/cart/{{cart_item_id}}",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "cart",
+                                "{{cart_item_id}}"
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}
