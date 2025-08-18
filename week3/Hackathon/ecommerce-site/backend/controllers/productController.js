@@ -5,6 +5,337 @@ import { validationResult } from "express-validator"
 // @desc    Get all products with filtering, search, and pagination
 // @route   GET /api/products
 // @access  Public
+
+// export const getProducts = asyncHandler(async (req, res) => {
+//   const {
+//     collection,
+//     origin,
+//     flavour,
+//     quality,
+//     caffeine,
+//     search,
+//     page = 1,
+//     limit = 12,
+//     sort = "-createdAt",
+//     minPrice,
+//     maxPrice,
+//   } = req.query
+
+//   // Build query object
+//   const query = { isActive: true }
+
+//   // Filter by collection
+//   if (collection) {
+//     query.collection = { $regex: collection, $options: "i" }
+//   }
+
+//   // Filter by origin
+//   if (origin) {
+//     query.origin = { $regex: origin, $options: "i" }
+//   }
+
+//   // Filter by flavour
+//   if (flavour) {
+//     query.flavour = { $regex: flavour, $options: "i" }
+//   }
+
+//   // Filter by quality
+//   if (quality) {
+//     query.quality = quality
+//   }
+
+//   // Filter by caffeine level
+//   if (caffeine) {
+//     query.caffeine = caffeine
+//   }
+
+//   // Price range filter
+//   if (minPrice || maxPrice) {
+//     query.price = {}
+//     if (minPrice) query.price.$gte = Number.parseFloat(minPrice)
+//     if (maxPrice) query.price.$lte = Number.parseFloat(maxPrice)
+//   }
+
+//   // Text search
+//   if (search) {
+//     query.$text = { $search: search }
+//   }
+
+//   // Calculate pagination
+//   const pageNum = Number.parseInt(page, 10)
+//   const limitNum = Number.parseInt(limit, 10)
+//   const skip = (pageNum - 1) * limitNum
+
+//   // Execute query with pagination
+//   const products = await Product.find(query).sort(sort).skip(skip).limit(limitNum).lean()
+
+//   // Get total count for pagination
+//   const total = await Product.countDocuments(query)
+//   const totalPages = Math.ceil(total / limitNum)
+
+//   // Get unique filter values for frontend
+//   const filterOptions = await Product.aggregate([
+//     { $match: { isActive: true } },
+//     {
+//       $group: {
+//         _id: null,
+//         collections: { $addToSet: "$collection" },
+//         origins: { $addToSet: "$origin" },
+//         flavours: { $addToSet: "$flavour" },
+//         qualities: { $addToSet: "$quality" },
+//         caffeinelevels: { $addToSet: "$caffeine" },
+//         priceRange: {
+//           $push: {
+//             min: { $min: "$price" },
+//             max: { $max: "$price" },
+//           },
+//         },
+//       },
+//     },
+//   ])
+
+//   res.status(200).json({
+//     success: true,
+//     count: products.length,
+//     pagination: {
+//       currentPage: pageNum,
+//       totalPages,
+//       totalProducts: total,
+//       hasNextPage: pageNum < totalPages,
+//       hasPrevPage: pageNum > 1,
+//     },
+//     filters: filterOptions[0] || {},
+//     data: products,
+//   })
+// })
+
+// // 2nd Deepseek
+// export const getProducts = asyncHandler(async (req, res) => {
+//   const {
+//     collection,
+//     origin,
+//     flavour,
+//     quality,
+//     caffeine,
+//     organic,
+//     search,
+//     page = 1,
+//     limit = 12,
+//     sort = "newest",
+//     minPrice,
+//     maxPrice,
+//   } = req.query
+
+//   const query = { isActive: true }
+
+//   // Collection filter
+//   if (collection) {
+//     query.collection = { $in: collection.split(",") }
+//   }
+
+//   // Origin filter
+//   if (origin) {
+//     query.origin = { $in: origin.split(",") }
+//   }
+
+//   // Flavour filter
+//   if (flavour) {
+//     query.flavour = { $in: flavour.split(",") }
+//   }
+
+//   // Quality filter
+//   if (quality) {
+//     query.quality = { $in: quality.split(",") }
+//   }
+
+//   // Caffeine filter
+//   if (caffeine) {
+//     query.caffeine = { $in: caffeine.split(",") }
+//   }
+
+//   // Organic filter
+//   if (organic) {
+//     query.Organic = organic === "true"
+//   }
+
+//   // Price range
+//   if (minPrice || maxPrice) {
+//     query.price = {}
+//     if (minPrice) query.price.$gte = Number(minPrice)
+//     if (maxPrice) query.price.$lte = Number(maxPrice)
+//   }
+
+//   // Text search
+//   if (search) {
+//     query.$text = { $search: search }
+//   }
+
+//   // Pagination
+//   const pageNum = Number(page)
+//   const limitNum = Number(limit)
+//   const skip = (pageNum - 1) * limitNum
+
+//   // Sorting
+//   let sortOption = { createdAt: -1 }
+//   if (sort === "price-low") sortOption = { price: 1 }
+//   if (sort === "price-high") sortOption = { price: -1 }
+//   if (sort === "popular") sortOption = { rating: -1 }
+
+//   // Fetch products
+//   const products = await Product.find(query)
+//     .sort(sortOption)
+//     .skip(skip)
+//     .limit(limitNum)
+//     .lean()
+
+//   const total = await Product.countDocuments(query)
+//   const totalPages = Math.ceil(total / limitNum)
+
+//   // Get unique filter values
+//   const filterOptions = await Product.aggregate([
+//     { $match: { isActive: true } },
+//     {
+//       $group: {
+//         _id: null,
+//         collections: { $addToSet: "$collection" },
+//         origins: { $addToSet: "$origin" },
+//         flavours: { $addToSet: "$flavour" },
+//         qualities: { $addToSet: "$quality" },
+//         caffeineLevels: { $addToSet: "$caffeine" },
+//         minPrice: { $min: "$price" },
+//         maxPrice: { $max: "$price" },
+//       },
+//     },
+//   ])
+
+//   res.status(200).json({
+//     success: true,
+//     count: products.length,
+//     pagination: {
+//       currentPage: pageNum,
+//       totalPages,
+//       totalProducts: total,
+//     },
+//     filters: filterOptions[0] || {},
+//     data: products,
+//   })
+// })
+
+// 3rd with search
+// @desc    Get all products with filtering
+// @route   GET /api/products
+// @access  Public
+// export const getProducts = asyncHandler(async (req, res) => {
+//   const {
+//     collection,  // Comma-separated string (e.g., "Black Tea,Green Tea")
+//     origin,
+//     flavour,
+//     quality,
+//     caffeine,
+//     organic,
+//     search,
+//     page = 1,
+//     limit = 12,
+//     sort = "newest",
+//     minPrice,
+//     maxPrice,
+//   } = req.query;
+
+//   const query = { isActive: true };
+
+//   // Collection filter (handle comma-separated values)
+//   if (collection) {
+//     query.collection = { 
+//       $in: collection.split(',').map(item => item.trim())
+//     };
+//   }
+
+//   // Origin filter
+//   if (origin) {
+//     query.origin = { 
+//       $in: origin.split(',').map(item => item.trim())
+//     };
+//   }
+
+//   // Flavour filter
+//   if (flavour) {
+//     query.flavour = { 
+//       $in: flavour.split(',').map(item => item.trim())
+//     };
+//   }
+
+//   // Quality filter
+//   if (quality) {
+//     query.quality = { 
+//       $in: quality.split(',').map(item => item.trim())
+//     };
+//   }
+
+//   // Caffeine filter
+//   if (caffeine) {
+//     query.caffeine = { 
+//       $in: caffeine.split(',').map(item => item.trim())
+//     };
+//   }
+
+//   // Organic filter
+//   if (organic) {
+//     query.Organic = organic === "true";
+//   }
+
+//   // Price range
+//   if (minPrice || maxPrice) {
+//     query.price = {};
+//     if (minPrice) query.price.$gte = Number(minPrice);
+//     if (maxPrice) query.price.$lte = Number(maxPrice);
+//   }
+
+//   // Text search
+//   if (search) {
+//     query.$text = { $search: search };
+//   }
+
+//   // Sorting
+//   let sortOption = { createdAt: -1 }; // Default: newest first
+//   switch (sort) {
+//     case "price-low":
+//       sortOption = { price: 1 };
+//       break;
+//     case "price-high":
+//       sortOption = { price: -1 };
+//       break;
+//     case "popular":
+//       sortOption = { rating: -1 };
+//       break;
+//   }
+
+//   // Pagination
+//   const pageNum = Number(page);
+//   const limitNum = Number(limit);
+//   const skip = (pageNum - 1) * limitNum;
+
+//   // Execute query
+//   const products = await Product.find(query)
+//     .sort(sortOption)
+//     .skip(skip)
+//     .limit(limitNum)
+//     .lean();
+
+//   const total = await Product.countDocuments(query);
+
+//   res.status(200).json({
+//     success: true,
+//     count: products.length,
+//     pagination: {
+//       currentPage: pageNum,
+//       totalPages: Math.ceil(total / limitNum),
+//       totalProducts: total,
+//     },
+//     data: products,
+//   });
+// });
+
+// query checked comma sepweated
 export const getProducts = asyncHandler(async (req, res) => {
   const {
     collection,
@@ -12,101 +343,124 @@ export const getProducts = asyncHandler(async (req, res) => {
     flavour,
     quality,
     caffeine,
+    organic,
     search,
     page = 1,
     limit = 12,
-    sort = "-createdAt",
+    sort = "newest",
     minPrice,
     maxPrice,
-  } = req.query
+    category
+  } = req.query;
 
-  // Build query object
-  const query = { isActive: true }
+  const query = { isActive: true };
 
-  // Filter by collection
+  // Collection filter
   if (collection) {
-    query.collection = { $regex: collection, $options: "i" }
+    query.collection = { 
+      $in: collection.split(',')
+        .map(item => decodeURIComponent(item))
+        .map(item => item.trim())
+    };
   }
 
-  // Filter by origin
+  // Origin filter
   if (origin) {
-    query.origin = { $regex: origin, $options: "i" }
+    query.origin = { 
+      $in: origin.split(',')
+        .map(item => decodeURIComponent(item))
+        .map(item => item.trim())
+    };
   }
 
-  // Filter by flavour
+  // Flavour filter
   if (flavour) {
-    query.flavour = { $regex: flavour, $options: "i" }
+    query.flavour = { 
+      $in: flavour.split(',')
+        .map(item => decodeURIComponent(item))
+        .map(item => item.trim())
+    };
   }
 
-  // Filter by quality
+  // Quality filter
   if (quality) {
-    query.quality = quality
+    query.quality = { 
+      $in: quality.split(',')
+        .map(item => decodeURIComponent(item))
+        .map(item => item.trim())
+    };
   }
 
-  // Filter by caffeine level
+  // Caffeine filter
   if (caffeine) {
-    query.caffeine = caffeine
+    query.caffeine = { 
+      $in: caffeine.split(',')
+        .map(item => decodeURIComponent(item))
+        .map(item => item.trim())
+    };
   }
 
-  // Price range filter
+  // Organic filter
+  if (organic) {
+    query.Organic = organic === "true";
+  }
+
+  // Category filter
+  if (category) {
+    query.collection = category;
+  }
+
+  // Price range
   if (minPrice || maxPrice) {
-    query.price = {}
-    if (minPrice) query.price.$gte = Number.parseFloat(minPrice)
-    if (maxPrice) query.price.$lte = Number.parseFloat(maxPrice)
+    query.price = {};
+    if (minPrice) query.price.$gte = Number(minPrice);
+    if (maxPrice) query.price.$lte = Number(maxPrice);
   }
 
   // Text search
   if (search) {
-    query.$text = { $search: search }
+    query.$text = { $search: search };
   }
 
-  // Calculate pagination
-  const pageNum = Number.parseInt(page, 10)
-  const limitNum = Number.parseInt(limit, 10)
-  const skip = (pageNum - 1) * limitNum
+  // Sorting
+  let sortOption = { createdAt: -1 }; // Default: newest first
+  switch (sort) {
+    case "price-low":
+      sortOption = { price: 1 };
+      break;
+    case "price-high":
+      sortOption = { price: -1 };
+      break;
+    case "popular":
+      sortOption = { rating: -1 };
+      break;
+  }
 
-  // Execute query with pagination
-  const products = await Product.find(query).sort(sort).skip(skip).limit(limitNum).lean()
+  // Pagination
+  const pageNum = Number(page);
+  const limitNum = Number(limit);
+  const skip = (pageNum - 1) * limitNum;
 
-  // Get total count for pagination
-  const total = await Product.countDocuments(query)
-  const totalPages = Math.ceil(total / limitNum)
+  // Execute query
+  const products = await Product.find(query)
+    .sort(sortOption)
+    .skip(skip)
+    .limit(limitNum)
+    .lean();
 
-  // Get unique filter values for frontend
-  const filterOptions = await Product.aggregate([
-    { $match: { isActive: true } },
-    {
-      $group: {
-        _id: null,
-        collections: { $addToSet: "$collection" },
-        origins: { $addToSet: "$origin" },
-        flavours: { $addToSet: "$flavour" },
-        qualities: { $addToSet: "$quality" },
-        caffeinelevels: { $addToSet: "$caffeine" },
-        priceRange: {
-          $push: {
-            min: { $min: "$price" },
-            max: { $max: "$price" },
-          },
-        },
-      },
-    },
-  ])
+  const total = await Product.countDocuments(query);
 
   res.status(200).json({
     success: true,
     count: products.length,
     pagination: {
       currentPage: pageNum,
-      totalPages,
+      totalPages: Math.ceil(total / limitNum),
       totalProducts: total,
-      hasNextPage: pageNum < totalPages,
-      hasPrevPage: pageNum > 1,
     },
-    filters: filterOptions[0] || {},
     data: products,
-  })
-})
+  });
+});
 
 // @desc    Get single product
 // @route   GET /api/products/:id
@@ -121,10 +475,8 @@ export const getProduct = asyncHandler(async (req, res) => {
     })
   }
 
-  res.status(200).json({
-    success: true,
-    data: product,
-  })
+   res.status(200).json(product) // Changed this line
+
 })
 
 // @desc    Create new product
