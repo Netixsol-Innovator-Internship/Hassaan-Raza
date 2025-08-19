@@ -1,16 +1,16 @@
-"use client"
-
 import { useEffect, useState } from "react"
 import { productsAPI } from "@/lib/api"
+import { Navigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 // Collection mapping for display
 const collectionConfig = [
-  { name: "BLACK TEA", key: "Black Tea"  ,image: "black-tea-cup.png" },
-  { name: "GREEN TEA", key: "Green Tea" ,image: "green-tea-steam.png" },
-  { name: "WHITE TEA", key: "White Tea" ,image: "white-tea-glass-cup.png" },
-  { name: "OOLONG", key: "Oolong Tea" ,image: "Oolong.png" },
-  { name: "HERBAL TEA", key: "Herbal Tea" ,image: "Herbaltea.png" },
-  { name: "PU-ERH TEA", key: "Pu-erh Tea" ,image: "Greentea.png" },
+  { name: "BLACK TEA", key: "Black Tea", image: "black-tea-cup.png" },
+  { name: "GREEN TEA", key: "Green Tea", image: "green-tea-steam.png" },
+  { name: "WHITE TEA", key: "White Tea", image: "white-tea-glass-cup.png" },
+  { name: "OOLONG", key: "Oolong Tea", image: "Oolong.png" },
+  { name: "HERBAL TEA", key: "Herbal Tea", image: "Herbaltea.png" },
+  { name: "PU-ERH TEA", key: "Pu-erh Tea", image: "Greentea.png" },
 ]
 
 export function CollectionsSection() {
@@ -48,7 +48,7 @@ export function CollectionsSection() {
             name: config.name,
             key: config.key,
             count: 0,
-            image: config.image ,
+            image: config.image,
             products: [],
           })),
         )
@@ -59,9 +59,10 @@ export function CollectionsSection() {
 
     fetchCollections()
   }, [])
+  const navigate = useNavigate();
 
   const handleCollectionClick = (collectionKey) => {
-    console.log("Navigate to collection:", collectionKey)
+    navigate(`/collections`);
   }
 
   if (loading) {
